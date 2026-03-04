@@ -1,26 +1,74 @@
 extends CharacterBody2D
 
 @export var move_speed : float = 100
+@export var cast_time : float = 1.5
+@onready var fire_sound = $FireSound
+@onready var walk_sound = $WalkSound 
+
 var projectile_scene : PackedScene = preload("res://Scenes/projectile.tscn")
 
-@onready var sprite : Sprite2D = $Sprite2D
+@onready var sprite = $AnimatedSprite2D
+@onready var cast_timer = $CastTimer
 
-func _physics_process(delta: float) -> void:
+var is_casting : bool = false
+
+func _physics_process(_delta: float) -> void:
+	if is_casting:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+	
 	var move_input : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = move_input * move_speed
-	move_and_slide()
+		
+	if move_input == Vector2.ZERO:
+		if sprite.animation != "idle":
+			sprite.play("idle")
+		if walk_sound.playing:
+			walk_sound.stop()
+	else:
+		if sprite.animation != "walk":
+			sprite.play("walk")
+		if not walk_sound.playing:
+			walk_sound.play()
 	
-func _process(delta: float) -> void:
+	move_and_slide()
+
+func _process(_delta: float) -> void:
+	if is_casting:
+		return
+	
 	var mouse_pos : Vector2 = get_global_mouse_position()
 	var mouse_dir : Vector2 = (mouse_pos - global_position).normalized()
 	
 	sprite.flip_h = mouse_dir.x < 0
-	if Input.is_action_pressed("shoot"):
-		shoot(mouse_pos, mouse_dir)
 	
-func shoot(mouse_pos, mouse_dir) -> void:
+	if Input.is_action_just_pressed("shoot"):
+		start_cast(mouse_pos, mouse_dir)
+
+func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
+	is_casting = true
+	velocity = Vector2.ZERO
+	sprite.play("cast")
+	
+	await get_tree().create_timer(0.3).timeout
+	shoot(mouse_dir)
+	await sprite.animation_finished
+	
+	is_casting = false
+
+func _on_CastTimer_timeout() -> void:
+	is_casting = false
+
+func shoot(mouse_dir: Vector2) -> void:
 	var projectile = projectile_scene.instantiate()
 	get_tree().current_scene.add_child(projectile)
 
-	projectile.global_position = global_position
+	var spawn_offset = 20
+
 	projectile.direction = mouse_dir
+	projectile.global_position = global_position + (mouse_dir * spawn_offset)
+	projectile.rotation = mouse_dir.angle()
+	
+	fire_sound.pitch_scale = randf_range(0.8, 1.2)
+	fire_sound.play()
