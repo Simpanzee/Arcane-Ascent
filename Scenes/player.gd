@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var cast_time : float = 1.5
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
+@onready var ultimate_sound = $UltimateSound
 
 var projectile_scene : PackedScene = preload("res://Scenes/projectile.tscn")
 
@@ -45,6 +46,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shoot"):
 		start_cast(mouse_pos, mouse_dir)
+	
+	if Input.is_action_just_pressed("ultimate"):
+		start_ultimate(mouse_pos, mouse_dir)
 
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	is_casting = true
@@ -54,6 +58,33 @@ func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	await get_tree().create_timer(0.3).timeout
 	shoot(mouse_dir)
 	await sprite.animation_finished
+	
+	is_casting = false
+
+func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
+	is_casting = true
+	velocity = Vector2.ZERO
+	
+	sprite.play("ultimate")
+	ultimate_sound.play()
+	
+	await get_tree().create_timer(2.0).timeout
+	
+	var ultimate_duration = 2.0
+	var timer = 0.0
+	var fire_interval = 0.1
+	
+	while timer < ultimate_duration:
+		var projectile = projectile_scene.instantiate()
+		get_tree().current_scene.add_child(projectile)
+
+		var spawn_offset = 20
+		projectile.direction = mouse_dir
+		projectile.global_position = global_position + (mouse_dir * spawn_offset)
+		projectile.rotation = mouse_dir.angle()
+		
+		await get_tree().create_timer(fire_interval).timeout
+		timer += fire_interval
 	
 	is_casting = false
 
