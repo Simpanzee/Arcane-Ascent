@@ -4,8 +4,10 @@ extends CharacterBody2D
 @export var cast_time : float = 1.5
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
+@onready var ultimate_sound = $UltimateSound
 
-var projectile_scene : PackedScene = preload("res://Scenes/projectile.tscn")
+var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
+var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -45,6 +47,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shoot"):
 		start_cast(mouse_pos, mouse_dir)
+	
+	if Input.is_action_just_pressed("ultimate"):
+		start_ultimate(mouse_pos, mouse_dir)
 
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	is_casting = true
@@ -55,6 +60,43 @@ func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	shoot(mouse_dir)
 	await sprite.animation_finished
 	
+	is_casting = false
+
+func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
+	is_casting = true
+	velocity = Vector2.ZERO
+	
+	sprite.play("ultimate")
+	ultimate_sound.play()
+	
+	await get_tree().create_timer(2.0).timeout
+	var beam = beam_scene.instantiate()
+	get_tree().current_scene.add_child(beam)
+	
+	var spawn_offset = 85
+	var current_angle = mouse_dir.angle()
+	var rotate_speed = 0.5
+	var ultimate_duration = 2.0
+	var timer = 0.0
+	
+	while timer < ultimate_duration:
+		await get_tree().process_frame
+		var delta = get_process_delta_time()
+		
+		var mouse_pos = get_global_mouse_position()
+		var target_dir = (mouse_pos - global_position).normalized()
+		var target_angle = target_dir.angle()
+		
+		current_angle = lerp_angle(current_angle, target_angle, rotate_speed * delta)
+		
+		var dir = Vector2.RIGHT.rotated(current_angle)
+		
+		beam.rotation = current_angle + deg_to_rad(90)
+		beam.global_position = global_position + dir * spawn_offset
+		
+		timer += delta
+	
+	await beam.finished
 	is_casting = false
 
 func _on_CastTimer_timeout() -> void:

@@ -695,6 +695,7 @@ sources/0 = SubResource("TileSetAtlasSource_s3j8h")
 size = Vector2(32, 16)
 
 [node name="Room_Template" type="StaticBody2D"]
+z_index = -5
 script = ExtResource("1_11dti")
 
 [node name="Base" type="TileMapLayer" parent="."]
