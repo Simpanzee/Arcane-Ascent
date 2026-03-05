@@ -6,8 +6,8 @@ extends CharacterBody2D
 @onready var walk_sound = $WalkSound 
 @onready var ultimate_sound = $UltimateSound
 
-var projectile_scene : PackedScene = preload("res://Scenes/projectile.tscn")
-var beam_scene : PackedScene = preload("res://Scenes/beam.tscn")
+var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
+var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
