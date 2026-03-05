@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://dfuvckrqq83mq"]
 
-[ext_resource type="Script" uid="uid://dybpu6p8bu2tg" path="res://Scenes/player.gd" id="1_cvnsp"]
+[ext_resource type="Script" uid="uid://dybpu6p8bu2tg" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/wizard.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://iboux3g3i2ed" path="res://Assets/audio/bullet.mp3" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://7pqd7mc7dyvn" path="res://Assets/audio/walking.mp3" id="4_vgqql"]
@@ -197,6 +197,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cvnsp")
+move_speed = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_v0iea")
@@ -209,7 +210,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
+zoom = Vector2(1.4, 1.4)
 
 [node name="CastTimer" type="Timer" parent="."]
 one_shot = true

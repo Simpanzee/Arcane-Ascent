@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 100
+@export var move_speed : float = 300
 @export var cast_time : float = 1.5
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
