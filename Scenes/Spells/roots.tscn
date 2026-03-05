@@ -1,0 +1,145 @@
+[gd_scene load_steps=21 format=3 uid="uid://bpnimtf07u253"]
+
+[ext_resource type="Script" uid="uid://2cbus0boai8j" path="res://Scenes/Spells/roots.gd" id="1_piadk"]
+[ext_resource type="Texture2D" uid="uid://b3t42p21er5y6" path="res://Assets/spells/roots.png" id="2_piadk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3j7b"]
+size = Vector2(53, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crhbn"]
+atlas = ExtResource("2_piadk")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuseg"]
+atlas = ExtResource("2_piadk")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpjty"]
+atlas = ExtResource("2_piadk")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hdd8"]
+atlas = ExtResource("2_piadk")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ouwc"]
+atlas = ExtResource("2_piadk")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm65r"]
+atlas = ExtResource("2_piadk")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvonl"]
+atlas = ExtResource("2_piadk")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c38c5"]
+atlas = ExtResource("2_piadk")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucsrq"]
+atlas = ExtResource("2_piadk")
+region = Rect2(504, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v41sh"]
+atlas = ExtResource("2_piadk")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt3ln"]
+atlas = ExtResource("2_piadk")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_375hw"]
+atlas = ExtResource("2_piadk")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmw7d"]
+atlas = ExtResource("2_piadk")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_am84a"]
+atlas = ExtResource("2_piadk")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_518i5"]
+atlas = ExtResource("2_piadk")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqavh"]
+atlas = ExtResource("2_piadk")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ybd1h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crhbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuseg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpjty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hdd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ouwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm65r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvonl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c38c5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucsrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v41sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt3ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_375hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmw7d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_am84a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_518i5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqavh")
+}],
+"loop": false,
+"name": &"end",
+"speed": 13.0
+}]
+
+[node name="Roots" type="Area2D"]
+script = ExtResource("1_piadk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_n3j7b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -26)
+sprite_frames = SubResource("SpriteFrames_ybd1h")
+frame = 7
+frame_progress = 1.0
