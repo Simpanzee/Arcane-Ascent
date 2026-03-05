@@ -1,3 +1,3 @@
 extends Node
 
-signal OnPlayerEnterRoom (room : Room)
+signal OnPlayerEnterRoom (_room : Room)
