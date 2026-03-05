@@ -8,9 +8,12 @@ extends CharacterBody2D
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
 @onready var ultimate_sound = $UltimateSound
+@onready var blink_sound = $BlinkSound
 
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
+var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
+
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -50,6 +53,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("shoot"):
 		start_cast(mouse_pos, mouse_dir)
+	
+	if Input.is_action_just_pressed("blink"):
+		blink()
 	
 	if Input.is_action_just_pressed("ultimate"):
 		start_ultimate(mouse_pos, mouse_dir)
@@ -120,3 +126,45 @@ func shoot(mouse_dir: Vector2) -> void:
 	
 	fire_sound.pitch_scale = randf_range(0.8, 1.2)
 	fire_sound.play()
+
+func blink() -> void:
+	if is_casting:
+		return
+	is_casting = true
+	velocity = Vector2.ZERO
+
+	if walk_sound.playing:
+		walk_sound.stop()
+
+	sprite.play("blink_cast")
+	await sprite.animation_finished
+
+	blink_sound.pitch_scale = randf_range(0.8, 1.2)
+	blink_sound.play()
+
+	var mouse_pos = get_global_mouse_position()
+	var direction = (mouse_pos - global_position).normalized()
+	var blink_distance = 150
+	var blink_speed = 2000
+
+	var distance_moved = 0.0
+	while distance_moved < blink_distance:
+		await get_tree().process_frame
+		var delta = get_process_delta_time()
+		var step = blink_speed * delta
+		if distance_moved + step > blink_distance:
+			step = blink_distance - distance_moved
+		var collision = move_and_collide(direction * step)
+		if collision:
+			break
+
+		distance_moved += step
+
+	var blink_effect = blink_scene.instantiate()
+	blink_effect.global_position = global_position
+	get_tree().current_scene.add_child(blink_effect)
+
+	await get_tree().process_frame
+	await get_tree().create_timer(0.5).timeout
+
+	is_casting = false

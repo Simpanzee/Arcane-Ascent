@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://vfpygfgtrcx" path="res://Assets/spells/ultamite/start/laser_S_8.png" id="25_ljf3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbn8e"]
-size = Vector2(22, 207)
+size = Vector2(22, 364)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1rm5"]
 animations = [{
@@ -126,14 +126,14 @@ collision_mask = 5
 script = ExtResource("1_7ddph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -29.5)
+position = Vector2(0, -108)
 shape = SubResource("RectangleShape2D_tbn8e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -28.979181)
-scale = Vector2(1.1635219, 3.1881502)
+position = Vector2(0, -107.97919)
+scale = Vector2(1.1635219, 5.6569004)
 sprite_frames = SubResource("SpriteFrames_m1rm5")
-animation = &"end"
+animation = &"active"
 autoplay = "start"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
