@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var base_speed : float = 200
+@export var damage : int = 1
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var direction: Vector2
@@ -29,3 +31,14 @@ func despawn() -> void:
 
 	await sprite.animation_finished
 	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		body.take_damage(damage)
+		
+		sprite.play("hit_miss")
+		await sprite.animation_finished
+		queue_free()
+	
+	

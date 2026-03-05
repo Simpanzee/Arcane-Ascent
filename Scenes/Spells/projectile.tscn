@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://cg8q8qv0mjrw"]
 
-[ext_resource type="Script" uid="uid://dw65hv6yujb3u" path="res://Scripts/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Script" uid="uid://dw65hv6yujb3u" path="res://Scenes/Spells/projectile.gd" id="1_yr2qt"]
 [ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/wizard.png" id="2_tl4hk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d4467"]
@@ -158,7 +158,9 @@ animations = [{
 }]
 
 [node name="Projectile" type="Area2D"]
-z_index = 1
+z_index = 3
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_yr2qt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -169,3 +171,5 @@ position = Vector2(-1, -1)
 sprite_frames = SubResource("SpriteFrames_b66ev")
 animation = &"fire"
 autoplay = "fire"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

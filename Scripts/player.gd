@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 @export var move_speed : float = 300
 @export var cast_time : float = 1.5
+@export var current_health : int = 3
+@export var max_health : int = 3
+
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
 @onready var ultimate_sound = $UltimateSound
@@ -56,6 +59,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ultimate"):
 		start_ultimate(mouse_pos, mouse_dir)
+
+func take_damage(amount : int):
+	print("Ouch!")
 
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	is_casting = true

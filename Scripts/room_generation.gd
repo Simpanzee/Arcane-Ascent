@@ -113,7 +113,7 @@ func _instantiate_rooms():
 			
 			if x == first_room_x and y == first_room_y:
 				first_room = room
-				first_room.player_enter(player)
+				first_room.player_spawn(player)
 			
 			last_room = room
 
