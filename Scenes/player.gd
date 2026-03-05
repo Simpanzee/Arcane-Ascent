@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var ultimate_sound = $UltimateSound
 
 var projectile_scene : PackedScene = preload("res://Scenes/projectile.tscn")
+var beam_scene : PackedScene = preload("res://Scenes/beam.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -69,23 +70,33 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	ultimate_sound.play()
 	
 	await get_tree().create_timer(2.0).timeout
+	var beam = beam_scene.instantiate()
+	get_tree().current_scene.add_child(beam)
 	
+	var spawn_offset = 85
+	var current_angle = mouse_dir.angle()
+	var rotate_speed = 0.5
 	var ultimate_duration = 2.0
 	var timer = 0.0
-	var fire_interval = 0.1
 	
 	while timer < ultimate_duration:
-		var projectile = projectile_scene.instantiate()
-		get_tree().current_scene.add_child(projectile)
-
-		var spawn_offset = 20
-		projectile.direction = mouse_dir
-		projectile.global_position = global_position + (mouse_dir * spawn_offset)
-		projectile.rotation = mouse_dir.angle()
+		await get_tree().process_frame
+		var delta = get_process_delta_time()
 		
-		await get_tree().create_timer(fire_interval).timeout
-		timer += fire_interval
+		var mouse_pos = get_global_mouse_position()
+		var target_dir = (mouse_pos - global_position).normalized()
+		var target_angle = target_dir.angle()
+		
+		current_angle = lerp_angle(current_angle, target_angle, rotate_speed * delta)
+		
+		var dir = Vector2.RIGHT.rotated(current_angle)
+		
+		beam.rotation = current_angle + deg_to_rad(90)
+		beam.global_position = global_position + dir * spawn_offset
+		
+		timer += delta
 	
+	await beam.finished
 	is_casting = false
 
 func _on_CastTimer_timeout() -> void:
