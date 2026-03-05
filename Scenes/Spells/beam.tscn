@@ -120,6 +120,7 @@ animations = [{
 }]
 
 [node name="Beam" type="Area2D"]
+z_index = 1
 script = ExtResource("1_7ddph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
