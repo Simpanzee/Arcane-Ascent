@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://b2skub35yxxu4"]
 
-[ext_resource type="Script" uid="uid://vp7usqx8jlwc" path="res://Scenes/Spells/beam.gd" id="1_7ddph"]
+[ext_resource type="Script" uid="uid://vp7usqx8jlwc" path="res://Scripts/beam.gd" id="1_7ddph"]
 [ext_resource type="Texture2D" uid="uid://crfs1ycauqqi7" path="res://Assets/spells/ultamite/active/laser_A_1.png" id="2_7ddph"]
 [ext_resource type="Texture2D" uid="uid://dugeo0q7jlk4m" path="res://Assets/spells/ultamite/active/laser_A_2.png" id="3_jrol3"]
 [ext_resource type="Texture2D" uid="uid://dmgmapqyl1t5e" path="res://Assets/spells/ultamite/active/laser_A_3.png" id="4_0jg1s"]

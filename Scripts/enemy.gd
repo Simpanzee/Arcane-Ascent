@@ -21,10 +21,10 @@ var player_distance : float
 func  _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	
-func _initialize (in_room : Room):
+func _initialize (_in_room : Room):
 	pass
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	player_direction = global_position.direction_to(player.global_position)
 	player_distance = global_position.distance_to(player.global_position)
 	

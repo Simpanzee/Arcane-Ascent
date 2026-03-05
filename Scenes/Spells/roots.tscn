@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://bpnimtf07u253"]
 
-[ext_resource type="Script" uid="uid://2cbus0boai8j" path="res://Scenes/Spells/roots.gd" id="1_piadk"]
+[ext_resource type="Script" uid="uid://2cbus0boai8j" path="res://Scripts/roots.gd" id="1_piadk"]
 [ext_resource type="Texture2D" uid="uid://b3t42p21er5y6" path="res://Assets/spells/roots.png" id="2_piadk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3j7b"]

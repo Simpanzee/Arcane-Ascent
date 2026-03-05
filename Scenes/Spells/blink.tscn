@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://danfgteqnvuom"]
 
-[ext_resource type="Script" uid="uid://dnk6g855c5oa5" path="res://Scenes/Spells/blink.gd" id="1_5b0l0"]
+[ext_resource type="Script" uid="uid://dnk6g855c5oa5" path="res://Scripts/blink.gd" id="1_5b0l0"]
 [ext_resource type="Texture2D" uid="uid://dd6vkg5ckpybd" path="res://Assets/spells/blink.png" id="3_hisct"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8i3hc"]
