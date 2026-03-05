@@ -43,5 +43,8 @@ func set_doors(data):
 		entrance_west.open_door()
 		
 
-func player_enter(player : CharacterBody2D):
+func player_spawn(player : CharacterBody2D):
 	player.global_position = global_position
+	
+func player_enter(player : CharacterBody2D):
+	pass

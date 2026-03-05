@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=4 uid="uid://c6ufqydbe7phr"]
+[gd_scene load_steps=19 format=4 uid="uid://c6ufqydbe7phr"]
 
 [ext_resource type="Script" uid="uid://b8hsm08njy2vg" path="res://Scripts/room.gd" id="1_11dti"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_y84gu"]
 [ext_resource type="Script" uid="uid://cgg0qdddkyxtf" path="res://Scripts/room_entrance.gd" id="2_ka8xt"]
+[ext_resource type="PackedScene" uid="uid://dlnc7g8upypc3" path="res://Scenes/Enemies/slime.tscn" id="4_s3j8h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lt6kj"]
 texture = ExtResource("1_y84gu")
@@ -873,3 +874,7 @@ tile_set = SubResource("TileSet_h1l6b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance_West/Barrier"]
 position = Vector2(0, -184)
 shape = SubResource("RectangleShape2D_yiwfh")
+
+[node name="Slime" parent="." instance=ExtResource("4_s3j8h")]
+z_index = 2
+position = Vector2(-68, -54)

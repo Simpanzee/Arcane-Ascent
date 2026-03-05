@@ -120,7 +120,9 @@ animations = [{
 }]
 
 [node name="Beam" type="Area2D"]
-z_index = 1
+z_index = 3
+collision_layer = 8
+collision_mask = 5
 script = ExtResource("1_7ddph")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -133,3 +135,5 @@ scale = Vector2(1.1635219, 3.1881502)
 sprite_frames = SubResource("SpriteFrames_m1rm5")
 animation = &"end"
 autoplay = "start"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
