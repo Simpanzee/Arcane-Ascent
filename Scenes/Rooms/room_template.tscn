@@ -706,24 +706,20 @@ tile_map_data = PackedByteArray("AAD4//T/AAAKAAIAAAD4//X/AAAKAAMAAAD5//T/AAALAAI
 tile_set = SubResource("TileSet_lt6kj")
 
 [node name="WallCollider" type="CollisionPolygon2D" parent="."]
-visible = false
 z_index = 1
 polygon = PackedVector2Array(-175, -16, -176, -176, -15, -176, -15, -240, -240, -239, -240, -16)
 
 [node name="WallCollider2" type="CollisionPolygon2D" parent="."]
-visible = false
 z_index = 1
 rotation = 1.5707964
 polygon = PackedVector2Array(-176, -14.999992, -176.00002, -175.99998, -16.000008, -176, -16.000011, -240, -240.00002, -237.99998, -240, -14.9999895)
 
 [node name="WallCollider3" type="CollisionPolygon2D" parent="."]
-visible = false
 z_index = 1
 rotation = -3.1415925
 polygon = PackedVector2Array(-175, -15.999973, -175.00003, -175.99997, -16.000027, -176, -16.000036, -240, -240.00003, -240.99997, -240, -15.999964)
 
 [node name="WallCollider4" type="CollisionPolygon2D" parent="."]
-visible = false
 z_index = 1
 rotation = -1.5698088
 polygon = PackedVector2Array(-176.01472, -14.826195, -176.1737, -175.82611, -16.17379, -175.98412, -16.236988, -239.98409, -240.23688, -239.76288, -240.0147, -14.762996)
@@ -840,6 +836,7 @@ position = Vector2(0, -184)
 shape = SubResource("RectangleShape2D_yiwfh")
 
 [node name="Entrance_West" type="Node2D" parent="."]
+z_index = -5
 rotation = -1.5707964
 script = ExtResource("2_ka8xt")
 direction = 3

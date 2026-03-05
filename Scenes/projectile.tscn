@@ -158,6 +158,7 @@ animations = [{
 }]
 
 [node name="Projectile" type="Area2D"]
+z_index = 1
 script = ExtResource("1_yr2qt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

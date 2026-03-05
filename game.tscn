@@ -5,8 +5,9 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="RoomGeneration" type="Node" parent="."]
+[node name="RoomGeneration" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("1_e2o6t")
+player = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("2_e2o6t")]
 z_index = 1

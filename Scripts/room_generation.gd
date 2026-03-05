@@ -18,6 +18,7 @@ var room_pos_offset : float = 480
 var first_room_x : int = 3
 var first_room_y : int = 3
 var first_room : Room
+var last_room : Room
 
 var directions = [
 	Vector2.UP,
@@ -109,6 +110,12 @@ func _instantiate_rooms():
 			room.set_doors.call_deferred(data)
 			
 			room.global_position = Vector2(x, y) * room_pos_offset
+			
+			if x == first_room_x and y == first_room_y:
+				first_room = room
+				first_room.player_enter(player)
+			
+			last_room = room
 
 func _get_map(x : int, y : int) -> RoomData:
 	return map[x + y * map_size]

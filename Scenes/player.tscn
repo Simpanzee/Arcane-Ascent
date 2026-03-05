@@ -210,7 +210,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.4, 1.4)
+zoom = Vector2(1.2, 1.2)
 
 [node name="CastTimer" type="Timer" parent="."]
 one_shot = true

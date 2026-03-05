@@ -28,12 +28,20 @@ func initial_state():
 func set_doors(data):
 	if data.north:
 		entrance_north.toggle_barrier(false)
+		entrance_north.open_door()
 
 	if data.south:
 		entrance_south.toggle_barrier(false)
+		entrance_south.open_door()
 
 	if data.east:
 		entrance_east.toggle_barrier(false)
+		entrance_east.open_door()
 
 	if data.west:
 		entrance_west.toggle_barrier(false)
+		entrance_west.open_door()
+		
+
+func player_enter(player : CharacterBody2D):
+	player.global_position = global_position
