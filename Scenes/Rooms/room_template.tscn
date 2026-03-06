@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://b8hsm08njy2vg" path="res://Scripts/room.gd" id="1_11dti"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_y84gu"]
 [ext_resource type="Script" uid="uid://cgg0qdddkyxtf" path="res://Scripts/room_entrance.gd" id="2_ka8xt"]
-[ext_resource type="PackedScene" uid="uid://dlnc7g8upypc3" path="res://Scenes/Enemies/slime.tscn" id="4_s3j8h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lt6kj"]
 texture = ExtResource("1_y84gu")
@@ -232,6 +231,9 @@ texture = ExtResource("1_y84gu")
 
 [sub_resource type="TileSet" id="TileSet_lt6kj"]
 sources/0 = SubResource("TileSetAtlasSource_y84gu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3j8h"]
+size = Vector2(319, 318)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5b8d"]
 texture = ExtResource("1_y84gu")
@@ -726,6 +728,13 @@ z_index = 1
 rotation = -1.5698088
 polygon = PackedVector2Array(-176.01472, -14.826195, -176.1737, -175.82611, -16.17379, -175.98412, -16.236988, -239.98409, -240.23688, -239.76288, -240.0147, -14.762996)
 
+[node name="RoomArea" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomArea"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_s3j8h")
+
 [node name="Entrance_North" type="Node2D" parent="."]
 script = ExtResource("2_ka8xt")
 
@@ -875,6 +884,4 @@ tile_set = SubResource("TileSet_h1l6b")
 position = Vector2(0, -184)
 shape = SubResource("RectangleShape2D_yiwfh")
 
-[node name="Slime" parent="." instance=ExtResource("4_s3j8h")]
-z_index = 2
-position = Vector2(-68, -54)
+[connection signal="body_entered" from="RoomArea" to="." method="_on_room_area_body_entered"]

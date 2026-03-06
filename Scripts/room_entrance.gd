@@ -28,12 +28,12 @@ func open_door():
 	door_shut_collision.disabled = true
 	door_open.visible = true
 	
-func close_door ():
+func close_door():
 	if barrier.visible:
 		return
 	
 	door_shut.visible = true
-	door_shut_collision.disabled = false
+	door_shut_collision.call_deferred("set_disabled", false)
 	door_open.visible = false
 	
 func _get_neighbor_entry_direction() -> Room.Direction:

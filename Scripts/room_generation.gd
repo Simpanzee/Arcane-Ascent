@@ -105,6 +105,9 @@ func _instantiate_rooms():
 				continue
 			var room : Room = room_scene.instantiate()
 			get_tree().root.add_child.call_deferred(room)
+			room.open_other_rooms.connect(_on_room_template_open_other_rooms)
+			room.close_other_rooms.connect(_on_room_template_close_other_rooms)
+			rooms.append(room)
 			
 			var data : RoomData = _get_map(x, y)
 			room.set_doors.call_deferred(data)
@@ -125,3 +128,13 @@ func _set_map(x : int, y : int, value : RoomData):
 	
 func _get_opposite(dir : Vector2) -> Vector2:
 	return -dir
+
+func _on_room_template_open_other_rooms() -> void:
+	for room in rooms:
+		if room.room_cleared == false:
+			room.open_all_doors()
+
+func _on_room_template_close_other_rooms() -> void:
+	for room in rooms:
+		if room.room_cleared == false:
+			room.close_all_doors()

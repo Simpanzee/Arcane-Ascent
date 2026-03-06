@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var cur_hp : int = 4
-@export var max_hp : int = 4
+@export var cur_hp : int = 3
+@export var max_hp : int = 3
 @export var move_speed : float = 20
 
 @export var attack_damage : int = 1
@@ -23,6 +23,7 @@ var player_direction : Vector2
 var player_distance : float
 
 var state : String = "move"
+signal died
 
 func  _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -31,6 +32,9 @@ func _initialize (_in_room : Room):
 	pass
 	
 func _physics_process(_delta: float) -> void:
+	if is_active == false:
+		return
+	
 	if state != "move":
 		return
 		
@@ -71,6 +75,9 @@ func _try_attack():
 	state = "move"
 	
 func take_damage(amount : int):
+	if is_active == false:
+		return
+	
 	if state == "dead":
 		return
 		
@@ -100,4 +107,5 @@ func take_damage(amount : int):
 	else:
 		state = "move"
 func die():
+	died.emit()
 	queue_free()
