@@ -9,11 +9,14 @@ extends CharacterBody2D
 @onready var walk_sound = $WalkSound 
 @onready var ultimate_sound = $UltimateSound
 @onready var blink_sound = $BlinkSound
+@onready var root_start = $RootStart
+@onready var root_end = $RootEnd
+
 
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
-
+var roots_scene : PackedScene = preload("res://Scenes/Spells/roots.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -57,6 +60,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("blink"):
 		blink()
 	
+	if Input.is_action_just_pressed("root"):
+		cast_root()
+	
 	if Input.is_action_just_pressed("ultimate"):
 		start_ultimate(mouse_pos, mouse_dir)
 
@@ -73,6 +79,28 @@ func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	await sprite.animation_finished
 	
 	is_casting = false
+
+func cast_root():
+	is_casting = true
+	sprite.play("blink_cast")
+	await sprite.animation_finished
+	is_casting = false
+	var cast_point = get_global_mouse_position()
+	var root_radius = 40.0
+	var affected = false
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
+		if enemy.global_position.distance_to(cast_point) <= root_radius:
+			var root = roots_scene.instantiate()
+			enemy.add_child(root)
+			root.position = Vector2.ZERO
+			affected = true
+	if affected:
+		root_start.pitch_scale = randf_range(0.95, 1.1)
+		root_start.play()
+	await get_tree().create_timer(3).timeout
+	if affected:
+		root_end.pitch_scale = randf_range(0.95, 1.1)
+		root_end.play()
 
 func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	is_casting = true

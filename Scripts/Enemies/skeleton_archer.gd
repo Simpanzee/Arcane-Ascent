@@ -1,7 +1,7 @@
 extends Enemy
 
-@export var flee_range : float = 60
-@export var flee_speed : float = 90
+@export var flee_range : float = 50
+@export var flee_speed : float = 80
 @export var idle_after_shot : float = 0.8
 @export var arrow_scene : PackedScene
 
@@ -33,7 +33,7 @@ func _physics_process(_delta: float) -> void:
 	sprite.flip_h = player_direction.x < 0
 
 	if player_distance < flee_range:
-		velocity = -player_direction * flee_speed
+		velocity = -player_direction * flee_speed * speed_multiplier
 		sprite.play("move")
 		move_and_slide()
 		return
@@ -42,7 +42,7 @@ func _physics_process(_delta: float) -> void:
 		_try_attack()
 		return
 
-	velocity = player_direction * move_speed
+	velocity = player_direction * move_speed * speed_multiplier
 	sprite.play("move")
 	move_and_slide()
 
