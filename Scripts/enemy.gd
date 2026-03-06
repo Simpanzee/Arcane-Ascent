@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Enemy
 
 @export var cur_hp : int = 3
 @export var max_hp : int = 3

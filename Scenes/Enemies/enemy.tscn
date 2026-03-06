@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://x4rbjsqcfvuo"]
+
+[ext_resource type="Script" uid="uid://can4vqe2t8tm" path="res://Scripts/enemy.gd" id="1_613su"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+z_index = 2
+z_as_relative = false
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_613su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Attack" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Despawn" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
