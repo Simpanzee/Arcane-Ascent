@@ -1,7 +1,8 @@
-[gd_scene load_steps=80 format=3 uid="uid://c5xcbdpu6m6lm"]
+[gd_scene load_steps=81 format=3 uid="uid://c5xcbdpu6m6lm"]
 
 [ext_resource type="PackedScene" uid="uid://x4rbjsqcfvuo" path="res://Scenes/Enemies/enemy.tscn" id="1_wt4au"]
 [ext_resource type="Texture2D" uid="uid://ddn08oi52kxm2" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack01.png" id="2_q14j8"]
+[ext_resource type="Script" uid="uid://b3m48166vrebb" path="res://Scenes/Enemies/orc.gd" id="2_uvm7r"]
 [ext_resource type="Texture2D" uid="uid://b42iwp532dejt" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack02.png" id="3_15v5j"]
 [ext_resource type="Texture2D" uid="uid://btni3bg7ifxf2" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack03.png" id="4_uvm7r"]
 [ext_resource type="Texture2D" uid="uid://jyyx1oaa2gxl" path="res://Assets/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Death.png" id="5_2i0ii"]
@@ -491,6 +492,7 @@ size = Vector2(62, 39.5)
 size = Vector2(62, 17)
 
 [node name="Orc" instance=ExtResource("1_wt4au")]
+script = ExtResource("2_uvm7r")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_fi1oq")
@@ -498,9 +500,8 @@ shape = SubResource("CircleShape2D_fi1oq")
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_gcr5c")
-animation = &"walk"
+animation = &"attack3"
 autoplay = "idle"
-frame_progress = 0.36137557
 
 [node name="Death" parent="." index="2"]
 stream = ExtResource("10_oxdsm")

@@ -1,25 +1,28 @@
 extends CharacterBody2D
 class_name Enemy
 
-@export var cur_hp : int = 3
-@export var max_hp : int = 3
-@export var move_speed : float = 40
+@export var cur_hp : int
+@export var max_hp : int
+@export var move_speed : float
 
-@export var attack_damage : int = 1
-@export var attack_range : float = 15
-@export var attack_rate : float = 1.5
+@export var attack_damage : int
+@export var attack_range : float
+@export var attack_rate : float
 var last_attack_time : float
 
 @export var separation_radius : float = 20
 @export var separation_strength : float = 80
 
 @onready var sprite = $AnimatedSprite2D
-@onready var slime_attack = $SlimeAttack
-@onready var slime_death = $SlimeDeath
-@onready var slime_hurt = $SlimeHurt
+@onready var attack = $Attack
+@onready var death = $Death
+@onready var hurt = $Hurt
 @onready var despawn = $Despawn
 
-var room : Room
+var hurt_pitch : Array[float]
+var death_pitch : Array[float]
+var despawn_pitch : Array[float]
+
 var is_active : bool = false
 var player : CharacterBody2D
 
@@ -33,12 +36,6 @@ signal died
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
-	add_to_group("Enemy")
-
-
-func _initialize(_in_room : Room):
-	pass
-
 
 func _physics_process(_delta: float) -> void:
 	if is_active == false:
@@ -75,22 +72,6 @@ func _try_attack():
 	state = "attack"
 	last_attack_time = Time.get_unix_time_from_system()
 	velocity = Vector2.ZERO
-	
-	sprite.play("attack")
-	await get_tree().create_timer(0.3).timeout
-	slime_attack.pitch_scale = randf_range(0.5, 2)
-	slime_attack.play()
-
-	if state == "dead":
-		return
-
-	var dist = global_position.distance_to(player.global_position)
-	if dist <= attack_range:
-		player.take_damage(attack_damage)
-
-	await sprite.animation_finished
-	if state != "dead":
-		state = "move"
 
 
 func get_separation_force() -> Vector2:
@@ -121,36 +102,35 @@ func take_damage(amount : int):
 	velocity = Vector2.ZERO
 	
 	sprite.play("hurt")
-	
-	slime_hurt.pitch_scale = randf_range(0.5, 2)
-	slime_hurt.play()
+	hurt.pitch_scale = randf_range(hurt_pitch[0], hurt_pitch[1])
+	hurt.play()
 	
 	cur_hp -= amount
 	
 	await sprite.animation_finished
 	
 	if cur_hp <= 0:
-		sprite.play("death")
-		state = "dead"
-		
-		slime_death.pitch_scale = randf_range(0.5, 2)
-		slime_death.play()
-		
-		await sprite.animation_finished
-		
-		despawn.pitch_scale = randf_range(0.8, 1.2)
-		despawn.play()
-		
-		sprite.scale = Vector2(0.6, 0.6)
-		sprite.play("despawn")
-		
-		await sprite.animation_finished
-		
 		die()
 	else:
 		state = "move"
 
 
 func die():
+	sprite.play("death")
+	state = "dead"
+	
+	death.pitch_scale = randf_range(death_pitch[0], death_pitch[1])
+	death.play()
+	
+	await sprite.animation_finished
+	
+	despawn.pitch_scale = randf_range(despawn_pitch[0], death_pitch[1])
+	despawn.play()
+	
+	sprite.scale = Vector2(0.6, 0.6)
+	sprite.play("despawn")
+	
+	await sprite.animation_finished
+	
 	died.emit()
 	queue_free()

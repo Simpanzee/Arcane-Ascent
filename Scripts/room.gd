@@ -21,7 +21,7 @@ signal close_other_rooms
 @onready var spawn_zone : Area2D = $SpawnZone
 
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
-var ork_scene : PackedScene = preload("res://Scenes/Enemies/ork.tscn")
+var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
 
 
 var enemies_count : int = randi_range(2, 4)
@@ -68,8 +68,13 @@ func spawn_enemies():
 			shapes.append(child)
 			
 	for i in range(enemies_count):
-		var slime = slime_scene.instantiate()
-		add_child(slime)
+		var enemy_scene : PackedScene
+		if randf() < 0.5:
+			enemy_scene = slime_scene
+		else:
+			enemy_scene = orc_scene
+		var enemy = enemy_scene.instantiate()
+		add_child(enemy)
 		
 		var shape_node : CollisionShape2D = shapes[randi() % shapes.size()]
 		var rect : RectangleShape2D = shape_node.shape
@@ -80,9 +85,9 @@ func spawn_enemies():
 		)
 		
 		var spawn_pos = shape_node.global_position + offset
-		slime.global_position = spawn_pos
+		enemy.global_position = spawn_pos
 		
-		slime.died.connect(_on_enemy_died)
+		enemy.died.connect(_on_enemy_died)
 	
 
 func _on_enemy_died() -> void:
