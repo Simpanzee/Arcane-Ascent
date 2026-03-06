@@ -132,6 +132,9 @@ func cast_root():
 		root_end.play()
 
 func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
+	if is_dead:
+		return
+
 	is_invulnerable = true
 	is_casting = true
 	velocity = Vector2.ZERO
@@ -140,6 +143,10 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	ultimate_sound.play()
 	
 	await get_tree().create_timer(2.0).timeout
+	
+	if is_dead:
+		return
+
 	var beam = beam_scene.instantiate()
 	get_tree().current_scene.add_child(beam)
 	
@@ -150,6 +157,10 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	var timer = 0.0
 	
 	while timer < ultimate_duration:
+		if is_dead:
+			beam.queue_free()
+			return
+
 		await get_tree().process_frame
 		var delta = get_process_delta_time()
 		
@@ -166,7 +177,14 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 		
 		timer += delta
 	
+	if is_dead:
+		return
+	
 	await beam.finished
+
+	if is_dead:
+		return
+
 	is_invulnerable = false
 	is_casting = false
 
