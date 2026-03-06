@@ -62,24 +62,15 @@ func player_enter(_player : CharacterBody2D):
 	
 func spawn_enemies():
 	for i in range(enemies_count):
-		#var slime = slime_scene.instantiate()
-		#add_child(slime)
+		var slime = slime_scene.instantiate()
+		add_child(slime)
 		
-		var ork = ork_scene.instantiate()
-		add_child(ork)
-		
-		#slime.global_position = global_position + Vector2(
-			#randf_range(-150, 150),
-			#randf_range(-150, 150)
-		#)
-		
-		ork.global_position = global_position + Vector2(
+		slime.global_position = global_position + Vector2(
 			randf_range(-150, 150),
 			randf_range(-150, 150)
 		)
 		
-		#slime.died.connect(_on_enemy_died)
-		ork.died.connect(_on_enemy_died)
+		slime.died.connect(_on_enemy_died)
 	
 
 func _on_enemy_died() -> void:
