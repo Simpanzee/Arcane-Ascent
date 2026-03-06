@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://c6ufqydbe7phr"]
+[gd_scene load_steps=21 format=4 uid="uid://c6ufqydbe7phr"]
 
 [ext_resource type="Script" uid="uid://b8hsm08njy2vg" path="res://Scripts/room.gd" id="1_11dti"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_y84gu"]
@@ -697,6 +697,12 @@ sources/0 = SubResource("TileSetAtlasSource_s3j8h")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yiwfh"]
 size = Vector2(32, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11dti"]
+size = Vector2(318.5, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6xlm"]
+size = Vector2(112, 97.5)
+
 [node name="Room_Template" type="StaticBody2D"]
 z_index = -5
 script = ExtResource("1_11dti")
@@ -883,5 +889,23 @@ tile_set = SubResource("TileSet_h1l6b")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Entrance_West/Barrier"]
 position = Vector2(0, -184)
 shape = SubResource("RectangleShape2D_yiwfh")
+
+[node name="SpawnZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZone"]
+position = Vector2(-1, -106)
+shape = SubResource("RectangleShape2D_11dti")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SpawnZone"]
+position = Vector2(0, 103)
+shape = SubResource("RectangleShape2D_11dti")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="SpawnZone"]
+position = Vector2(-104, -0.5)
+shape = SubResource("RectangleShape2D_i6xlm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="SpawnZone"]
+position = Vector2(103, -1.75)
+shape = SubResource("RectangleShape2D_i6xlm")
 
 [connection signal="body_entered" from="RoomArea" to="." method="_on_room_area_body_entered"]
