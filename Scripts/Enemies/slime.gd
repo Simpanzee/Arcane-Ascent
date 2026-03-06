@@ -2,9 +2,9 @@ extends Enemy
 
 func _ready() -> void:
 	super()
-	cur_hp = 2
-	max_hp = 2
-	move_speed = 45
+	cur_hp = 1
+	max_hp = 1
+	move_speed = 50
 
 	attack_damage = 1
 	attack_range = 15

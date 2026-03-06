@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mdd0r1tg6y28"
-path="res://.godot/imported/Orc rider-Attack01.png-3d43f33461a660104e0e370a068f8e57.ctex"
+path="res://.godot/imported/Orc rider-Attack01.png-c0e5dfaf7b3b6deaa14ab4e970f01293.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Orc rider/Orc rider with shadows/Orc rider-Attack01.png"
-dest_files=["res://.godot/imported/Orc rider-Attack01.png-3d43f33461a660104e0e370a068f8e57.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Orc rider/Orc rider with shadows/Orc rider-Attack01.png"
+dest_files=["res://.godot/imported/Orc rider-Attack01.png-c0e5dfaf7b3b6deaa14ab4e970f01293.ctex"]
 
 [params]
 

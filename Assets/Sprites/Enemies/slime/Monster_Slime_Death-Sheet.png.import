@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c2y5fyc08qm4c"
-path="res://.godot/imported/Monster_Slime_Death-Sheet.png-a9f022d67c9bab0a694900b5a7a2f643.ctex"
+path="res://.godot/imported/Monster_Slime_Death-Sheet.png-6383258bd2384cb3b0aff7654febc57c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/slime/Monster_Slime_Death-Sheet.png"
-dest_files=["res://.godot/imported/Monster_Slime_Death-Sheet.png-a9f022d67c9bab0a694900b5a7a2f643.ctex"]
+source_file="res://Assets/sprites/Enemies/slime/Monster_Slime_Death-Sheet.png"
+dest_files=["res://.godot/imported/Monster_Slime_Death-Sheet.png-6383258bd2384cb3b0aff7654febc57c.ctex"]
 
 [params]
 
