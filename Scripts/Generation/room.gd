@@ -24,7 +24,7 @@ var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
 var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
 var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton_archer.tscn")
 
-var enemies_count : int = randi_range(4, 7)
+var enemies_count : int = randi_range(6, 10)
 var room_cleared : bool = false
 
 func _ready() -> void:
@@ -69,9 +69,10 @@ func spawn_enemies():
 			
 	for i in range(enemies_count):
 		var enemy_scene : PackedScene
-		if randf() < 0.5:
+		var random_num = randf()
+		if random_num < 0.33:
 			enemy_scene = slime_scene
-		elif randf() < 0.7:
+		elif random_num < 0.67:
 			enemy_scene = skeleton_archer_scene
 		else:
 			enemy_scene = orc_scene

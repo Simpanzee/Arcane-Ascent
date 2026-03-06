@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jvf5ef5x4hu1"
-path="res://.godot/imported/Priest-Attack_effect.png-e250a0c1dfce15d51b937d4bb628eddb.ctex"
+path="res://.godot/imported/Priest-Attack_effect.png-81914767913d287647fb00c22e94b9e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Magic(Projectile)/Priest-Attack_effect.png"
-dest_files=["res://.godot/imported/Priest-Attack_effect.png-e250a0c1dfce15d51b937d4bb628eddb.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Magic(Projectile)/Priest-Attack_effect.png"
+dest_files=["res://.godot/imported/Priest-Attack_effect.png-81914767913d287647fb00c22e94b9e0.ctex"]
 
 [params]
 
