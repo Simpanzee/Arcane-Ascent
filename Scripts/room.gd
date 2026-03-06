@@ -20,6 +20,7 @@ signal close_other_rooms
 @onready var room_area : Area2D = $RoomArea
 
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
+var ork_scene : PackedScene = preload("res://Scenes/Enemies/ork.tscn")
 
 
 var enemies_count : int = randi_range(2, 4)
@@ -59,18 +60,26 @@ func player_spawn(player : CharacterBody2D):
 func player_enter(_player : CharacterBody2D):
 	pass
 	
-	
 func spawn_enemies():
 	for i in range(enemies_count):
-		var slime = slime_scene.instantiate()
-		add_child(slime)
+		#var slime = slime_scene.instantiate()
+		#add_child(slime)
 		
-		slime.global_position = global_position + Vector2(
+		var ork = ork_scene.instantiate()
+		add_child(ork)
+		
+		#slime.global_position = global_position + Vector2(
+			#randf_range(-150, 150),
+			#randf_range(-150, 150)
+		#)
+		
+		ork.global_position = global_position + Vector2(
 			randf_range(-150, 150),
 			randf_range(-150, 150)
 		)
-
-		slime.died.connect(_on_enemy_died)
+		
+		#slime.died.connect(_on_enemy_died)
+		ork.died.connect(_on_enemy_died)
 	
 
 func _on_enemy_died() -> void:
