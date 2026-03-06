@@ -32,6 +32,10 @@ var is_dead : bool = false
 
 
 func _physics_process(_delta: float) -> void:
+	if is_dead:
+		velocity = Vector2.ZERO
+		return
+	
 	if is_casting:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -54,6 +58,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
+	if is_dead or is_casting:
+		return
+		
 	if is_casting:
 		return
 	
@@ -99,14 +106,21 @@ func take_damage(amount : int):
 	is_casting = false
 
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
+	if is_dead:
+		return
+
 	is_casting = true
 	velocity = Vector2.ZERO
 	sprite.play("cast")
-	
 	await get_tree().create_timer(0.3).timeout
+	if is_dead:
+		return
 	shoot(mouse_dir)
 	await sprite.animation_finished
 	
+	if is_dead:
+		return
+
 	is_casting = false
 
 func cast_root():
