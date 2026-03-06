@@ -1,11 +1,11 @@
 [gd_scene load_steps=42 format=3 uid="uid://dfuvckrqq83mq"]
 
 [ext_resource type="Script" uid="uid://dybpu6p8bu2tg" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/wizard.png" id="1_v0iea"]
-[ext_resource type="AudioStream" uid="uid://iboux3g3i2ed" path="res://Assets/audio/bullet.mp3" id="3_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://7pqd7mc7dyvn" path="res://Assets/audio/walking.mp3" id="4_vgqql"]
-[ext_resource type="AudioStream" uid="uid://ctllrfac32emj" path="res://Assets/audio/ultimate.mp3" id="5_fkybt"]
-[ext_resource type="AudioStream" uid="uid://bpxdm3eamwa2e" path="res://Assets/audio/blink.mp3" id="6_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://iboux3g3i2ed" path="res://Assets/Audio/bullet.mp3" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://7pqd7mc7dyvn" path="res://Assets/Audio/walking.mp3" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://ctllrfac32emj" path="res://Assets/Audio/ultimate.mp3" id="5_fkybt"]
+[ext_resource type="AudioStream" uid="uid://bpxdm3eamwa2e" path="res://Assets/Audio/blink.mp3" id="6_x3wgy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
 radius = 8.0

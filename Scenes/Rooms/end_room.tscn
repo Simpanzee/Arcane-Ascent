@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6ufqydbe7phr" path="res://Scenes/Rooms/room_template.tscn" id="1_r503f"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="2_1bb1s"]
-[ext_resource type="Script" uid="uid://bw1wg73kp5qag" path="res://Scripts/end_room.gd" id="2_8trei"]
+[ext_resource type="Script" uid="uid://bw1wg73kp5qag" path="res://Scripts/Generation/end_room.gd" id="2_8trei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8trei"]
 texture = ExtResource("2_1bb1s")

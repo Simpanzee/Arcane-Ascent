@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://x4rbjsqcfvuo"]
 
-[ext_resource type="Script" uid="uid://can4vqe2t8tm" path="res://Scripts/enemy.gd" id="1_613su"]
+[ext_resource type="Script" uid="uid://can4vqe2t8tm" path="res://Scripts/Enemies/enemy.gd" id="1_613su"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 z_index = 2

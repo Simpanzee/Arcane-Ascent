@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=4 uid="uid://c6ufqydbe7phr"]
 
-[ext_resource type="Script" uid="uid://b8hsm08njy2vg" path="res://Scripts/room.gd" id="1_11dti"]
+[ext_resource type="Script" uid="uid://b8hsm08njy2vg" path="res://Scripts/Generation/room.gd" id="1_11dti"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_y84gu"]
-[ext_resource type="Script" uid="uid://cgg0qdddkyxtf" path="res://Scripts/room_entrance.gd" id="2_ka8xt"]
+[ext_resource type="Script" uid="uid://cgg0qdddkyxtf" path="res://Scripts/Generation/room_entrance.gd" id="2_ka8xt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lt6kj"]
 texture = ExtResource("1_y84gu")
