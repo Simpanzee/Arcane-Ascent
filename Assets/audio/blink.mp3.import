@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bpxdm3eamwa2e"
-path="res://.godot/imported/blink.mp3-c0553277eadc7989079f8d99e9b30eb0.mp3str"
+path="res://.godot/imported/blink.mp3-80dfbbd6e6d9b28c6c5288dc8c88556c.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/blink.mp3"
-dest_files=["res://.godot/imported/blink.mp3-c0553277eadc7989079f8d99e9b30eb0.mp3str"]
+source_file="res://Assets/audio/blink.mp3"
+dest_files=["res://.godot/imported/blink.mp3-80dfbbd6e6d9b28c6c5288dc8c88556c.mp3str"]
 
 [params]
 

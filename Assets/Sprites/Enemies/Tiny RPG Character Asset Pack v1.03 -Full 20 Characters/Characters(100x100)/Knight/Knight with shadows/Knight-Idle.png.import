@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1srvgxvlkaii"
-path="res://.godot/imported/Knight-Idle.png-190cd384210f451e6a4861b70eba73a2.ctex"
+path="res://.godot/imported/Knight-Idle.png-5d5e78084eda1ba9ee596da8d9546e25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight with shadows/Knight-Idle.png"
-dest_files=["res://.godot/imported/Knight-Idle.png-190cd384210f451e6a4861b70eba73a2.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight with shadows/Knight-Idle.png"
+dest_files=["res://.godot/imported/Knight-Idle.png-5d5e78084eda1ba9ee596da8d9546e25.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://iboux3g3i2ed"
-path="res://.godot/imported/bullet.mp3-09a211ff376a4fc0805dd419b8c71a7f.mp3str"
+path="res://.godot/imported/bullet.mp3-da7efcc12eedf3d2e42cb5956f773f3e.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/bullet.mp3"
-dest_files=["res://.godot/imported/bullet.mp3-09a211ff376a4fc0805dd419b8c71a7f.mp3str"]
+source_file="res://Assets/audio/bullet.mp3"
+dest_files=["res://.godot/imported/bullet.mp3-da7efcc12eedf3d2e42cb5956f773f3e.mp3str"]
 
 [params]
 

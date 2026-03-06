@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt8wb75n1fb2j"
-path="res://.godot/imported/Werewolf-Idle.png-15081dedb29d5b36737d9ccb7b588330.ctex"
+path="res://.godot/imported/Werewolf-Idle.png-2401ec2e068488a5e521f2e6516c1dde.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf-Idle.png"
-dest_files=["res://.godot/imported/Werewolf-Idle.png-15081dedb29d5b36737d9ccb7b588330.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werewolf/Werewolf with shadows/Werewolf-Idle.png"
+dest_files=["res://.godot/imported/Werewolf-Idle.png-2401ec2e068488a5e521f2e6516c1dde.ctex"]
 
 [params]
 
