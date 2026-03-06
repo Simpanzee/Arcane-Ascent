@@ -18,6 +18,7 @@ signal close_other_rooms
 @onready var entrance_west : RoomEntrance = $Entrance_West
 
 @onready var room_area : Area2D = $RoomArea
+@onready var spawn_zone : Area2D = $SpawnZone
 
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
 var ork_scene : PackedScene = preload("res://Scenes/Enemies/ork.tscn")
@@ -61,13 +62,21 @@ func player_enter(_player : CharacterBody2D):
 	pass
 	
 func spawn_enemies():
+	var shapes := []
+	for child in spawn_zone.get_children():
+		if child is CollisionShape2D and child.shape is RectangleShape2D:
+			shapes.append(child)
+			
 	for i in range(enemies_count):
 		var slime = slime_scene.instantiate()
 		add_child(slime)
 		
-		slime.global_position = global_position + Vector2(
-			randf_range(-150, 150),
-			randf_range(-150, 150)
+		var shape_node : CollisionShape2D = shapes[randi() % shapes.size()]
+		var rect : RectangleShape2D = shape_node.shape
+		
+		var offset = Vector2(
+			randf_range(-rect.extents.x, rect.extents.x),
+			randf_range(-rect.extents.y, rect.extents.y)
 		)
 		
 		slime.died.connect(_on_enemy_died)
@@ -98,7 +107,7 @@ func mark_room_cleared():
 func _on_room_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		if room_cleared == false:
-			close_all_doors()
+			close_all_doors.call_deferred()
 			close_other_rooms.emit()
 			for enemy in get_children():
 				if enemy.is_in_group("Enemy"):

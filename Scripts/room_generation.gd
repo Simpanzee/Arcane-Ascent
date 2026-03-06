@@ -13,12 +13,12 @@ class RoomData:
 var room_count : int = 0
 var map : Array[RoomData]
 var rooms : Array[Room]
+var room_order : Array[Vector2] = []
 var room_pos_offset : float = 480
 
 var first_room_x : int = 3
 var first_room_y : int = 3
 var first_room : Room
-var last_room : Room
 
 var directions = [
 	Vector2.UP,
@@ -28,6 +28,7 @@ var directions = [
 ]
 
 var room_scene : PackedScene = preload("res://Scenes/Rooms/room_template.tscn")
+var end_room_scene : PackedScene = preload("res://Scenes/Rooms/end_room.tscn")
 
 @export var player : CharacterBody2D
 
@@ -53,6 +54,7 @@ func _check_room(x : int, y : int, entrance_direction : Vector2, is_first_room :
 		return false
 	
 	room_count += 1
+	room_order.append(Vector2(x, y))
 
 	var data := RoomData.new()
 	data.exists = true
@@ -99,14 +101,24 @@ func _check_room(x : int, y : int, entrance_direction : Vector2, is_first_room :
 	return true
 	
 func _instantiate_rooms():
+	var last_room_position : Vector2 = room_order[room_order.size() - 1]
 	for x in range(map_size):
 		for y in range(map_size):
 			if _get_map(x, y) == null or _get_map(x, y).exists == false:
 				continue
-			var room : Room = room_scene.instantiate()
+				
+			var scene_to_use : PackedScene = room_scene
+			if Vector2(x, y) == last_room_position:
+				scene_to_use = end_room_scene
+			
+			var room : Room = scene_to_use.instantiate()
 			get_tree().root.add_child.call_deferred(room)
+			
 			room.open_other_rooms.connect(_on_room_template_open_other_rooms)
 			room.close_other_rooms.connect(_on_room_template_close_other_rooms)
+			if room is EndRoom:
+				room.new_floor.connect(_on_new_floor)
+			
 			rooms.append(room)
 			
 			var data : RoomData = _get_map(x, y)
@@ -117,8 +129,7 @@ func _instantiate_rooms():
 			if x == first_room_x and y == first_room_y:
 				first_room = room
 				first_room.player_spawn(player)
-			
-			last_room = room
+
 
 func _get_map(x : int, y : int) -> RoomData:
 	return map[x + y * map_size]
@@ -128,7 +139,7 @@ func _set_map(x : int, y : int, value : RoomData):
 	
 func _get_opposite(dir : Vector2) -> Vector2:
 	return -dir
-
+	
 func _on_room_template_open_other_rooms() -> void:
 	for room in rooms:
 		if room.room_cleared == false:
@@ -138,3 +149,16 @@ func _on_room_template_close_other_rooms() -> void:
 	for room in rooms:
 		if room.room_cleared == false:
 			room.close_all_doors()
+			
+func _on_new_floor() -> void:
+	for room in rooms:
+		room.queue_free()
+		
+	rooms_to_generate = randi_range(4,10)
+	map.clear()
+	rooms.clear()
+	room_order.clear()
+	
+	_generate()
+	
+	
