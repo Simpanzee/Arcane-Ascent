@@ -286,10 +286,21 @@ func start_invulnerability():
 
 	sprite.visible = true
 	is_invulnerable = false
-	
+
+func stop_all_sounds():
+	fire_sound.stop()
+	walk_sound.stop()
+	ultimate_sound.stop()
+	blink_sound.stop()
+	root_start.stop()
+	root_end.stop()
+	hurt.stop()
+
 func die():	
 	is_dead = true
 	is_casting = true
+	
+	stop_all_sounds()
 	
 	var death_choice = randi() % 3
 	
