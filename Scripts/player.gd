@@ -187,8 +187,9 @@ func shoot(mouse_dir: Vector2) -> void:
 	fire_sound.play()
 
 func blink() -> void:
-	if is_casting:
+	if is_casting or is_dead:
 		return
+		
 	is_casting = true
 	velocity = Vector2.ZERO
 
@@ -197,6 +198,9 @@ func blink() -> void:
 
 	sprite.play("blink_cast")
 	await sprite.animation_finished
+	
+	if is_dead:
+		return
 
 	blink_sound.pitch_scale = randf_range(0.8, 1.2)
 	blink_sound.play()
@@ -207,12 +211,18 @@ func blink() -> void:
 	var blink_speed = 2000
 
 	var distance_moved = 0.0
+	
 	while distance_moved < blink_distance:
+		if is_dead:
+			return
+			
 		await get_tree().process_frame
 		var delta = get_process_delta_time()
 		var step = blink_speed * delta
+		
 		if distance_moved + step > blink_distance:
 			step = blink_distance - distance_moved
+
 		var collision = move_and_collide(direction * step)
 		if collision:
 			break
@@ -226,7 +236,8 @@ func blink() -> void:
 	await get_tree().process_frame
 	await get_tree().create_timer(0.5).timeout
 
-	is_casting = false
+	if not is_dead:
+		is_casting = false
 
 func start_invulnerability():
 	var blink_speed = 0.05
