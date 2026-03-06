@@ -60,7 +60,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ultimate"):
 		start_ultimate(mouse_pos, mouse_dir)
 
-func take_damage(_amount : int):
+func take_damage(amount : int):
 	print("Ouch!")
 
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:

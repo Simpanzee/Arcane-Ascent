@@ -1,9 +1,10 @@
-[gd_scene load_steps=55 format=3 uid="uid://hpxg1i4jgurk"]
+[gd_scene load_steps=56 format=3 uid="uid://hpxg1i4jgurk"]
 
 [ext_resource type="PackedScene" uid="uid://x4rbjsqcfvuo" path="res://Scenes/Enemies/enemy.tscn" id="1_xj1k3"]
 [ext_resource type="Texture2D" uid="uid://qb5qfsv50jtj" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Idle.png" id="2_0ortl"]
 [ext_resource type="Texture2D" uid="uid://das13nigxol52" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png" id="2_p1bnd"]
 [ext_resource type="Script" uid="uid://bw3g15lk8c4iu" path="res://Scripts/Enemies/skeleton_archer.gd" id="2_tq0yd"]
+[ext_resource type="PackedScene" uid="uid://drqteqqsjg7w" path="res://Scenes/Enemies/arrow.tscn" id="3_80pb8"]
 [ext_resource type="Texture2D" uid="uid://bd031wp5y6wtl" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Walk.png" id="3_fhlu0"]
 [ext_resource type="Texture2D" uid="uid://lqa5sa6iq7o8" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Death.png" id="3_tq0yd"]
 [ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/Sprites/Enemies/despawn.png" id="4_80pb8"]
@@ -358,6 +359,7 @@ script = ExtResource("2_tq0yd")
 flee_range = 60.0
 flee_speed = 90.0
 idle_after_shot = 0.8
+arrow_scene = ExtResource("3_80pb8")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_xj1k3")

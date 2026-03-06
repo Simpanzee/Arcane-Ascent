@@ -3,6 +3,7 @@ extends Enemy
 @export var flee_range : float = 60
 @export var flee_speed : float = 90
 @export var idle_after_shot : float = 0.8
+@export var arrow_scene : PackedScene
 
 func _ready() -> void:
 	super()
@@ -56,7 +57,10 @@ func _try_attack():
 	attack.pitch_scale = randf_range(0.5, 2)
 	attack.play()
 
-	# Spawn arrow ghe
+	var arrow = arrow_scene.instantiate()
+	arrow.global_position = global_position
+	arrow.direction = player_direction
+	get_tree().current_scene.add_child(arrow)
 
 	await sprite.animation_finished
 

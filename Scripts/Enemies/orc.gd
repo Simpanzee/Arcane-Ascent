@@ -76,16 +76,13 @@ func attack3_move():
 	attack3_hitbox.monitoring = false
 	await sprite.animation_finished
 
-
 func _on_attack1_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
 		player.take_damage(attack_damage)
 
-
 func _on_attack2_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
 		player.take_damage(attack_damage)
-
 
 func _on_attack3_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
