@@ -61,7 +61,7 @@ func _try_attack():
 	if state == "dead":
 		return
 
-	attack.pitch_scale = randf_range(0.5, 2)
+	attack.pitch_scale = randf_range(0.8, 1.1)
 	attack.play()
 	
 	var arrow = arrow_scene.instantiate()
