@@ -12,6 +12,10 @@ extends CharacterBody2D
 @onready var root_start = $RootStart
 @onready var root_end = $RootEnd
 
+@onready var hurt = $Hurt
+@onready var death_1 = $Death1
+@onready var death_2 = $Death2
+@onready var death_3 = $Death3
 
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
@@ -22,6 +26,10 @@ var roots_scene : PackedScene = preload("res://Scenes/Spells/roots.tscn")
 @onready var cast_timer = $CastTimer
 
 var is_casting : bool = false
+var is_invulnerable : bool = false
+var invuln_time : float = 2.0
+var is_dead : bool = false
+
 
 func _physics_process(_delta: float) -> void:
 	if is_casting:
@@ -66,8 +74,29 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ultimate"):
 		start_ultimate(mouse_pos, mouse_dir)
 
-func take_damage(_amount : int):
-	print("Ouch!")
+func take_damage(amount : int):
+	if is_dead or is_invulnerable:
+		return
+
+	current_health -= amount
+	hurt.pitch_scale = randf_range(1, 1.4)
+	hurt.play()
+	print("Ouch! HP:", current_health)
+
+	if current_health <= 0:
+		if is_invulnerable:
+			current_health = 1
+			return
+		die()
+		return
+
+	is_invulnerable = true
+	is_casting = true
+
+	sprite.play("hurt")
+	await sprite.animation_finished
+	start_invulnerability()
+	is_casting = false
 
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	is_casting = true
@@ -103,6 +132,7 @@ func cast_root():
 		root_end.play()
 
 func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
+	is_invulnerable = true
 	is_casting = true
 	velocity = Vector2.ZERO
 	
@@ -137,6 +167,7 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 		timer += delta
 	
 	await beam.finished
+	is_invulnerable = false
 	is_casting = false
 
 func _on_CastTimer_timeout() -> void:
@@ -196,3 +227,39 @@ func blink() -> void:
 	await get_tree().create_timer(0.5).timeout
 
 	is_casting = false
+
+func start_invulnerability():
+	var blink_speed = 0.05
+	var elapsed = 0.0
+
+	while elapsed < invuln_time:
+		sprite.visible = false
+		await get_tree().create_timer(blink_speed).timeout
+		
+		sprite.visible = true
+		await get_tree().create_timer(blink_speed).timeout
+		
+		elapsed += blink_speed * 2
+
+	sprite.visible = true
+	is_invulnerable = false
+	
+func die():	
+	is_dead = true
+	is_casting = true
+	
+	var death_choice = randi() % 3
+	
+	if death_choice == 0:
+		death_1.pitch_scale = randf_range(0.9, 1.2)
+		death_1.play()
+	elif death_choice == 1:
+		death_2.pitch_scale = randf_range(0.9, 1.2)
+		death_2.play()
+	else:
+		death_3.pitch_scale = randf_range(0.9, 1.2)
+		death_3.play()
+		
+	sprite.play("death")
+	await get_tree().create_timer(2).timeout
+	print("Player died")

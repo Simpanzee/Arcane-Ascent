@@ -34,13 +34,19 @@ var speed_multiplier : float = 1.0
 
 signal died
 
-
 func _ready() -> void:
 	add_to_group("Enemy")
 	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(_delta: float) -> void:
 	if is_active == false:
+		return
+		
+	if player == null or player.is_dead:
+		state = "idle"
+		velocity = Vector2.ZERO
+		sprite.play("idle")
+		move_and_slide()
 		return
 
 	player_direction = global_position.direction_to(player.global_position)
@@ -71,7 +77,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _try_attack() -> bool:
-	if state == "dead":
+	if state == "dead" or player.is_dead:
 		return false
 
 	if Time.get_unix_time_from_system() - last_attack_time < attack_rate:
