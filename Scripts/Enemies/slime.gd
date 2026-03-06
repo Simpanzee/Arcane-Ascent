@@ -20,7 +20,10 @@ func _try_attack():
 
 	sprite.play("attack")
 	await get_tree().create_timer(0.3).timeout
-
+	
+	if state == "dead":
+		return
+	
 	attack.pitch_scale = randf_range(0.5, 2)
 	attack.play()
 

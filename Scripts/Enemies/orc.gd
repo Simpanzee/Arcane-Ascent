@@ -47,6 +47,10 @@ func _try_attack():
 func attack1_move():
 	sprite.play("attack")
 	attack.pitch_scale = randf_range(0.8, 1.2)
+	
+	if state == "dead":
+		return
+		
 	attack.play()
 	await get_tree().create_timer(0.25).timeout
 	attack1_hitbox.monitoring = true
@@ -58,6 +62,10 @@ func attack1_move():
 func attack2_move():
 	sprite.play("attack2")
 	attack2.pitch_scale = randf_range(0.8, 1.2)
+	
+	if state == "dead":
+		return
+		
 	attack2.play()
 	await get_tree().create_timer(0.35).timeout
 	attack2_hitbox.monitoring = true
@@ -69,6 +77,10 @@ func attack2_move():
 func attack3_move():
 	sprite.play("attack3")
 	attack3.pitch_scale = randf_range(0.8, 1.2)
+	
+	if state == "dead":
+		return
+		
 	attack3.play()
 	await get_tree().create_timer(0.3).timeout
 	attack3_hitbox.monitoring = true

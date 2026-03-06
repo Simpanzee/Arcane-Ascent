@@ -51,12 +51,19 @@ func _try_attack():
 	if !super():
 		return
 
+	if state == "dead":
+		return
+
 	sprite.play("attack")
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.6).timeout
+	
+	# Keep So it STAYS DEAD
+	if state == "dead":
+		return
 
 	attack.pitch_scale = randf_range(0.5, 2)
 	attack.play()
-
+	
 	var arrow = arrow_scene.instantiate()
 	arrow.global_position = global_position
 	arrow.direction = player_direction
@@ -64,7 +71,11 @@ func _try_attack():
 
 	await sprite.animation_finished
 
+	if state == "dead":
+		return
+
+	sprite.play("idle")
+	await get_tree().create_timer(idle_after_shot).timeout
+
 	if state != "dead":
-		sprite.play("idle")
-		await get_tree().create_timer(idle_after_shot).timeout
 		state = "move"
