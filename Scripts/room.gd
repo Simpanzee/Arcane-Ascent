@@ -79,6 +79,9 @@ func spawn_enemies():
 			randf_range(-rect.extents.y, rect.extents.y)
 		)
 		
+		var spawn_pos = shape_node.global_position + offset
+		slime.global_position = spawn_pos
+		
 		slime.died.connect(_on_enemy_died)
 	
 
