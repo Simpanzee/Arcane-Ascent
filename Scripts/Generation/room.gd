@@ -22,9 +22,9 @@ signal close_other_rooms
 
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
 var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
+var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton_archer.tscn")
 
-
-var enemies_count : int = randi_range(2, 4)
+var enemies_count : int = randi_range(4, 7)
 var room_cleared : bool = false
 
 func _ready() -> void:
@@ -71,8 +71,11 @@ func spawn_enemies():
 		var enemy_scene : PackedScene
 		if randf() < 0.5:
 			enemy_scene = slime_scene
+		elif randf() < 0.7:
+			enemy_scene = skeleton_archer_scene
 		else:
 			enemy_scene = orc_scene
+
 		var enemy = enemy_scene.instantiate()
 		add_child(enemy)
 		
