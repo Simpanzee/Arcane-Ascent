@@ -21,6 +21,7 @@ signal close_other_rooms
 @onready var spawn_zone : Area2D = $SpawnZone
 
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
+var ork_scene : PackedScene = preload("res://Scenes/Enemies/ork.tscn")
 
 
 var enemies_count : int = randi_range(2, 4)
@@ -78,10 +79,6 @@ func spawn_enemies():
 			randf_range(-rect.extents.y, rect.extents.y)
 		)
 		
-		var spawn_pos = shape_node.global_position + offset
-		
-		slime.global_position = spawn_pos
-
 		slime.died.connect(_on_enemy_died)
 	
 
