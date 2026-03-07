@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jks6g4dcf6tf"
-path="res://.godot/imported/Skeleton-Idle.png-8c961dcf1f4105aa1712297902c206a8.ctex"
+path="res://.godot/imported/Skeleton-Idle.png-5363d719fb8c1e0fa7be423a0f533749.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton/Skeleton with shadows/Skeleton-Idle.png"
-dest_files=["res://.godot/imported/Skeleton-Idle.png-8c961dcf1f4105aa1712297902c206a8.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton/Skeleton with shadows/Skeleton-Idle.png"
+dest_files=["res://.godot/imported/Skeleton-Idle.png-5363d719fb8c1e0fa7be423a0f533749.ctex"]
 
 [params]
 

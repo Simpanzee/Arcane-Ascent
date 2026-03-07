@@ -91,9 +91,6 @@ func take_damage(amount : int):
 	print("Ouch! HP:", current_health)
 
 	if current_health <= 0:
-		if is_invulnerable:
-			current_health = 1
-			return
 		die()
 		return
 
