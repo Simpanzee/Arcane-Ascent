@@ -352,6 +352,9 @@ func die():
 	
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		enemy.is_active = false
+		enemy.velocity = Vector2.ZERO
+		enemy.state = "idle"
+		enemy.sprite.play("idle")
 		
 	var death_choice = randi() % 3
 	
