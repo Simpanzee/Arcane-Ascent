@@ -139,23 +139,29 @@ func remove_root_slow():
 	if state == "rooted":
 		state = "move"
 
+var has_died: bool = false
+
 func die():
+	if has_died:
+		return
+	
+	has_died = true
 	sprite.play("death")
 	state = "dead"
-	
+   
 	death.pitch_scale = randf_range(death_pitch[0], death_pitch[1])
 	death.play()
-	
+   
 	await sprite.animation_finished
 	await get_tree().create_timer(1).timeout
-	
+   
 	despawn.pitch_scale = randf_range(despawn_pitch[0], death_pitch[1])
 	despawn.play()
-	
-	sprite.scale = Vector2(0.6, 0.6)
+   
 	sprite.play("despawn")
-	
+	sprite.scale = Vector2(0.6, 0.6)
+
 	await sprite.animation_finished
-	
+   
 	died.emit()
 	queue_free()

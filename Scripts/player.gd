@@ -17,6 +17,10 @@ extends CharacterBody2D
 @onready var death_2 = $Death2
 @onready var death_3 = $Death3
 
+@onready var lightning_sound1 = $Lightning1
+@onready var lightning_sound2 = $Lightning2
+@onready var lightning_sound3 = $Lightning3
+
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
@@ -284,8 +288,27 @@ func lightning_strike():
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if enemy.global_position.distance_to(cast_point) <= lightning_radius:
 			var strike = lightning_scene.instantiate()
-			get_tree().current_scene.add_child(strike)
+			enemy.add_child(strike)
 			strike.global_position = enemy.global_position
+			lighting_sound()
+
+func lighting_sound():
+	for i in range(3):
+		var player = lightning_sound1.duplicate()
+		add_child(player)
+
+		var sound = randi() % 3
+		if sound == 0:
+			player.stream = lightning_sound1.stream
+		elif sound == 1:
+			player.stream = lightning_sound2.stream
+		else:
+			player.stream = lightning_sound3.stream
+
+		player.pitch_scale = randf_range(0.9, 1.2)
+		player.play()
+
+		await get_tree().create_timer(0.5).timeout
 
 func start_invulnerability():
 	var blink_speed = 0.05

@@ -68,7 +68,6 @@ func _ready() -> void:
 
 	queue_free()
 
-
 func _on_radius_hitbox_body_entered(body: Node2D) -> void:
 	if !body.is_in_group("Enemy"):
 		return
@@ -79,7 +78,6 @@ func _on_radius_hitbox_body_entered(body: Node2D) -> void:
 	if body not in slowed_enemies:
 		body.apply_root_slow()
 		slowed_enemies.append(body)
-
 
 func _on_radius_hitbox_area_entered(area: Area2D) -> void:
 	var body = area

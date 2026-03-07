@@ -7,10 +7,6 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var radius_hitbox: Area2D = $AOE
 
-@onready var lightning_sound1 = $Lightning1
-@onready var lightning_sound2 = $Lightning2
-@onready var lightning_sound3 = $Lightning3
-
 var enemies_in_range : Array = []
 
 func _ready():
@@ -28,27 +24,26 @@ func _ready():
 	await sprite.animation_finished
 
 	if enemies_in_range.is_empty():
+		await get_tree().create_timer(0.6).timeout
 		queue_free()
 		return
 
+
+	var dead_enemies := {}
 	for i in range(hits):
 		sprite.play("strike")
-		var sound = randi() % 3
-		if sound == 0:
-			lightning_sound1.pitch_scale = randf_range(0.9, 1.2)
-			lightning_sound1.play()
-		elif sound == 1:
-			lightning_sound2.pitch_scale = randf_range(0.9, 1.2)
-			lightning_sound2.play()
-		else:
-			lightning_sound3.pitch_scale = randf_range(0.9, 1.2)
-			lightning_sound3.play()
-
 		for enemy in enemies_in_range:
 			if enemy and enemy.is_inside_tree():
 				if enemy in radius_hitbox.get_overlapping_bodies():
 					if enemy.has_method("take_damage"):
-						enemy.take_damage(damage)
+						var is_dead = false
+						if enemy.has_method("state"):
+							if enemy.state == "dead" or enemy.state == "hurt":
+								is_dead = true
+						if not dead_enemies.has(enemy) and not is_dead:
+							enemy.take_damage(damage)
+							if enemy.has_method("cur_hp") and (enemy.cur_hp - damage) <= 0:
+								dead_enemies[enemy] = true
 
 		await get_tree().create_timer(interval).timeout
 		

@@ -1,14 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://2suo3r65oheh"]
+[gd_scene load_steps=12 format=3 uid="uid://2suo3r65oheh"]
 
 [ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/spells/lightning.png" id="1_6361t"]
 [ext_resource type="Script" uid="uid://ch2qoiysgcity" path="res://Scripts/Spells/lightning.gd" id="1_hca2r"]
 [ext_resource type="Texture2D" uid="uid://cw6fy8exfrgq7" path="res://Assets/spells/ultimate/end/laser_E_8.png" id="3_3nifa"]
-[ext_resource type="AudioStream" uid="uid://bejck50dj55ti" path="res://Assets/audio/lightning1.mp3" id="4_cnvyv"]
-[ext_resource type="AudioStream" uid="uid://cjg0dvj6nfnl4" path="res://Assets/audio/lightning2.mp3" id="5_pvjbm"]
-[ext_resource type="AudioStream" uid="uid://jsqeg1d3cys" path="res://Assets/audio/lightning3.mp3" id="6_dt41w"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8i3hc"]
-radius = 7.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hca2r"]
 atlas = ExtResource("1_6361t")
@@ -56,9 +50,8 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_3nifa"]
-script/source = "extends Area2D
-"
+[sub_resource type="CircleShape2D" id="CircleShape2D_8i3hc"]
+radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6361t"]
 radius = 30.0
@@ -68,9 +61,6 @@ collision_layer = 8
 collision_mask = 4
 script = ExtResource("1_hca2r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8i3hc")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0.24999797, -23.000002)
 scale = Vector2(0.2304688, 0.25781247)
@@ -79,22 +69,12 @@ animation = &"strike"
 frame = 4
 frame_progress = 1.0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8i3hc")
+
 [node name="AOE" type="Area2D" parent="."]
 collision_layer = 8
 collision_mask = 4
-script = SubResource("GDScript_3nifa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AOE"]
 shape = SubResource("CircleShape2D_6361t")
-
-[node name="Lightning1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_cnvyv")
-max_polyphony = 5
-
-[node name="Lightning2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_pvjbm")
-max_polyphony = 5
-
-[node name="Lightning3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_dt41w")
-max_polyphony = 5
