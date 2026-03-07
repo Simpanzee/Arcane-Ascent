@@ -21,6 +21,7 @@ var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tsc
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
 var roots_scene : PackedScene = preload("res://Scenes/Spells/roots.tscn")
+var lightning_scene : PackedScene = preload("res://Scenes/Spells/lightning.tscn")
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -29,7 +30,6 @@ var is_casting : bool = false
 var is_invulnerable : bool = false
 var invuln_time : float = 2.0
 var is_dead : bool = false
-
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
@@ -77,6 +77,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("root"):
 		cast_root()
+		
+	if Input.is_action_just_pressed("lightning"):
+		lightning_strike()
 	
 	if Input.is_action_just_pressed("ultimate"):
 		start_ultimate(mouse_pos, mouse_dir)
@@ -91,6 +94,9 @@ func take_damage(amount : int):
 	print("Ouch! HP:", current_health)
 
 	if current_health <= 0:
+		if is_invulnerable:
+			current_health = 1
+			return
 		die()
 		return
 
@@ -267,6 +273,19 @@ func blink() -> void:
 
 	if not is_dead:
 		is_casting = false
+
+func lightning_strike():
+	is_casting = true
+	sprite.play("cast")
+	await sprite.animation_finished
+	is_casting = false
+	var cast_point = get_global_mouse_position()
+	var lightning_radius = 30
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
+		if enemy.global_position.distance_to(cast_point) <= lightning_radius:
+			var strike = lightning_scene.instantiate()
+			get_tree().current_scene.add_child(strike)
+			strike.global_position = enemy.global_position
 
 func start_invulnerability():
 	var blink_speed = 0.05

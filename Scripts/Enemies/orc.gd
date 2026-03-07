@@ -32,7 +32,7 @@ func _ready() -> void:
 func _try_attack():
 	if !super():
 		return
-		
+	
 	var attack_choice = randi() % 3
 	
 	if attack_choice == 0:
