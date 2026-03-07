@@ -1,11 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://wayk2e27upmm"]
+[gd_scene load_steps=9 format=3 uid="uid://wayk2e27upmm"]
 
 [ext_resource type="Script" uid="uid://dtto6qw6gpeh7" path="res://Scripts/main_menu.gd" id="1_28flt"]
-[ext_resource type="Theme" path="res://Assets/Menu/skwdShdwBrdrdRdBttmBttn.theme" id="2_48xlc"]
+[ext_resource type="Theme" uid="uid://4tvbhv53fhuu" path="res://Assets/Menu/skwdShdwBrdrdRdBttmBttn.theme" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://d3boajdd4ry4b" path="res://Dusk.png" id="2_n45e2"]
 [ext_resource type="AudioStream" uid="uid://bgwmbyvwqwbph" path="res://Assets/audio/MedievalCastle.mp3" id="3_1ehe0"]
+[ext_resource type="FontFile" uid="uid://d4uwfufeucog" path="res://Assets/Menu/Font.ttf" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://dre7ha8inevko" path="res://Assets/Menu/book.png" id="3_opfnp"]
+[ext_resource type="AudioStream" uid="uid://6bmuivqheqlg" path="res://Assets/audio/Minimalist7.mp3" id="7_yhxw7"]
+[ext_resource type="AudioStream" uid="uid://b4j7ftnvnjbhw" path="res://Assets/audio/Minimalist1.mp3" id="8_trj04"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_28flt")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_right = 479.88885
+offset_bottom = 269.0
+texture = ExtResource("2_n45e2")
+
+[node name="Book" type="TextureRect" parent="."]
+offset_left = 37.0
+offset_top = 16.0
+offset_right = 134.0
+offset_bottom = 113.0
+texture = ExtResource("3_opfnp")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 43.0
+offset_right = 412.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(1, 0, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 40
+text = "Arcane Ascent"
 
 [node name="ButtonManager" type="Control" parent="."]
 layout_mode = 3
@@ -16,25 +48,38 @@ offset_bottom = 40.0
 [node name="Play" type="Button" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 202.0
-offset_top = 167.0
+offset_top = 174.0
 offset_right = 283.0
-offset_bottom = 200.0
+offset_bottom = 201.0
 theme = ExtResource("2_48xlc")
-text = "Play
+theme_override_fonts/font = ExtResource("3_ce3w2")
+text = "PLAY
 "
 
 [node name="Quit" type="Button" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 194.0
-offset_top = 216.0
+offset_top = 219.0
 offset_right = 274.0
-offset_bottom = 249.0
+offset_bottom = 246.0
 theme = ExtResource("2_48xlc")
-text = "Quit"
+theme_override_fonts/font = ExtResource("3_ce3w2")
+text = "QUIT"
 
 [node name="MenuTheme" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1ehe0")
+volume_db = -5.0
 parameters/looping = true
 
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_yhxw7")
+volume_db = 12.0
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_trj04")
+volume_db = 12.0
+
+[connection signal="mouse_entered" from="ButtonManager/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="ButtonManager/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="ButtonManager/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
