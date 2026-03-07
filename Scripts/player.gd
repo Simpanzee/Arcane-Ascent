@@ -35,6 +35,8 @@ var is_invulnerable : bool = false
 var invuln_time : float = 2.0
 var is_dead : bool = false
 
+var is_ulting : bool = false
+
 func _physics_process(_delta: float) -> void:
 	if is_dead:
 		velocity = Vector2.ZERO
@@ -89,7 +91,7 @@ func _process(_delta: float) -> void:
 		start_ultimate(mouse_pos, mouse_dir)
 
 func take_damage(amount : int):
-	if is_dead or is_invulnerable:
+	if is_dead or is_invulnerable or is_ulting:
 		return
 
 	current_health -= amount
@@ -155,7 +157,7 @@ func cast_root():
 func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	if is_dead:
 		return
-
+	is_ulting = true
 	is_invulnerable = true
 	is_casting = true
 	velocity = Vector2.ZERO
@@ -205,7 +207,8 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 
 	if is_dead:
 		return
-
+	
+	is_ulting = false
 	is_invulnerable = false
 	is_casting = false
 
