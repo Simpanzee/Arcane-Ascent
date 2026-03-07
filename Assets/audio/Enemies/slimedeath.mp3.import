@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://v6m0q36vxhhb"
-path="res://.godot/imported/slimedeath.mp3-71dd713d1e0edad10fb00fa6034ea816.mp3str"
+path="res://.godot/imported/slimedeath.mp3-3731de2a16fa6741503ecdbf6af6aec9.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Enemies/slimedeath.mp3"
-dest_files=["res://.godot/imported/slimedeath.mp3-71dd713d1e0edad10fb00fa6034ea816.mp3str"]
+source_file="res://Assets/Audio/Enemies/slimedeath.mp3"
+dest_files=["res://.godot/imported/slimedeath.mp3-3731de2a16fa6741503ecdbf6af6aec9.mp3str"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://2suo3r65oheh"]
 
-[ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/spells/lightning.png" id="1_6361t"]
+[ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/Spells/lightning.png" id="1_6361t"]
 [ext_resource type="Script" uid="uid://ch2qoiysgcity" path="res://Scripts/Spells/lightning.gd" id="1_hca2r"]
-[ext_resource type="Texture2D" uid="uid://cw6fy8exfrgq7" path="res://Assets/spells/ultimate/end/laser_E_8.png" id="3_3nifa"]
+[ext_resource type="Texture2D" uid="uid://cw6fy8exfrgq7" path="res://Assets/Spells/Ultimate/end/laser_E_8.png" id="3_3nifa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hca2r"]
 atlas = ExtResource("1_6361t")

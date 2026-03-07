@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bmi0weh4ekf0b"
-path="res://.godot/imported/orcattack3.mp3-d84db852890466a5474cac385cbd3ceb.mp3str"
+path="res://.godot/imported/orcattack3.mp3-b36d10a571c7d2cd423fafef3124661b.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Enemies/orcattack3.mp3"
-dest_files=["res://.godot/imported/orcattack3.mp3-d84db852890466a5474cac385cbd3ceb.mp3str"]
+source_file="res://Assets/Audio/Enemies/orcattack3.mp3"
+dest_files=["res://.godot/imported/orcattack3.mp3-b36d10a571c7d2cd423fafef3124661b.mp3str"]
 
 [params]
 

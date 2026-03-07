@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dm2okbqmi7ed6"]
 
-[ext_resource type="Script" uid="uid://bf73axfhlflwu" path="res://Scripts/retry.gd" id="1_vw84n"]
+[ext_resource type="Script" uid="uid://bf73axfhlflwu" path="res://Scripts/Screens/retry.gd" id="1_vw84n"]
 [ext_resource type="Theme" path="res://Assets/Menu/skwdShdwBrdrdRdBttmBttn.theme" id="2_7n2l4"]
 
 [node name="Retry" type="Node2D"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3boajdd4ry4b"
-path="res://.godot/imported/Dusk.png-74399653148f3931951577c778c437e5.ctex"
+uid="uid://tskbtbjfqa7m"
+path="res://.godot/imported/staff.png-7c33b29f2e1df4c678e45452afc2317e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dusk.png"
-dest_files=["res://.godot/imported/Dusk.png-74399653148f3931951577c778c437e5.ctex"]
+source_file="res://Assets/Menu/staff.png"
+dest_files=["res://.godot/imported/staff.png-7c33b29f2e1df4c678e45452afc2317e.ctex"]
 
 [params]
 
