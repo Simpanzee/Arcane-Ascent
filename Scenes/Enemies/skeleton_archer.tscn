@@ -381,7 +381,7 @@ stream = ExtResource("10_ln6uk")
 
 [node name="Attack" parent="." index="3"]
 stream = ExtResource("11_p7yrc")
-volume_db = -10.0
+volume_db = -15.0
 
 [node name="Despawn" parent="." index="4"]
 stream = ExtResource("12_gkmb3")

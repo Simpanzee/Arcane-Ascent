@@ -23,15 +23,23 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_active == false:
 		return
-		
+
+	if player == null or not is_instance_valid(player):
+		return
+
+	if player.is_dead:
+		velocity = Vector2.ZERO
+		sprite.play("idle")
+		return
+
 	if state != "move":
 		return
 
 	player_direction = global_position.direction_to(player.global_position)
 	player_distance = global_position.distance_to(player.global_position)
-
+	
 	sprite.flip_h = player_direction.x < 0
-
+	
 	if player_distance < flee_range:
 		velocity = -player_direction * flee_speed * speed_multiplier
 		sprite.play("move")
@@ -45,7 +53,6 @@ func _physics_process(_delta: float) -> void:
 	velocity = player_direction * move_speed * speed_multiplier
 	sprite.play("move")
 	move_and_slide()
-
 
 func _try_attack():
 	if !super():

@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://wayk2e27upmm"]
+
+[ext_resource type="Script" uid="uid://dtto6qw6gpeh7" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Theme" path="res://Assets/Menu/skwdShdwBrdrdRdBttmBttn.theme" id="2_48xlc"]
+[ext_resource type="AudioStream" uid="uid://bgwmbyvwqwbph" path="res://Assets/audio/MedievalCastle.mp3" id="3_1ehe0"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_28flt")
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 167.0
+offset_right = 283.0
+offset_bottom = 200.0
+theme = ExtResource("2_48xlc")
+text = "Play
+"
+
+[node name="Quit" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 216.0
+offset_right = 274.0
+offset_bottom = 249.0
+theme = ExtResource("2_48xlc")
+text = "Quit"
+
+[node name="MenuTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1ehe0")
+parameters/looping = true
+
+[connection signal="pressed" from="ButtonManager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]

@@ -41,7 +41,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if is_active == false:
 		return
-		
+	
 	if player == null or player.is_dead:
 		state = "idle"
 		velocity = Vector2.ZERO

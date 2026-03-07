@@ -112,7 +112,7 @@ func _instantiate_rooms():
 				scene_to_use = end_room_scene
 			
 			var room : Room = scene_to_use.instantiate()
-			get_tree().root.add_child.call_deferred(room)
+			call_deferred("add_child", room)
 			
 			room.open_other_rooms.connect(_on_room_template_open_other_rooms)
 			room.close_other_rooms.connect(_on_room_template_close_other_rooms)

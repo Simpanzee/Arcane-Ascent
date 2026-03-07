@@ -21,6 +21,8 @@ extends CharacterBody2D
 @onready var lightning_sound2 = $Lightning2
 @onready var lightning_sound3 = $Lightning3
 
+@onready var battle_theme1 = $BattleTheme1
+
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
@@ -36,6 +38,9 @@ var invuln_time : float = 2.0
 var is_dead : bool = false
 
 var is_ulting : bool = false
+
+func _ready() -> void:
+	battle_theme1.play()
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
@@ -337,6 +342,7 @@ func stop_all_sounds():
 	root_start.stop()
 	root_end.stop()
 	hurt.stop()
+	battle_theme1.stop()
 
 func die():	
 	is_dead = true
@@ -344,6 +350,9 @@ func die():
 	
 	stop_all_sounds()
 	
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
+		enemy.is_active = false
+		
 	var death_choice = randi() % 3
 	
 	if death_choice == 0:
@@ -357,5 +366,6 @@ func die():
 		death_3.play()
 		
 	sprite.play("death")
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(3).timeout
+	get_tree().change_scene_to_file("res://Scenes/retry.tscn")
 	print("Player died")
