@@ -5,8 +5,8 @@ extends Node2D
 @onready var hover = $Hover
 
 
-#func _ready() -> void:
-	#menu_theme.play()
+func _ready() -> void:
+	menu_theme.play()
 
 func _on_play_pressed() -> void:
 	click.play()
@@ -23,3 +23,7 @@ func _on_quit_pressed() -> void:
 
 func _on_quit_mouse_entered() -> void:
 	hover.play()
+
+func _on_settings_pressed() -> void:
+	click.play()
+	await get_tree().create_timer(0.2).timeout

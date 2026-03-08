@@ -1,11 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://wayk2e27upmm"]
+[gd_scene load_steps=15 format=4 uid="uid://wayk2e27upmm"]
 
 [ext_resource type="Script" uid="uid://dtto6qw6gpeh7" path="res://Scripts/Screens/main_menu.gd" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://tskbtbjfqa7m" path="res://Assets/Menu/staff.png" id="2_cp0ys"]
 [ext_resource type="AudioStream" uid="uid://bgwmbyvwqwbph" path="res://Assets/Audio/Menu/MedievalCastle.mp3" id="3_1ehe0"]
 [ext_resource type="Theme" path="res://Assets/Menu/skwdShdwlssBrdrdRdTpLftRdBttn.theme" id="4_cp0ys"]
 [ext_resource type="FontFile" uid="uid://csteby7yfu6f1" path="res://Assets/Menu/OldeTome.ttf" id="4_yhxw7"]
-[ext_resource type="AudioStream" uid="uid://b2w6j56c78bvp" path="res://Assets/Audio/Menu/click.mp3" id="6_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://8i1jbfb25d2b" path="res://Assets/Audio/Menu/click.mp3" id="6_cp0ys"]
+[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/Menu/hover.mp3" id="7_cp0ys"]
 
 [sub_resource type="Image" id="Image_cp0ys"]
 data = {
@@ -302,10 +303,10 @@ texture = ExtResource("2_cp0ys")
 flip_h = true
 
 [node name="Title" type="Label" parent="."]
-offset_left = 103.0
-offset_top = 30.0
-offset_right = 387.0
-offset_bottom = 79.0
+offset_left = 110.0
+offset_top = 33.0
+offset_right = 394.0
+offset_bottom = 82.0
 theme_override_colors/font_color = Color(1, 0, 1, 1)
 theme_override_colors/font_outline_color = Color(0.36399594, 9.036549e-05, 0.36405566, 1)
 theme_override_constants/outline_size = 7
@@ -323,9 +324,9 @@ offset_bottom = 40.0
 [node name="Play" type="Button" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 35.999996
-offset_top = 150.0
+offset_top = 151.00002
 offset_right = 117.0
-offset_bottom = 172.0
+offset_bottom = 173.00002
 scale = Vector2(0.8, 0.8)
 theme = ExtResource("4_cp0ys")
 theme_override_fonts/font = SubResource("FontFile_5egv6")
@@ -336,9 +337,9 @@ text = "PLAY
 [node name="Settings" type="Button" parent="ButtonManager"]
 layout_mode = 0
 offset_left = 33.000027
-offset_top = 184.0
+offset_top = 185.00002
 offset_right = 118.00003
-offset_bottom = 206.0
+offset_bottom = 207.00002
 scale = Vector2(0.8, 0.8)
 theme = ExtResource("4_cp0ys")
 theme_override_fonts/font = SubResource("FontFile_5egv6")
@@ -366,15 +367,14 @@ parameters/looping = true
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_cp0ys")
-volume_db = 10.0
 
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
-volume_db = 10.0
+stream = ExtResource("7_cp0ys")
 
 [connection signal="mouse_entered" from="ButtonManager/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="ButtonManager/Play" to="." method="_on_play_pressed"]
 [connection signal="mouse_entered" from="ButtonManager/Settings" to="." method="_on_play_mouse_entered"]
-[connection signal="pressed" from="ButtonManager/Settings" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ButtonManager/Settings" to="." method="_on_settings_pressed"]
 [connection signal="mouse_entered" from="ButtonManager/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_entered" from="ButtonManager/Quit" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]
