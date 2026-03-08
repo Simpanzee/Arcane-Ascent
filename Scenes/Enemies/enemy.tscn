@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://x4rbjsqcfvuo"]
+[gd_scene load_steps=5 format=3 uid="uid://x4rbjsqcfvuo"]
 
 [ext_resource type="Script" uid="uid://can4vqe2t8tm" path="res://Scripts/Enemies/enemy.gd" id="1_613su"]
+[ext_resource type="Texture2D" uid="uid://ctesj1bf7ywfp" path="res://Assets/UI/healthbarUnder.png" id="2_x1rqp"]
+[ext_resource type="Texture2D" uid="uid://b0co41iglq3p8" path="res://Assets/UI/healthbarProgress.png" id="3_ubio8"]
+[ext_resource type="Script" uid="uid://1bwno2ygcjmx" path="res://Scripts/Enemies/enemy_hp_bar.gd" id="4_ubio8"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 z_index = 2
@@ -20,3 +23,13 @@ script = ExtResource("1_613su")
 [node name="Despawn" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Hp Bar" type="TextureProgressBar" parent="."]
+z_index = 99
+offset_right = 64.0
+offset_bottom = 10.0
+scale = Vector2(0.25, 0.25)
+value = 100.0
+texture_under = ExtResource("2_x1rqp")
+texture_progress = ExtResource("3_ubio8")
+script = ExtResource("4_ubio8")

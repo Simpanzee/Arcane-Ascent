@@ -1,21 +1,21 @@
 [gd_scene load_steps=81 format=3 uid="uid://c5xcbdpu6m6lm"]
 
 [ext_resource type="PackedScene" uid="uid://x4rbjsqcfvuo" path="res://Scenes/Enemies/enemy.tscn" id="1_wt4au"]
-[ext_resource type="Texture2D" uid="uid://ddn08oi52kxm2" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack01.png" id="2_q14j8"]
+[ext_resource type="Texture2D" uid="uid://ddn08oi52kxm2" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack01.png" id="2_q14j8"]
 [ext_resource type="Script" uid="uid://b3m48166vrebb" path="res://Scripts/Enemies/orc.gd" id="2_uvm7r"]
-[ext_resource type="Texture2D" uid="uid://b42iwp532dejt" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack02.png" id="3_15v5j"]
-[ext_resource type="Texture2D" uid="uid://btni3bg7ifxf2" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack03.png" id="4_uvm7r"]
-[ext_resource type="Texture2D" uid="uid://jyyx1oaa2gxl" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Death.png" id="5_2i0ii"]
-[ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/Sprites/Enemies/despawn.png" id="6_2l31v"]
-[ext_resource type="Texture2D" uid="uid://tdmloq66lcie" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Hurt.png" id="7_uk263"]
-[ext_resource type="Texture2D" uid="uid://dn1cs24uo3mqm" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Idle.png" id="8_1l4s1"]
-[ext_resource type="Texture2D" uid="uid://bxewm2ip0kamd" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Walk.png" id="9_4tmc8"]
-[ext_resource type="AudioStream" uid="uid://buxukfi36qsm8" path="res://Assets/Audio/Enemies/orcdeath.mp3" id="10_oxdsm"]
-[ext_resource type="AudioStream" uid="uid://cb1hjhrhohcmp" path="res://Assets/Audio/Enemies/orcattack1.mp3" id="11_15v5j"]
-[ext_resource type="AudioStream" uid="uid://84ihehmilmyx" path="res://Assets/Audio/Enemies/despawn.mp3" id="11_ovk68"]
-[ext_resource type="AudioStream" uid="uid://d1538ppowv8yv" path="res://Assets/Audio/Enemies/orchurt.mp3" id="12_m3phr"]
-[ext_resource type="AudioStream" uid="uid://y0gda40e2rlt" path="res://Assets/Audio/Enemies/orcattack2.mp3" id="13_cd0bd"]
-[ext_resource type="AudioStream" uid="uid://bmi0weh4ekf0b" path="res://Assets/Audio/Enemies/orcattack3.mp3" id="14_uv2jl"]
+[ext_resource type="Texture2D" uid="uid://b42iwp532dejt" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack02.png" id="3_15v5j"]
+[ext_resource type="Texture2D" uid="uid://btni3bg7ifxf2" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Attack03.png" id="4_uvm7r"]
+[ext_resource type="Texture2D" uid="uid://jyyx1oaa2gxl" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Death.png" id="5_2i0ii"]
+[ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/sprites/Enemies/despawn.png" id="6_2l31v"]
+[ext_resource type="Texture2D" uid="uid://tdmloq66lcie" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Hurt.png" id="7_uk263"]
+[ext_resource type="Texture2D" uid="uid://dn1cs24uo3mqm" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Idle.png" id="8_1l4s1"]
+[ext_resource type="Texture2D" uid="uid://bxewm2ip0kamd" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Orc/Armored Orc/Armored Orc-Walk.png" id="9_4tmc8"]
+[ext_resource type="AudioStream" uid="uid://buxukfi36qsm8" path="res://Assets/audio/Enemies/orcdeath.mp3" id="10_oxdsm"]
+[ext_resource type="AudioStream" uid="uid://cb1hjhrhohcmp" path="res://Assets/audio/Enemies/orcattack1.mp3" id="11_15v5j"]
+[ext_resource type="AudioStream" uid="uid://84ihehmilmyx" path="res://Assets/audio/Enemies/despawn.mp3" id="11_ovk68"]
+[ext_resource type="AudioStream" uid="uid://d1538ppowv8yv" path="res://Assets/audio/Enemies/orchurt.mp3" id="12_m3phr"]
+[ext_resource type="AudioStream" uid="uid://y0gda40e2rlt" path="res://Assets/audio/Enemies/orcattack2.mp3" id="13_cd0bd"]
+[ext_resource type="AudioStream" uid="uid://bmi0weh4ekf0b" path="res://Assets/audio/Enemies/orcattack3.mp3" id="14_uv2jl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fi1oq"]
 radius = 8.0
@@ -544,3 +544,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack3Hitbox" index="0"]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_ej31k")
+
+[node name="Hp Bar" parent="." index="11"]
+offset_left = -8.0
+offset_top = -16.0
+offset_right = 56.0
+offset_bottom = -6.0

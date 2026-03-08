@@ -1,18 +1,18 @@
 [gd_scene load_steps=60 format=3 uid="uid://hpxg1i4jgurk"]
 
 [ext_resource type="PackedScene" uid="uid://x4rbjsqcfvuo" path="res://Scenes/Enemies/enemy.tscn" id="1_xj1k3"]
-[ext_resource type="Texture2D" uid="uid://qb5qfsv50jtj" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Idle.png" id="2_0ortl"]
-[ext_resource type="Texture2D" uid="uid://das13nigxol52" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png" id="2_p1bnd"]
+[ext_resource type="Texture2D" uid="uid://qb5qfsv50jtj" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Idle.png" id="2_0ortl"]
+[ext_resource type="Texture2D" uid="uid://das13nigxol52" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png" id="2_p1bnd"]
 [ext_resource type="Script" uid="uid://bw3g15lk8c4iu" path="res://Scripts/Enemies/skeleton_archer.gd" id="2_tq0yd"]
-[ext_resource type="PackedScene" uid="uid://drqteqqsjg7w" path="res://Scenes/Enemies/arrow.tscn" id="3_80pb8"]
-[ext_resource type="Texture2D" uid="uid://bd031wp5y6wtl" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Walk.png" id="3_fhlu0"]
-[ext_resource type="Texture2D" uid="uid://lqa5sa6iq7o8" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Death.png" id="3_tq0yd"]
-[ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/Sprites/Enemies/despawn.png" id="4_80pb8"]
-[ext_resource type="Texture2D" uid="uid://biflj5vsnftou" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Hurt.png" id="5_6s6yk"]
-[ext_resource type="AudioStream" uid="uid://dtldh73jv8wxo" path="res://Assets/Audio/Enemies/skeletonarcherdeath.mp3" id="10_ln6uk"]
-[ext_resource type="AudioStream" uid="uid://rvtu20peojud" path="res://Assets/Audio/Enemies/skeletonarcherattack.mp3" id="11_p7yrc"]
-[ext_resource type="AudioStream" uid="uid://84ihehmilmyx" path="res://Assets/Audio/Enemies/despawn.mp3" id="12_gkmb3"]
-[ext_resource type="AudioStream" uid="uid://c88tyixehwfpd" path="res://Assets/Audio/Enemies/skeletonarcherhurt.mp3" id="13_3uhkr"]
+[ext_resource type="PackedScene" path="res://Scenes/Enemies/arrow.tscn" id="3_80pb8"]
+[ext_resource type="Texture2D" uid="uid://bd031wp5y6wtl" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Walk.png" id="3_fhlu0"]
+[ext_resource type="Texture2D" uid="uid://lqa5sa6iq7o8" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Death.png" id="3_tq0yd"]
+[ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/sprites/Enemies/despawn.png" id="4_80pb8"]
+[ext_resource type="Texture2D" uid="uid://biflj5vsnftou" path="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Hurt.png" id="5_6s6yk"]
+[ext_resource type="AudioStream" uid="uid://dtldh73jv8wxo" path="res://Assets/audio/Enemies/skeletonarcherdeath.mp3" id="10_ln6uk"]
+[ext_resource type="AudioStream" uid="uid://rvtu20peojud" path="res://Assets/audio/Enemies/skeletonarcherattack.mp3" id="11_p7yrc"]
+[ext_resource type="AudioStream" uid="uid://84ihehmilmyx" path="res://Assets/audio/Enemies/despawn.mp3" id="12_gkmb3"]
+[ext_resource type="AudioStream" uid="uid://c88tyixehwfpd" path="res://Assets/audio/Enemies/skeletonarcherhurt.mp3" id="13_3uhkr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xj1k3"]
 radius = 10.198039
@@ -388,3 +388,9 @@ stream = ExtResource("12_gkmb3")
 
 [node name="Hurt" parent="." index="5"]
 stream = ExtResource("13_3uhkr")
+
+[node name="Hp Bar" parent="." index="6"]
+offset_left = -8.0
+offset_top = -15.0
+offset_right = 56.0
+offset_bottom = -5.0

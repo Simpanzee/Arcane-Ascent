@@ -33,6 +33,7 @@ var state : String = "move"
 var speed_multiplier : float = 1.0
 
 signal died
+signal healthChanged
 
 func _ready() -> void:
 	add_to_group("Enemy")
@@ -122,6 +123,7 @@ func take_damage(amount : int):
 	hurt.play()
 	
 	cur_hp -= amount
+	healthChanged.emit()
 	
 	await sprite.animation_finished
 	
