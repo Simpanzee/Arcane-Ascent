@@ -9,4 +9,6 @@ func _ready() -> void:
 
 func update():
 	value = player.current_health * 100 / player.max_health
+	if player.current_health < 0:
+		player.current_health = 0
 	label.text = str(player.current_health) + " / " + str(player.max_health)

@@ -13,7 +13,7 @@ func _ready() -> void:
 	max_hp = 4
 	move_speed = 25
 
-	attack_damage = 1
+	attack_damage = 3
 	attack_range = 30
 	attack_rate = 1.5
 	
