@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkjhlqa1ivyyd"
-path="res://.godot/imported/Slime-Hurt.png-cf15e56a84af536cb2dd4cbb0fcbb580.ctex"
+path="res://.godot/imported/Slime-Hurt.png-180ef171898294a970f35c227260c64d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Slime/Slime with shadows/Slime-Hurt.png"
-dest_files=["res://.godot/imported/Slime-Hurt.png-cf15e56a84af536cb2dd4cbb0fcbb580.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Slime/Slime with shadows/Slime-Hurt.png"
+dest_files=["res://.godot/imported/Slime-Hurt.png-180ef171898294a970f35c227260c64d.ctex"]
 
 [params]
 

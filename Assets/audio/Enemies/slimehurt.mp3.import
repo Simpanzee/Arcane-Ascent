@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dci6dvlaqln2q"
-path="res://.godot/imported/slimehurt.mp3-f300f71b4eb03cce936b1e20e54cf1da.mp3str"
+path="res://.godot/imported/slimehurt.mp3-b0ea316015c575b64ecfcb62f18f861e.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Enemies/slimehurt.mp3"
-dest_files=["res://.godot/imported/slimehurt.mp3-f300f71b4eb03cce936b1e20e54cf1da.mp3str"]
+source_file="res://Assets/audio/Enemies/slimehurt.mp3"
+dest_files=["res://.godot/imported/slimehurt.mp3-b0ea316015c575b64ecfcb62f18f861e.mp3str"]
 
 [params]
 

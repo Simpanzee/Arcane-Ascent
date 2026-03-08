@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq2npx1451kt1"
-path="res://.godot/imported/Archer-Attack01.png-c7fa209d3af29d2e73533cc989c9eace.ctex"
+path="res://.godot/imported/Archer-Attack01.png-de1d5f3ce36eb77301afabe40cf74eec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Archer/Archer/Archer-Attack01.png"
-dest_files=["res://.godot/imported/Archer-Attack01.png-c7fa209d3af29d2e73533cc989c9eace.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Archer/Archer/Archer-Attack01.png"
+dest_files=["res://.godot/imported/Archer-Attack01.png-de1d5f3ce36eb77301afabe40cf74eec.ctex"]
 
 [params]
 

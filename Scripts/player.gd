@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
+signal healthChanged
+
 @export var move_speed : float = 300
 @export var cast_time : float = 1.5
-@export var current_health : int = 3
-@export var max_health : int = 3
+@export var current_health : int = 5
+@export var max_health : int = 5
 
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
@@ -100,6 +102,7 @@ func take_damage(amount : int):
 		return
 
 	current_health -= amount
+	healthChanged.emit()
 	hurt.pitch_scale = randf_range(1, 1.4)
 	hurt.play()
 	print("Ouch! HP:", current_health)

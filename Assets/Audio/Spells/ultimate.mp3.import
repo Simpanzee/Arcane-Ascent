@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ctllrfac32emj"
-path="res://.godot/imported/ultimate.mp3-cdeb688ac8cbdd03cb5e675f25d08e65.mp3str"
+path="res://.godot/imported/ultimate.mp3-75ed5b404f4f8126534b9f97a5e16c0a.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Spells/ultimate.mp3"
-dest_files=["res://.godot/imported/ultimate.mp3-cdeb688ac8cbdd03cb5e675f25d08e65.mp3str"]
+source_file="res://Assets/audio/Spells/ultimate.mp3"
+dest_files=["res://.godot/imported/ultimate.mp3-75ed5b404f4f8126534b9f97a5e16c0a.mp3str"]
 
 [params]
 

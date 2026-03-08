@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bgwmbyvwqwbph"
-path="res://.godot/imported/MedievalCastle.mp3-4f8846abd62016e91170fd223c73cbf1.mp3str"
+path="res://.godot/imported/MedievalCastle.mp3-23d28667dc33a9994202a1ec711eed0b.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Menu/MedievalCastle.mp3"
-dest_files=["res://.godot/imported/MedievalCastle.mp3-4f8846abd62016e91170fd223c73cbf1.mp3str"]
+source_file="res://Assets/audio/Menu/MedievalCastle.mp3"
+dest_files=["res://.godot/imported/MedievalCastle.mp3-23d28667dc33a9994202a1ec711eed0b.mp3str"]
 
 [params]
 
