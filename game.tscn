@@ -42,7 +42,7 @@ parameters/looping = true
 
 [node name="BattleMusic6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7sc4i")
-volume_db = -8.0
+volume_db = -6.0
 parameters/looping = true
 
 [node name="RoomGeneration" type="Node" parent="." node_paths=PackedStringArray("player")]
