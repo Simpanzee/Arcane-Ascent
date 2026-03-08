@@ -1,13 +1,49 @@
-[gd_scene load_steps=7 format=3 uid="uid://cv61m3r6pw6tm"]
+[gd_scene load_steps=13 format=3 uid="uid://cv61m3r6pw6tm"]
 
 [ext_resource type="Script" uid="uid://dyo48eg3w2ei8" path="res://Scripts/Generation/room_generation.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dfuvckrqq83mq" path="res://Scenes/player.tscn" id="2_e2o6t"]
+[ext_resource type="AudioStream" uid="uid://bir6ijdprynu4" path="res://Assets/Audio/Music/ProudHeros.mp3" id="2_j5wjh"]
 [ext_resource type="Texture2D" uid="uid://dyt4708fglsso" path="res://Assets/UI/health meter-09.png" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://cbnx0uxb7soll" path="res://Scripts/player_health_bar.gd" id="3_feb5d"]
+[ext_resource type="AudioStream" uid="uid://buevryx738g45" path="res://Assets/Audio/Music/Army.mp3" id="3_iotsf"]
+[ext_resource type="AudioStream" uid="uid://d3a3rf5fc5at1" path="res://Assets/Audio/Music/Fight.mp3" id="3_vef74"]
+[ext_resource type="AudioStream" uid="uid://cxm3nv3xecwfm" path="res://Assets/Audio/Music/Storm.mp3" id="4_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://i22jkr1ga577" path="res://Assets/UI/health meter-12.png" id="4_ryrav"]
+[ext_resource type="AudioStream" uid="uid://cbka1esu4obe0" path="res://Assets/Audio/Music/TheSeven.mp3" id="5_215e1"]
+[ext_resource type="AudioStream" uid="uid://c645xcr17yart" path="res://Assets/Audio/Music/Wicked.mp3" id="6_7sc4i"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
 
 [node name="Game" type="Node2D"]
+
+[node name="BattleMusic1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_j5wjh")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="BattleMusic2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vef74")
+volume_db = -12.0
+parameters/looping = true
+
+[node name="BattleMusic3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iotsf")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="BattleMusic4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lc2xo")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="BattleMusic5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_215e1")
+volume_db = -10.0
+parameters/looping = true
+
+[node name="BattleMusic6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7sc4i")
+volume_db = -8.0
+parameters/looping = true
 
 [node name="RoomGeneration" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("1_e2o6t")

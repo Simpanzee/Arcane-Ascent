@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://cpkv7hj1netgh" path="res://Assets/Menu/scroll.gdshader" id="2_5egv6"]
 [ext_resource type="Texture2D" uid="uid://tskbtbjfqa7m" path="res://Assets/Menu/staff.png" id="2_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://ccdxtc5xeglnm" path="res://Assets/Menu/Background/dark sky.png" id="2_yhxw7"]
-[ext_resource type="AudioStream" uid="uid://bgwmbyvwqwbph" path="res://Assets/Audio/Menu/MedievalCastle.mp3" id="3_1ehe0"]
+[ext_resource type="AudioStream" uid="uid://bgwmbyvwqwbph" path="res://Assets/Audio/Music/MedievalCastle.mp3" id="3_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://dfftlvr11lfsd" path="res://Assets/Menu/Background/moon.png" id="3_16hvj"]
 [ext_resource type="Theme" path="res://Assets/Menu/skwdShdwlssBrdrdRdTpLftRdBttn.theme" id="4_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://bes1y3s05lag3" path="res://Assets/Menu/Background/dark castle.png" id="4_vr1f0"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://ceexqnskywk52" path="res://Assets/Menu/Background/pine 2.png" id="10_wyh8j"]
 [ext_resource type="Texture2D" uid="uid://beac0svcshbya" path="res://Assets/Menu/Background/pine 3.png" id="11_ujyyl"]
 [ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="12_ujyyl"]
-[ext_resource type="AudioStream" uid="uid://5lqcvnnqkpwu" path="res://Assets/Menu/walk.mp3" id="19_mkpwh"]
+[ext_resource type="AudioStream" uid="uid://5lqcvnnqkpwu" path="res://Assets/Audio/Menu/walk.mp3" id="19_mkpwh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wyh8j"]
 shader = ExtResource("2_5egv6")
@@ -508,7 +508,7 @@ scale = Vector2(6.4062486, 6.4062486)
 sprite_frames = SubResource("SpriteFrames_ne6ao")
 animation = &"run"
 autoplay = "default"
-frame_progress = 0.7803098
+frame_progress = 0.29681912
 flip_h = true
 
 [node name="Title" type="Label" parent="."]

@@ -10,6 +10,17 @@ class RoomData:
 
 @export var map_size : int = 7
 @export var rooms_to_generate : int = randi_range(4,10)
+
+@onready var battle_music1 : AudioStreamPlayer = $"../BattleMusic1"
+@onready var battle_music2 : AudioStreamPlayer = $"../BattleMusic2"
+@onready var battle_music3 : AudioStreamPlayer = $"../BattleMusic3"
+@onready var battle_music4 : AudioStreamPlayer = $"../BattleMusic4"
+@onready var battle_music5 : AudioStreamPlayer = $"../BattleMusic5"
+@onready var battle_music6 : AudioStreamPlayer = $"../BattleMusic6"
+
+var music_tracks : Array[AudioStreamPlayer]
+var current_music : AudioStreamPlayer
+
 var room_count : int = 0
 var map : Array[RoomData]
 var rooms : Array[Room]
@@ -31,14 +42,16 @@ var room_scene : PackedScene = preload("res://Scenes/Rooms/room_template.tscn")
 var end_room_scene : PackedScene = preload("res://Scenes/Rooms/end_room.tscn")
 
 @export var player : CharacterBody2D
-
+	
 func _ready() -> void:
+	music_tracks = [battle_music1, battle_music2, battle_music3, battle_music4, battle_music5, battle_music6]
+	current_music = music_tracks.pick_random()
+	current_music.play()
 	_generate()
 	
 func _generate():
 	room_count = 0
 	map.resize(map_size * map_size)
-	
 	_check_room(first_room_x, first_room_y, Vector2.ZERO, true)
 	_instantiate_rooms()
 	
@@ -161,5 +174,12 @@ func _on_new_floor() -> void:
 	room_order.clear()
 	
 	_generate()
+	var new_music = music_tracks.pick_random()
+	if new_music != current_music:
+		current_music.stop()
+		current_music = new_music
+		current_music.play()
+	
+	
 	
 	
