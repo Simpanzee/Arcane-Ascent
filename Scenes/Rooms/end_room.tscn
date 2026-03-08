@@ -259,9 +259,6 @@ visible = false
 [node name="WallCollider4" parent="." index="5"]
 visible = false
 
-[node name="RoomArea" parent="." index="6"]
-visible = false
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="11"]
 polygon = PackedVector2Array(16, 17, 31, 17, 31, -33, -32, -33, -33, 16, -16, 16, -16, 31, -40, 31, -40, -49, 39, -49, 41, 31, 16, 31)
 

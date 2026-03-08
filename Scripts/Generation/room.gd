@@ -26,9 +26,14 @@ var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton
 
 var enemies_count : int = randi_range(6, 10)
 var room_cleared : bool = false
+var is_first_room : bool = false
 
 func _ready() -> void:
 	initial_state()
+	if is_first_room:
+		enemies_count = 0
+		mark_room_cleared.call_deferred()
+		return
 	spawn_enemies()
 
 func initial_state():

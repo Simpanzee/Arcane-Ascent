@@ -129,6 +129,7 @@ func _instantiate_rooms():
 			if x == first_room_x and y == first_room_y:
 				first_room = room
 				first_room.player_spawn(player)
+				first_room.is_first_room = true
 
 
 func _get_map(x : int, y : int) -> RoomData:

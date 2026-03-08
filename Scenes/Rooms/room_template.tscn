@@ -698,10 +698,10 @@ sources/0 = SubResource("TileSetAtlasSource_s3j8h")
 size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11dti"]
-size = Vector2(318.5, 110)
+size = Vector2(256, 79.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6xlm"]
-size = Vector2(112, 97.5)
+size = Vector2(64, 96.375)
 
 [node name="Room_Template" type="StaticBody2D"]
 z_index = -5
@@ -893,19 +893,19 @@ shape = SubResource("RectangleShape2D_yiwfh")
 [node name="SpawnZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnZone"]
-position = Vector2(-1, -106)
+position = Vector2(-1, -88)
 shape = SubResource("RectangleShape2D_11dti")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="SpawnZone"]
-position = Vector2(0, 103)
+position = Vector2(0, 88.5)
 shape = SubResource("RectangleShape2D_11dti")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="SpawnZone"]
-position = Vector2(-104, -0.5)
+position = Vector2(-96, 0)
 shape = SubResource("RectangleShape2D_i6xlm")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="SpawnZone"]
-position = Vector2(103, -1.75)
+position = Vector2(95, -0.8125)
 shape = SubResource("RectangleShape2D_i6xlm")
 
 [connection signal="body_entered" from="RoomArea" to="." method="_on_room_area_body_entered"]
