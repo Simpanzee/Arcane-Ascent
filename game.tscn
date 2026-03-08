@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv61m3r6pw6tm"]
+[gd_scene load_steps=7 format=3 uid="uid://cv61m3r6pw6tm"]
 
 [ext_resource type="Script" uid="uid://dyo48eg3w2ei8" path="res://Scripts/Generation/room_generation.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dfuvckrqq83mq" path="res://Scenes/player.tscn" id="2_e2o6t"]
 [ext_resource type="Texture2D" uid="uid://dyt4708fglsso" path="res://Assets/UI/health meter-09.png" id="3_7jktm"]
 [ext_resource type="Script" uid="uid://cbnx0uxb7soll" path="res://Scripts/player_health_bar.gd" id="3_feb5d"]
 [ext_resource type="Texture2D" uid="uid://i22jkr1ga577" path="res://Assets/UI/health meter-12.png" id="4_ryrav"]
+[ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
 
 [node name="Game" type="Node2D"]
 
@@ -33,9 +34,9 @@ script = ExtResource("3_feb5d")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.47522524
-anchor_top = 0.39615384
+anchor_top = 0.44743583
 anchor_right = 0.5487988
-anchor_bottom = 0.6423077
+anchor_bottom = 0.6935897
 offset_left = -16.5
 offset_top = -12.5
 offset_right = 16.5
@@ -43,5 +44,6 @@ offset_bottom = 10.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 38
+theme_override_fonts/font = ExtResource("6_ryrav")
+theme_override_font_sizes/font_size = 36
 metadata/_edit_use_anchors_ = true

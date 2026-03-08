@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccf8qc55x2y7d"
-path="res://.godot/imported/Dusk.png-884b346a63a088823453fc31dc3e3083.ctex"
+uid="uid://4lwtr7fguso2"
+path="res://.godot/imported/pine1.png-4fa12c4e59a7d81333509a52d2cab0f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/Dusk.png"
-dest_files=["res://.godot/imported/Dusk.png-884b346a63a088823453fc31dc3e3083.ctex"]
+source_file="res://Assets/Menu/Background/pine1.png"
+dest_files=["res://.godot/imported/pine1.png-4fa12c4e59a7d81333509a52d2cab0f0.ctex"]
 
 [params]
 

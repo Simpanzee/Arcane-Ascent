@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://buxukfi36qsm8"
-path="res://.godot/imported/orcdeath.mp3-47d28b5c029f1a42ba562e068e68d04b.mp3str"
+path="res://.godot/imported/orcdeath.mp3-4e968c70b9e7e4e873d8deeaac4a55f5.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Enemies/orcdeath.mp3"
-dest_files=["res://.godot/imported/orcdeath.mp3-47d28b5c029f1a42ba562e068e68d04b.mp3str"]
+source_file="res://Assets/Audio/Enemies/orcdeath.mp3"
+dest_files=["res://.godot/imported/orcdeath.mp3-4e968c70b9e7e4e873d8deeaac4a55f5.mp3str"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl7o772nqasny"
-path="res://.godot/imported/Swordsman-Death.png-3624812cb0c932d30623577324de6f04.ctex"
+path="res://.godot/imported/Swordsman-Death.png-ffe3ba8dae7442c594c65989defa453d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Swordsman/Swordsman with shadows/Swordsman-Death.png"
-dest_files=["res://.godot/imported/Swordsman-Death.png-3624812cb0c932d30623577324de6f04.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Swordsman/Swordsman with shadows/Swordsman-Death.png"
+dest_files=["res://.godot/imported/Swordsman-Death.png-ffe3ba8dae7442c594c65989defa453d.ctex"]
 
 [params]
 

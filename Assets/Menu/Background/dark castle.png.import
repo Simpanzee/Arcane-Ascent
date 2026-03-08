@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkmf22cxfrclb"
-path="res://.godot/imported/book.png-0a8dbbd1be86f3fcd13dcff3f8254259.ctex"
+uid="uid://bes1y3s05lag3"
+path="res://.godot/imported/dark castle.png-92656d7db227a87a1ee608670d465996.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Menu/book.png"
-dest_files=["res://.godot/imported/book.png-0a8dbbd1be86f3fcd13dcff3f8254259.ctex"]
+source_file="res://Assets/Menu/Background/dark castle.png"
+dest_files=["res://.godot/imported/dark castle.png-92656d7db227a87a1ee608670d465996.ctex"]
 
 [params]
 
