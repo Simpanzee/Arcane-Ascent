@@ -263,7 +263,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"cast",
-"speed": 20.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -558,7 +558,7 @@ shape = SubResource("CapsuleShape2D_v0iea")
 position = Vector2(1.0728836e-06, -1.999999)
 scale = Vector2(0.74999994, 0.74999994)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
-animation = &"lightning_cast"
+animation = &"cast"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
