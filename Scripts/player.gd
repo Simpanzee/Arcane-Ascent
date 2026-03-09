@@ -179,7 +179,6 @@ func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 		return
 	shoot(mouse_dir)
 	await sprite.animation_finished
-	
 	if is_dead:
 		return
 
