@@ -1,8 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://2suo3r65oheh"]
+[gd_scene load_steps=15 format=3 uid="uid://2suo3r65oheh"]
 
-[ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/Spells/lightning.png" id="1_6361t"]
+[ext_resource type="Texture2D" uid="uid://bs8ym6woctfk4" path="res://Assets/Spells/lightning.png" id="1_6361t"]
 [ext_resource type="Script" uid="uid://ch2qoiysgcity" path="res://Scripts/Spells/lightning.gd" id="1_hca2r"]
+[ext_resource type="Shader" uid="uid://c6eg0pk5pduep" path="res://Assets/Spells/lightning.gdshader" id="2_nvoy2"]
 [ext_resource type="Texture2D" uid="uid://cw6fy8exfrgq7" path="res://Assets/Spells/Ultimate/end/laser_E_8.png" id="3_3nifa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hlxka"]
+shader = ExtResource("2_nvoy2")
+shader_parameter/colour = Color(0.7058824, 0, 0.27450982, 1)
+shader_parameter/tint_factor = 1.0
+shader_parameter/fade = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hca2r"]
 atlas = ExtResource("1_6361t")
@@ -24,6 +31,10 @@ region = Rect2(384, 0, 128, 256)
 atlas = ExtResource("1_6361t")
 region = Rect2(512, 0, 128, 256)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvjbm"]
+atlas = ExtResource("3_3nifa")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_pvjbm"]
 animations = [{
 "frames": [{
@@ -43,7 +54,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_cnvyv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_3nifa")
+"texture": SubResource("AtlasTexture_pvjbm")
 }],
 "loop": false,
 "name": &"strike",
@@ -62,11 +73,13 @@ collision_mask = 4
 script = ExtResource("1_hca2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_hlxka")
 position = Vector2(0.24999797, -23.000002)
 scale = Vector2(0.2304688, 0.25781247)
 sprite_frames = SubResource("SpriteFrames_pvjbm")
 animation = &"strike"
-frame = 4
+autoplay = "strike"
+frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

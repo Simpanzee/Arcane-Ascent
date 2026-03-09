@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv61m3r6pw6tm"]
+[gd_scene load_steps=18 format=3 uid="uid://cv61m3r6pw6tm"]
 
 [ext_resource type="Script" uid="uid://dyo48eg3w2ei8" path="res://Scripts/Generation/room_generation.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dfuvckrqq83mq" path="res://Scenes/player.tscn" id="2_e2o6t"]
@@ -12,6 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://cbka1esu4obe0" path="res://Assets/Audio/Music/TheSeven.mp3" id="5_215e1"]
 [ext_resource type="AudioStream" uid="uid://c645xcr17yart" path="res://Assets/Audio/Music/Wicked.mp3" id="6_7sc4i"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://d08iqfpsun481" path="res://Scenes/spell_button.tscn" id="9_lc2xo"]
+[ext_resource type="Texture2D" uid="uid://bgsey1lqeap2f" path="res://Assets/UI/Spells/blink.png" id="10_80cx4"]
+[ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/UI/Spells/lightning.png" id="11_80cx4"]
+[ext_resource type="Texture2D" uid="uid://ek5ydj51t81p" path="res://Assets/UI/Spells/roots.png" id="11_e8heu"]
+[ext_resource type="Texture2D" uid="uid://dxw2vdhxer0g0" path="res://Assets/UI/Spells/ultamite.png" id="13_e8heu"]
 
 [node name="Game" type="Node2D"]
 
@@ -54,11 +59,47 @@ position = Vector2(242, 119)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="Blink" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
+offset_left = 11.0
+offset_top = 230.0
+offset_right = 51.0
+offset_bottom = 270.0
+texture_normal = ExtResource("10_80cx4")
+key_text = "E"
+
+[node name="Roots" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
+offset_left = 50.000004
+offset_top = 230.0
+offset_right = 90.0
+offset_bottom = 270.0
+texture_normal = ExtResource("11_e8heu")
+cooldown = 8.0
+key_text = "C"
+
+[node name="Lightning" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
+offset_left = 89.0
+offset_top = 230.0
+offset_right = 129.0
+offset_bottom = 270.0
+texture_normal = ExtResource("11_80cx4")
+cooldown = 10.0
+key_text = "F"
+
+[node name="Ultamite" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
+offset_left = 413.0
+offset_top = 206.00002
+offset_right = 453.66666
+offset_bottom = 246.66667
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("13_e8heu")
+cooldown = 90.0
+key_text = "Q"
+
 [node name="Player Health Bar" type="TextureProgressBar" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 8.0
-offset_right = 675.0
-offset_bottom = 138.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 672.0
+offset_bottom = 136.0
 scale = Vector2(0.15, 0.15)
 value = 100.0
 texture_under = ExtResource("3_7jktm")

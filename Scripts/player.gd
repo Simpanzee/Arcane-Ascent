@@ -23,11 +23,29 @@ signal healthChanged
 @onready var lightning_sound2 = $Lightning2
 @onready var lightning_sound3 = $Lightning3
 
+@onready var error = $Error
+
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
 var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
 var roots_scene : PackedScene = preload("res://Scenes/Spells/roots.tscn")
 var lightning_scene : PackedScene = preload("res://Scenes/Spells/lightning.tscn")
+
+@onready var blink_ui = $"../CanvasLayer/Blink"
+var blink_ready : bool = true
+var blink_cd : float = 5.0
+
+@onready var roots_ui = $"../CanvasLayer/Roots"
+var roots_ready : bool = true
+var roots_cd : float = 8.0
+
+@onready var lightning_ui = $"../CanvasLayer/Lightning"
+var lightning_ready : bool = true
+var lightning_cd : float = 10.0
+
+@onready var ult_ui = $"../CanvasLayer/Ultamite"
+var ult_ready : bool = true
+var ult_cd : float = 90.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -81,17 +99,49 @@ func _process(_delta: float) -> void:
 		start_cast(mouse_pos, mouse_dir)
 	
 	if Input.is_action_just_pressed("blink"):
-		blink()
+		if blink_ready:
+			blink_ready = false
+			blink()
+			await get_tree().create_timer(0.4).timeout
+			blink_ui.start_cooldown()
+			await get_tree().create_timer(blink_cd).timeout
+			blink_ready = true
+		else:
+			error.play()
 	
 	if Input.is_action_just_pressed("root"):
-		cast_root()
+		if roots_ready:
+			roots_ready = false
+			cast_root()
+			await get_tree().create_timer(0.2).timeout
+			roots_ui.start_cooldown()
+			await get_tree().create_timer(roots_cd).timeout
+			roots_ready = true
+		else:
+			error.play()
 		
 	if Input.is_action_just_pressed("lightning"):
-		lightning_strike()
+		if lightning_ready:
+			lightning_ready = false
+			lightning_strike()
+			await get_tree().create_timer(0.4).timeout
+			lightning_ui.start_cooldown()
+			await get_tree().create_timer(lightning_cd).timeout
+			lightning_ready = true
+		else:
+			error.play()
 	
 	if Input.is_action_just_pressed("ultimate"):
-		start_ultimate(mouse_pos, mouse_dir)
-
+		if ult_ready:
+			ult_ready = false
+			start_ultimate(mouse_pos, mouse_dir)
+			await get_tree().create_timer(5.0).timeout
+			ult_ui.start_cooldown()
+			await get_tree().create_timer(ult_cd).timeout
+			ult_ready = true
+		else:
+			error.play()
+			
 func take_damage(amount : int):
 	if is_dead or is_invulnerable or is_ulting:
 		return

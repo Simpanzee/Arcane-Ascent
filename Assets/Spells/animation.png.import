@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd6vkg5ckpybd"
-path="res://.godot/imported/blink.png-5aa90dcbba58a8e9cc34d3b8ed4eb301.ctex"
+uid="uid://b2rlum8c1h20v"
+path="res://.godot/imported/animation.png-aeb9080a2fc327ccc281afa17dd42234.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spells/blink.png"
-dest_files=["res://.godot/imported/blink.png-5aa90dcbba58a8e9cc34d3b8ed4eb301.ctex"]
+source_file="res://Assets/Spells/animation.png"
+dest_files=["res://.godot/imported/animation.png-aeb9080a2fc327ccc281afa17dd42234.ctex"]
 
 [params]
 
