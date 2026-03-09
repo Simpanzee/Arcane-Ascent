@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5vc5qbbwd0jd"
-path="res://.godot/imported/Skeleton-Death.png-323dc4c974987633671f99c95c867b59.ctex"
+path="res://.godot/imported/Skeleton-Death.png-8e67d802d8f2070dbd6a96fb361231ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton/Skeleton/Skeleton-Death.png"
-dest_files=["res://.godot/imported/Skeleton-Death.png-323dc4c974987633671f99c95c867b59.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton/Skeleton/Skeleton-Death.png"
+dest_files=["res://.godot/imported/Skeleton-Death.png-8e67d802d8f2070dbd6a96fb361231ba.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c645xcr17yart"
-path="res://.godot/imported/Wicked.mp3-060a2d1b46f311b91dda7f4e95588493.mp3str"
+path="res://.godot/imported/Wicked.mp3-613f86247477b3d66294b2f67402c7ca.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Music/Wicked.mp3"
-dest_files=["res://.godot/imported/Wicked.mp3-060a2d1b46f311b91dda7f4e95588493.mp3str"]
+source_file="res://Assets/audio/Music/Wicked.mp3"
+dest_files=["res://.godot/imported/Wicked.mp3-613f86247477b3d66294b2f67402c7ca.mp3str"]
 
 [params]
 
