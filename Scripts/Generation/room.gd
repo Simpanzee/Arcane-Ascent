@@ -125,7 +125,7 @@ func _on_room_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		if room_cleared == false:
 			close_all_doors.call_deferred()
-			close_other_rooms.emit()
+			close_other_rooms.emit.call_deferred()
 			for enemy in get_children():
 				if enemy.is_in_group("Enemy"):
 					enemy.is_active = true
