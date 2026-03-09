@@ -263,7 +263,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"cast",
-"speed": 10.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -341,6 +341,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvnsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t5aa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}],
+"loop": false,
+"name": &"lightning_cast",
 "speed": 10.0
 }, {
 "frames": [{
@@ -529,7 +558,7 @@ shape = SubResource("CapsuleShape2D_v0iea")
 position = Vector2(1.0728836e-06, -1.999999)
 scale = Vector2(0.74999994, 0.74999994)
 sprite_frames = SubResource("SpriteFrames_cvnsp")
-animation = &"cast"
+animation = &"lightning_cast"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]

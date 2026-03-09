@@ -60,36 +60,36 @@ position = Vector2(242, 119)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Blink" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
-offset_left = 11.0
-offset_top = 230.0
+offset_left = 11.000001
+offset_top = 231.00002
 offset_right = 51.0
-offset_bottom = 270.0
+offset_bottom = 271.0
 texture_normal = ExtResource("10_80cx4")
 key_text = "E"
 
 [node name="Roots" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
 offset_left = 50.000004
-offset_top = 230.0
+offset_top = 231.00002
 offset_right = 90.0
-offset_bottom = 270.0
+offset_bottom = 271.0
 texture_normal = ExtResource("11_e8heu")
 cooldown = 8.0
 key_text = "C"
 
 [node name="Lightning" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
 offset_left = 89.0
-offset_top = 230.0
+offset_top = 231.00002
 offset_right = 129.0
-offset_bottom = 270.0
+offset_bottom = 271.0
 texture_normal = ExtResource("11_80cx4")
 cooldown = 10.0
 key_text = "F"
 
 [node name="Ultamite" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
 offset_left = 413.0
-offset_top = 206.00002
+offset_top = 203.0
 offset_right = 453.66666
-offset_bottom = 246.66667
+offset_bottom = 243.66666
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("13_e8heu")
 cooldown = 90.0

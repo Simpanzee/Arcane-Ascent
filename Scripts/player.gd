@@ -174,7 +174,7 @@ func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	is_casting = true
 	velocity = Vector2.ZERO
 	sprite.play("cast")
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.2).timeout
 	if is_dead:
 		return
 	shoot(mouse_dir)
@@ -336,7 +336,7 @@ func blink() -> void:
 
 func lightning_strike():
 	is_casting = true
-	sprite.play("cast")
+	sprite.play("lightning_cast")
 	await sprite.animation_finished
 	is_casting = false
 	var cast_point = get_global_mouse_position()
