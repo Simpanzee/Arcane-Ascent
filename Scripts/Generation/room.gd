@@ -119,7 +119,7 @@ func close_all_doors():
 func mark_room_cleared():
 	room_cleared = true
 	open_all_doors()
-	open_other_rooms.emit()
+	open_other_rooms.emit.call_deferred()
 
 func _on_room_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
