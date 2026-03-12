@@ -11,7 +11,7 @@ func _on_retry_pressed() -> void:
 func _on_menu_pressed() -> void:
 	click.play()
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
 
 func _on_retry_mouse_entered() -> void:
 	hover.play()

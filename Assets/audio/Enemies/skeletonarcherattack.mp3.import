@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://rvtu20peojud"
-path="res://.godot/imported/skeletonarcherattack.mp3-56ac5ce7bd6308e992ab0f4faf79bd2d.mp3str"
+path="res://.godot/imported/skeletonarcherattack.mp3-52a26d63047e191ec6bd9666f9e46ae7.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Enemies/skeletonarcherattack.mp3"
-dest_files=["res://.godot/imported/skeletonarcherattack.mp3-56ac5ce7bd6308e992ab0f4faf79bd2d.mp3str"]
+source_file="res://Assets/audio/Enemies/skeletonarcherattack.mp3"
+dest_files=["res://.godot/imported/skeletonarcherattack.mp3-52a26d63047e191ec6bd9666f9e46ae7.mp3str"]
 
 [params]
 

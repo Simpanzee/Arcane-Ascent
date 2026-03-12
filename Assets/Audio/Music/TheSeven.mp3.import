@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cbka1esu4obe0"
-path="res://.godot/imported/TheSeven.mp3-83e4b05bb9336ca88a1d8016ec24af8e.mp3str"
+path="res://.godot/imported/TheSeven.mp3-cfbe83f050b824ff239b2cdfe9578881.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Music/TheSeven.mp3"
-dest_files=["res://.godot/imported/TheSeven.mp3-83e4b05bb9336ca88a1d8016ec24af8e.mp3str"]
+source_file="res://Assets/audio/Music/TheSeven.mp3"
+dest_files=["res://.godot/imported/TheSeven.mp3-cfbe83f050b824ff239b2cdfe9578881.mp3str"]
 
 [params]
 

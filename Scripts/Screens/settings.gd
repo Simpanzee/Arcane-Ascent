@@ -47,13 +47,13 @@ func _on_save_pressed() -> void:
 	original_settings = current_settings.duplicate()
 	save_button.visible = false
 	await get_tree().create_timer(0.01).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
 
 func _on_return_pressed() -> void:
 	click.play()
 	_apply_settings(original_settings)
 	await get_tree().create_timer(0.01).timeout
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
 
 func _on_return_mouse_entered() -> void:
 	hover.play()
