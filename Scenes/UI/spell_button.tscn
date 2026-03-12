@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://d08iqfpsun481"]
+
+[ext_resource type="Script" uid="uid://becyj55bdqxmn" path="res://Scripts/Spells/spell_button.gd" id="1_ougmo"]
+[ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="2_17les"]
+[ext_resource type="Texture2D" uid="uid://btope6hkkrm24" path="res://Assets/Spells/cooldown.png" id="2_ougmo"]
+
+[node name="SpellButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("1_ougmo")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+step = 0.01
+fill_mode = 4
+texture_progress = ExtResource("2_ougmo")
+tint_progress = Color(0.050337207, 0.050337207, 0.050337207, 0.75686276)
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Key" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.7499995
+offset_top = -18.749998
+offset_right = 19.75
+offset_bottom = -1.75
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_17les")
+theme_override_font_sizes/font_size = 16
+text = "1"
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.25
+offset_top = -12.5
+offset_right = 35.25
+offset_bottom = -3.5
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.92941177, 1, 0.92941177, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_17les")
+theme_override_font_sizes/font_size = 8
+text = "0.0"
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="."]

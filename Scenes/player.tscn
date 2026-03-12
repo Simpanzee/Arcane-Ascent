@@ -1,21 +1,21 @@
 [gd_scene load_steps=65 format=3 uid="uid://dfuvckrqq83mq"]
 
 [ext_resource type="Script" uid="uid://dybpu6p8bu2tg" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/Player/wizard.png" id="1_v0iea"]
-[ext_resource type="AudioStream" uid="uid://iboux3g3i2ed" path="res://Assets/audio/Spells/bullet.mp3" id="3_6t5aa"]
-[ext_resource type="AudioStream" uid="uid://7pqd7mc7dyvn" path="res://Assets/audio/Player/walking.mp3" id="4_vgqql"]
-[ext_resource type="AudioStream" uid="uid://ctllrfac32emj" path="res://Assets/audio/Spells/ultimate.mp3" id="5_fkybt"]
-[ext_resource type="AudioStream" uid="uid://bpxdm3eamwa2e" path="res://Assets/audio/Spells/blink.mp3" id="6_x3wgy"]
-[ext_resource type="AudioStream" uid="uid://crwhid5yg0wji" path="res://Assets/audio/Spells/rootstart.mp3" id="7_8erm5"]
-[ext_resource type="AudioStream" uid="uid://8w6cdnosvie8" path="res://Assets/audio/Spells/rootend.mp3" id="8_f1ek2"]
-[ext_resource type="AudioStream" uid="uid://dgiu8vovet48w" path="res://Assets/audio/Player/hurt.mp3" id="9_f1ek2"]
-[ext_resource type="AudioStream" uid="uid://wb0xaaslkv53" path="res://Assets/audio/Player/death1.mp3" id="10_pu2lt"]
-[ext_resource type="AudioStream" uid="uid://2rvnodce2hil" path="res://Assets/audio/Player/death2.mp3" id="11_ukyrk"]
-[ext_resource type="AudioStream" uid="uid://b481r2ngiwp46" path="res://Assets/audio/Player/death3.mp3" id="12_7dp3o"]
-[ext_resource type="AudioStream" uid="uid://bejck50dj55ti" path="res://Assets/audio/Spells/lightning1.mp3" id="13_h4iuc"]
-[ext_resource type="AudioStream" uid="uid://cjg0dvj6nfnl4" path="res://Assets/audio/Spells/lightning2.mp3" id="14_fd4e3"]
-[ext_resource type="AudioStream" uid="uid://jsqeg1d3cys" path="res://Assets/audio/Spells/lightning3.mp3" id="15_qqcod"]
-[ext_resource type="AudioStream" uid="uid://bnc33wiuqax08" path="res://Assets/spells/error.mp3" id="16_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://iboux3g3i2ed" path="res://Assets/Audio/Spells/bullet.mp3" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://7pqd7mc7dyvn" path="res://Assets/Audio/Player/walking.mp3" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://ctllrfac32emj" path="res://Assets/Audio/Spells/ultimate.mp3" id="5_fkybt"]
+[ext_resource type="AudioStream" uid="uid://bpxdm3eamwa2e" path="res://Assets/Audio/Spells/blink.mp3" id="6_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://crwhid5yg0wji" path="res://Assets/Audio/Spells/rootstart.mp3" id="7_8erm5"]
+[ext_resource type="AudioStream" uid="uid://8w6cdnosvie8" path="res://Assets/Audio/Spells/rootend.mp3" id="8_f1ek2"]
+[ext_resource type="AudioStream" uid="uid://dgiu8vovet48w" path="res://Assets/Audio/Player/hurt.mp3" id="9_f1ek2"]
+[ext_resource type="AudioStream" uid="uid://wb0xaaslkv53" path="res://Assets/Audio/Player/death1.mp3" id="10_pu2lt"]
+[ext_resource type="AudioStream" uid="uid://2rvnodce2hil" path="res://Assets/Audio/Player/death2.mp3" id="11_ukyrk"]
+[ext_resource type="AudioStream" uid="uid://b481r2ngiwp46" path="res://Assets/Audio/Player/death3.mp3" id="12_7dp3o"]
+[ext_resource type="AudioStream" uid="uid://bejck50dj55ti" path="res://Assets/Audio/Spells/lightning1.mp3" id="13_h4iuc"]
+[ext_resource type="AudioStream" uid="uid://cjg0dvj6nfnl4" path="res://Assets/Audio/Spells/lightning2.mp3" id="14_fd4e3"]
+[ext_resource type="AudioStream" uid="uid://jsqeg1d3cys" path="res://Assets/Audio/Spells/lightning3.mp3" id="15_qqcod"]
+[ext_resource type="AudioStream" uid="uid://bnc33wiuqax08" path="res://Assets/Spells/error.mp3" id="16_fd4e3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
 radius = 8.0
@@ -570,50 +570,64 @@ one_shot = true
 [node name="FireSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_6t5aa")
 volume_db = -3.0
+bus = &"SFX"
 
 [node name="WalkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_vgqql")
 volume_db = 10.0
+bus = &"SFX"
 
 [node name="UltimateSound" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1.0728836e-06, -1.999999)
 scale = Vector2(0.74999994, 0.74999994)
 stream = ExtResource("5_fkybt")
+bus = &"SFX"
 
 [node name="BlinkSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_x3wgy")
+bus = &"SFX"
 
 [node name="RootStart" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_8erm5")
+bus = &"SFX"
 
 [node name="RootEnd" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_f1ek2")
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1.0728836e-06, -1.999999)
 scale = Vector2(0.74999994, 0.74999994)
 stream = ExtResource("9_f1ek2")
+bus = &"SFX"
 
 [node name="Death1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_pu2lt")
+bus = &"SFX"
 
 [node name="Death2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_ukyrk")
+bus = &"SFX"
 
 [node name="Death3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_7dp3o")
+bus = &"SFX"
 
 [node name="Lightning1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_h4iuc")
 volume_db = -3.0
+bus = &"SFX"
 
 [node name="Lightning2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_fd4e3")
 volume_db = -3.0
+bus = &"SFX"
 
 [node name="Lightning3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_qqcod")
 volume_db = -3.0
+bus = &"SFX"
 
 [node name="Error" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_fd4e3")
+bus = &"SFX"

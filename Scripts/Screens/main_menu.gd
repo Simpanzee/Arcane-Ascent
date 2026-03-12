@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var menu_theme = $MenuTheme
 @onready var click = $Click
 @onready var hover = $Hover
 @onready var walk = $Walk
@@ -17,7 +16,7 @@ var leaving := false
 
 func _ready() -> void:
 	sprite.play("default")
-	menu_theme.play()
+	MusicPlayer.play_menu()
 
 func _process(delta):
 	if running:
@@ -41,7 +40,7 @@ func leave_menu() -> void:
 
 func _on_play_pressed() -> void:
 	click.play()
-	menu_theme.stop()
+	MusicPlayer.stop_music()
 	sprite.play("run")
 	walk.play()
 	running = true
@@ -62,4 +61,5 @@ func _on_quit_mouse_entered() -> void:
 
 func _on_settings_pressed() -> void:
 	click.play()
-	#await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.01).timeout
+	get_tree().change_scene_to_file("res://Scenes/settings.tscn")

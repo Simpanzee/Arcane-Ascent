@@ -17,12 +17,16 @@ script = ExtResource("1_613su")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [node name="Despawn" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+bus = &"SFX"
 
 [node name="Hp Bar" type="TextureProgressBar" parent="."]
 z_index = 99

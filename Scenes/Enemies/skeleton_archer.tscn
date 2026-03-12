@@ -378,16 +378,20 @@ frame_progress = 1.0
 
 [node name="Death" parent="." index="2"]
 stream = ExtResource("10_ln6uk")
+bus = &"SFX"
 
 [node name="Attack" parent="." index="3"]
 stream = ExtResource("11_p7yrc")
 volume_db = -10.0
+bus = &"SFX"
 
 [node name="Despawn" parent="." index="4"]
 stream = ExtResource("12_gkmb3")
+bus = &"SFX"
 
 [node name="Hurt" parent="." index="5"]
 stream = ExtResource("13_3uhkr")
+bus = &"SFX"
 
 [node name="Hp Bar" parent="." index="6"]
 offset_left = -8.0

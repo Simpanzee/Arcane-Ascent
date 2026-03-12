@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://5lqcvnnqkpwu"
-path="res://.godot/imported/walk.mp3-aae0349e518660641b1dcab0c233a3d0.mp3str"
+path="res://.godot/imported/walk.mp3-786694e91b1164a880b82ae58692b607.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Menu/walk.mp3"
-dest_files=["res://.godot/imported/walk.mp3-aae0349e518660641b1dcab0c233a3d0.mp3str"]
+source_file="res://Assets/Audio/Menu/walk.mp3"
+dest_files=["res://.godot/imported/walk.mp3-786694e91b1164a880b82ae58692b607.mp3str"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bir6ijdprynu4"
-path="res://.godot/imported/ProudHeros.mp3-f3761cad2f0107bc24131b50fa63796d.mp3str"
+path="res://.godot/imported/ProudHeros.mp3-4f911f49068635edc3a90c8024652b26.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Music/ProudHeros.mp3"
-dest_files=["res://.godot/imported/ProudHeros.mp3-f3761cad2f0107bc24131b50fa63796d.mp3str"]
+source_file="res://Assets/Audio/Music/ProudHeros.mp3"
+dest_files=["res://.godot/imported/ProudHeros.mp3-4f911f49068635edc3a90c8024652b26.mp3str"]
 
 [params]
 
