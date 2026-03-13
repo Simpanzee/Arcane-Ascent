@@ -37,6 +37,7 @@ func _ready() -> void:
 		chest.position += Vector2(0, -75)
 		add_child(chest)
 		enemies_count = 0
+		await get_tree().create_timer(0.2).timeout
 		mark_room_cleared.call_deferred()
 		return
 	spawn_enemies()
