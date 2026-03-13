@@ -20,6 +20,8 @@ signal close_other_rooms
 @onready var room_area : Area2D = $RoomArea
 @onready var spawn_zone : Area2D = $SpawnZone
 
+var chest_scene : PackedScene = preload("res://Scenes/chest.tscn")
+
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
 var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
 var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton_archer.tscn")
@@ -31,6 +33,9 @@ var is_first_room : bool = false
 func _ready() -> void:
 	initial_state()
 	if is_first_room:
+		var chest = chest_scene.instantiate()
+		chest.position += Vector2(0, -75)
+		add_child(chest)
 		enemies_count = 0
 		mark_room_cleared.call_deferred()
 		return

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://cvqpqvr6sjhf4"]
+
+[ext_resource type="Script" uid="uid://nys3sc3cy45a" path="res://Scripts/Upgrades/upgrade.gd" id="1_gcicx"]
+
+[resource]
+script = ExtResource("1_gcicx")
+name = "Even More Health"
+tier = 2
+description = "+3 Health"
+metadata/_custom_type_script = "uid://nys3sc3cy45a"

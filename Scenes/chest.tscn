@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfltgtqy3450l"]
+
+[ext_resource type="Script" uid="uid://1mssnbwnb6qn" path="res://Scripts/chest.gd" id="1_cjfl1"]
+[ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_lyb87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjfl1"]
+size = Vector2(16, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bagqn"]
+radius = 31.06445
+
+[node name="Chest" type="StaticBody2D"]
+collision_mask = 3
+script = ExtResource("1_cjfl1")
+
+[node name="closed" type="Sprite2D" parent="."]
+texture = ExtResource("1_lyb87")
+region_enabled = true
+region_rect = Rect2(96, 33, 16, 14)
+
+[node name="open" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_lyb87")
+region_enabled = true
+region_rect = Rect2(96, 50, 16, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cjfl1")
+
+[node name="active_area" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="active_area"]
+shape = SubResource("CircleShape2D_bagqn")
+
+[node name="Label" type="Label" parent="."]
+z_index = 99
+offset_left = -27.0
+offset_top = -22.0
+offset_right = 26.3
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 9
+text = "\"O\" to Open"
+
+[connection signal="body_entered" from="active_area" to="." method="_on_active_area_body_entered"]
+[connection signal="body_exited" from="active_area" to="." method="_on_active_area_body_exited"]

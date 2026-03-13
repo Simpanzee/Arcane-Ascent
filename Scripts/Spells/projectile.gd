@@ -1,12 +1,15 @@
 extends Area2D
 
 @export var base_speed : float = 200
-@export var damage : int = 1
+var damage
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var direction: Vector2
 var is_traveling: bool = false
+
+func set_damage(value):
+	damage = value
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -6,6 +6,7 @@ signal healthChanged
 @export var cast_time : float = 1.5
 @export var current_health : int = 5
 @export var max_health : int = 5
+@export var main_attack_damage = 1
 
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
@@ -56,6 +57,8 @@ var invuln_time : float = 2.0
 var is_dead : bool = false
 
 var is_ulting : bool = false
+
+var upgrades : Array[Upgrade] = []
 
 func _physics_process(_delta: float) -> void:
 	if is_dead:
@@ -269,6 +272,7 @@ func _on_CastTimer_timeout() -> void:
 
 func shoot(mouse_dir: Vector2) -> void:
 	var projectile = projectile_scene.instantiate()
+	projectile.set_damage(main_attack_damage)
 	get_tree().current_scene.add_child(projectile)
 
 	var spawn_offset = 20
@@ -418,3 +422,8 @@ func die():
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/retry.tscn")
 	print("Player died")
+
+func apply_upgrade(upgrade : Upgrade):
+	upgrades.append(upgrade)
+	upgrade.apply(self)
+	healthChanged.emit()
