@@ -53,7 +53,7 @@ func _generate():
 	room_count = 0
 	map.resize(map_size * map_size)
 	_check_room(first_room_x, first_room_y, Vector2.ZERO, true)
-	_instantiate_rooms()
+	_instantiate_rooms.call_deferred()
 	
 func _check_room(x : int, y : int, entrance_direction : Vector2, is_first_room : bool = false):
 	if room_count >= rooms_to_generate:
@@ -141,7 +141,9 @@ func _instantiate_rooms():
 			
 			if x == first_room_x and y == first_room_y:
 				first_room = room
+				player.get_node("CollisionShape2D").disabled = true
 				first_room.player_spawn(player)
+				player.get_node("CollisionShape2D").disabled = false
 				first_room.is_first_room = true
 
 

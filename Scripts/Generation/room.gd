@@ -116,10 +116,10 @@ func open_all_doors():
 	entrance_west.open_door()
 	
 func close_all_doors():
-	entrance_north.close_door()
-	entrance_south.close_door()
-	entrance_east.close_door()
-	entrance_west.close_door()
+	if entrance_north: entrance_north.close_door()
+	if entrance_south: entrance_south.close_door()
+	if entrance_east: entrance_east.close_door()
+	if entrance_west: entrance_west.close_door()
 	
 func mark_room_cleared():
 	room_cleared = true

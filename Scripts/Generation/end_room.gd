@@ -17,4 +17,6 @@ func mark_room_cleared():
 
 func _on_next_floor_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		body.get_node("CollisionShape2D").set_deferred("disabled", true)
+		await get_tree().create_timer(0.1).timeout
 		new_floor.emit()

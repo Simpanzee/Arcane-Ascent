@@ -2,11 +2,13 @@ extends CharacterBody2D
 
 signal healthChanged
 
-@export var move_speed : float = 300
+@export var move_speed : float = 100
 @export var cast_time : float = 1.5
 @export var current_health : int = 5
 @export var max_health : int = 5
 @export var main_attack_damage = 1
+
+@onready var collision_shape = $CollisionShape2D
 
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 

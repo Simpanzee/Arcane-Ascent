@@ -549,7 +549,6 @@ animations = [{
 collision_layer = 2
 collision_mask = 9
 script = ExtResource("1_cvnsp")
-move_speed = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_v0iea")
