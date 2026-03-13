@@ -17,3 +17,5 @@ func apply(player):
 			player.main_attack_damage += 1
 		"More Speed":
 			player.move_speed += 10
+		"Even More Speed":
+			player.move_speed += 30

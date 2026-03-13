@@ -7,17 +7,21 @@ extends StaticBody2D
 
 var player_near : bool = false
 var chest_opened : bool = false
+var loot_generator : Node
 
-var upgrade_pool = [
+var silver_upgrade_pool = [
 	preload("res://Scripts/Upgrades/resources/more_health.tres"),
-	preload("res://Scripts/Upgrades/resources/even_more_health.tres"),
-	
 	preload("res://Scripts/Upgrades/resources/more_damage.tres"),
-	
 	preload("res://Scripts/Upgrades/resources/more_speed.tres")
 ]
 
+var gold_upgrade_pool = [
+	preload("res://Scripts/Upgrades/resources/even_more_health.tres"),
+	preload("res://Scripts/Upgrades/resources/even_more_speed.tres")
+]
+
 func _ready() -> void:
+	loot_generator = preload("res://Scripts/Lootbox Generator/lootbox.gd").new()
 	closed_sprite.visible = true
 	open_sprite.visible = false
 	label.visible = false
@@ -43,9 +47,31 @@ func open_chest():
 	open_sprite.visible = true
 	closed_sprite.visible = false
 	
-	var choices = []
-	while choices.size() < 4:
-		var upgrade = upgrade_pool[randi() % upgrade_pool.size()]
-		choices.append(upgrade)
+	var lootboxes = loot_generator.generate_loot(1, 1, 0.0, 1)
+	var lootbox = lootboxes[0]
+	var choices = pick_upgrades(lootbox)
 
 	get_tree().call_group("Upgrade_Menu", "open_selection", choices)
+
+
+func pick_upgrades(lootbox: Dictionary) -> Array:
+	var selected_upgrades : Array = []
+
+	for tier_name in lootbox["loot"].keys():
+		var count = lootbox["loot"][tier_name]
+		var tier = int(tier_name.split(" ")[1])  # Converts "Tier 1" to 1
+		var tier_pool
+
+		if tier == 1:
+			tier_pool = silver_upgrade_pool.duplicate()
+		elif tier == 2:
+			tier_pool = gold_upgrade_pool.duplicate()
+
+		for i in range(count):
+			if tier_pool.size() == 0:
+				break  # No more upgrades of this tier left
+			var index = randi() % tier_pool.size()
+			selected_upgrades.append(tier_pool[index])
+			tier_pool.remove_at(index)  # prevent duplicates
+
+	return selected_upgrades
