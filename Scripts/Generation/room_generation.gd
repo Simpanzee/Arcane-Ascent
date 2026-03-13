@@ -21,6 +21,9 @@ class RoomData:
 var music_tracks : Array[AudioStreamPlayer]
 var current_music : AudioStreamPlayer
 
+var floor_number : int = 1
+signal floor_number_changed(num : int)
+
 var room_count : int = 0
 var map : Array[RoomData]
 var rooms : Array[Room]
@@ -167,6 +170,8 @@ func _on_room_template_close_other_rooms() -> void:
 			room.close_all_doors()
 			
 func _on_new_floor() -> void:
+	floor_number += 1
+	floor_number_changed.emit(floor_number)
 	for room in rooms:
 		room.queue_free()
 		

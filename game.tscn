@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cv61m3r6pw6tm"]
+[gd_scene load_steps=20 format=3 uid="uid://cv61m3r6pw6tm"]
 
 [ext_resource type="Script" uid="uid://dyo48eg3w2ei8" path="res://Scripts/Generation/room_generation.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dfuvckrqq83mq" path="res://Scenes/player.tscn" id="2_e2o6t"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://cbka1esu4obe0" path="res://Assets/audio/Music/TheSeven.mp3" id="5_215e1"]
 [ext_resource type="AudioStream" uid="uid://c645xcr17yart" path="res://Assets/audio/Music/Wicked.mp3" id="6_7sc4i"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
+[ext_resource type="Script" uid="uid://e7kyjwkrlsll" path="res://Scripts/Screens/main_UI.gd" id="9_boyg6"]
 [ext_resource type="PackedScene" uid="uid://d08iqfpsun481" path="res://Scenes/UI/spell_button.tscn" id="9_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://bgsey1lqeap2f" path="res://Assets/UI/Spells/blink.png" id="10_80cx4"]
 [ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/UI/Spells/lightning.png" id="11_80cx4"]
@@ -65,6 +66,7 @@ player = NodePath("../Player")
 position = Vector2(242, 119)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("9_boyg6")
 
 [node name="Blink" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
 offset_left = 11.000001
@@ -132,4 +134,19 @@ theme_override_fonts/font = ExtResource("6_ryrav")
 theme_override_font_sizes/font_size = 36
 metadata/_edit_use_anchors_ = true
 
+[node name="Floor_Number" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 28.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("6_ryrav")
+theme_override_font_sizes/font_size = 16
+text = "Floor: 1"
+
 [node name="Upgrade_Menu" parent="." instance=ExtResource("18_rvswv")]
+
+[connection signal="floor_number_changed" from="RoomGeneration" to="CanvasLayer" method="_on_room_generation_floor_number_changed"]
