@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kt0oouk43h1r"
-path="res://.godot/imported/Priest-Walk.png-e65eb3f9e37aab580a55fdfcf6ba7921.ctex"
+path="res://.godot/imported/Priest-Walk.png-28fd479046a95adc4bf9cbcdcf90c484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Priest/Priest/Priest-Walk.png"
-dest_files=["res://.godot/imported/Priest-Walk.png-e65eb3f9e37aab580a55fdfcf6ba7921.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Priest/Priest/Priest-Walk.png"
+dest_files=["res://.godot/imported/Priest-Walk.png-28fd479046a95adc4bf9cbcdcf90c484.ctex"]
 
 [params]
 

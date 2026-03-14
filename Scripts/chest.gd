@@ -27,9 +27,8 @@ func _ready() -> void:
 	label.visible = false
 
 func _process(_delta: float) -> void:
-	if player_near and Input.is_action_just_pressed("open") and chest_opened == false:
+	if player_near and Input.is_action_just_pressed("interact") and chest_opened == false:
 		open_chest()
-
 
 func _on_active_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

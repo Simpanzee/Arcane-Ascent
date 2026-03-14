@@ -8,7 +8,7 @@ script = ExtResource("1_ug0k1")
 
 [node name="MenuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_stptp")
-volume_db = -5.0
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
 parameters/looping = true

@@ -100,10 +100,10 @@ func _process(_delta: float) -> void:
 	
 	sprite.flip_h = mouse_dir.x < 0
 	
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("primary"):
 		start_cast(mouse_pos, mouse_dir)
 	
-	if Input.is_action_just_pressed("blink"):
+	if Input.is_action_just_pressed("ability_1"):
 		if blink_ready:
 			blink_ready = false
 			blink()
@@ -114,7 +114,7 @@ func _process(_delta: float) -> void:
 		else:
 			error.play()
 	
-	if Input.is_action_just_pressed("root"):
+	if Input.is_action_just_pressed("ability_2"):
 		if roots_ready:
 			roots_ready = false
 			cast_root()
@@ -125,7 +125,7 @@ func _process(_delta: float) -> void:
 		else:
 			error.play()
 		
-	if Input.is_action_just_pressed("lightning"):
+	if Input.is_action_just_pressed("ability_3"):
 		if lightning_ready:
 			lightning_ready = false
 			lightning_strike()

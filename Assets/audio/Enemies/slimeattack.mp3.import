@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bw11ffpamhfl1"
-path="res://.godot/imported/slimeattack.mp3-07d74c91745156dc009de34c9a251149.mp3str"
+path="res://.godot/imported/slimeattack.mp3-9d77b6e609f85055ab902227fcbfc795.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Enemies/slimeattack.mp3"
-dest_files=["res://.godot/imported/slimeattack.mp3-07d74c91745156dc009de34c9a251149.mp3str"]
+source_file="res://Assets/Audio/Enemies/slimeattack.mp3"
+dest_files=["res://.godot/imported/slimeattack.mp3-9d77b6e609f85055ab902227fcbfc795.mp3str"]
 
 [params]
 

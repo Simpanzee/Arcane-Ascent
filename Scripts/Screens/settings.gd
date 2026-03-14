@@ -3,11 +3,14 @@ extends Control
 var music = AudioServer.get_bus_index("Music")
 var sfx = AudioServer.get_bus_index("SFX")
 
+
 @onready var click = $Click
 @onready var hover = $Hover
 @onready var save_button = $Save
 @onready var music_slider = $MarginContainer/VBoxContainer/MusicSlider
 @onready var sfx_slider = $MarginContainer/VBoxContainer/SFXSlider
+@onready var input_menu = $CanvasLayer/InputSettings
+
 
 var original_settings = {
 	"music": 1.0,
@@ -19,9 +22,15 @@ var current_settings = {
 }
 
 func _ready():
-	_apply_settings(original_settings)
+	var loaded_audio = ConfigFileHandler.load_audio_settings()
+	original_settings = {
+		"music": loaded_audio.get("music_volume", 1.0),
+		"sfx": loaded_audio.get("sfx_volume", 1.0)
+	}
 	current_settings = original_settings.duplicate()
+	_apply_settings(original_settings)
 	save_button.visible = false
+	input_menu.visible = false
 
 func _apply_settings(settings: Dictionary) -> void:
 	music_slider.value = settings.get("music", 1.0)
@@ -47,7 +56,8 @@ func _on_save_pressed() -> void:
 	original_settings = current_settings.duplicate()
 	save_button.visible = false
 	await get_tree().create_timer(0.01).timeout
-	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
+	ConfigFileHandler.save_audio_setting("sfx_volume", sfx_slider.value)
+	ConfigFileHandler.save_audio_setting("music_volume", music_slider.value)
 
 func _on_return_pressed() -> void:
 	click.play()
@@ -59,4 +69,11 @@ func _on_return_mouse_entered() -> void:
 	hover.play()
 
 func _on_save_mouse_entered() -> void:
+	hover.play()
+
+func _on_keybinds_pressed() -> void:
+	click.play()
+	input_menu.visible = true
+
+func _on_keybinds_mouse_entered() -> void:
 	hover.play()

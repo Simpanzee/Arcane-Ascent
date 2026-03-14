@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://bj5dqntfo4qyn"]
+
+[ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="1_ee6dt"]
+[ext_resource type="Script" uid="uid://qdehgq01tkw7" path="res://Scripts/Screens/input_button.gd" id="1_qry0x"]
+[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/Menu/hover.mp3" id="3_t2lqj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bumm"]
+bg_color = Color(0, 0, 0, 0.392)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scu67"]
+bg_color = Color(1, 1, 1, 0.39215687)
+
+[node name="InputButton" type="Button"]
+custom_minimum_size = Vector2(0, 18)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bumm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_scu67")
+theme_override_styles/hover = SubResource("StyleBoxFlat_scu67")
+script = ExtResource("1_qry0x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("1_ee6dt")
+theme_override_font_sizes/font_size = 10
+text = "ACTION NAME"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("1_ee6dt")
+theme_override_font_sizes/font_size = 10
+text = "INPUT KEY"
+vertical_alignment = 1
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_t2lqj")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

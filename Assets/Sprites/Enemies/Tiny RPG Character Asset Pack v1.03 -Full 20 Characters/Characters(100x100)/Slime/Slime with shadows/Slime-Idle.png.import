@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctl7bgcnocw2m"
-path="res://.godot/imported/Slime-Idle.png-f5d41655e1ec2bb6c93155ace75e58c8.ctex"
+path="res://.godot/imported/Slime-Idle.png-490404dfdbbb115dc33786b4da6d6df5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Slime/Slime with shadows/Slime-Idle.png"
-dest_files=["res://.godot/imported/Slime-Idle.png-f5d41655e1ec2bb6c93155ace75e58c8.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Slime/Slime with shadows/Slime-Idle.png"
+dest_files=["res://.godot/imported/Slime-Idle.png-490404dfdbbb115dc33786b4da6d6df5.ctex"]
 
 [params]
 

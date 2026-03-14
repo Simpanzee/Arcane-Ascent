@@ -1,9 +1,276 @@
-[gd_scene format=3 uid="uid://bljg1ibpbefsr"]
+[gd_scene load_steps=17 format=3 uid="uid://bljg1ibpbefsr"]
 
-[node name="InoutSettings" type="Control"]
+[ext_resource type="Script" uid="uid://clavmpmffimh8" path="res://Scripts/Screens/input_settings.gd" id="1_blk88"]
+[ext_resource type="PackedScene" uid="uid://bj5dqntfo4qyn" path="res://Scenes/UI/input_button.tscn" id="2_sudnn"]
+[ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="3_sudnn"]
+[ext_resource type="AudioStream" uid="uid://cuktvdhto32ub" path="res://Assets/Audio/Menu/click.mp3" id="4_4gbk4"]
+[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/Menu/hover.mp3" id="5_g6301"]
+[ext_resource type="Texture2D" uid="uid://ccdxtc5xeglnm" path="res://Assets/Menu/Background/dark sky.png" id="6_lsq0o"]
+[ext_resource type="Texture2D" uid="uid://dfftlvr11lfsd" path="res://Assets/Menu/Background/moon.png" id="7_1r8jd"]
+[ext_resource type="Texture2D" uid="uid://bes1y3s05lag3" path="res://Assets/Menu/Background/dark castle.png" id="8_4gwow"]
+[ext_resource type="Shader" uid="uid://cpkv7hj1netgh" path="res://Assets/Menu/scroll.gdshader" id="9_385ck"]
+[ext_resource type="Texture2D" uid="uid://0r2bbgeekx7m" path="res://Assets/Menu/Background/mist.png" id="10_2t4lf"]
+[ext_resource type="Texture2D" uid="uid://briitdc4j0ep6" path="res://Assets/Menu/Background/dark forest.png" id="11_7x8sm"]
+[ext_resource type="Texture2D" uid="uid://dmqua70r2vg7t" path="res://Assets/Menu/Background/castle.png" id="12_o8s15"]
+[ext_resource type="Texture2D" uid="uid://4lwtr7fguso2" path="res://Assets/Menu/Background/pine1.png" id="13_hbpjn"]
+[ext_resource type="Texture2D" uid="uid://ceexqnskywk52" path="res://Assets/Menu/Background/pine 2.png" id="14_13ldb"]
+[ext_resource type="Texture2D" uid="uid://beac0svcshbya" path="res://Assets/Menu/Background/pine 3.png" id="15_1in1k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jaf52"]
+shader = ExtResource("9_385ck")
+
+[node name="InputSettings" type="Control"]
 layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_blk88")
+
+[node name="Sky" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("6_lsq0o")
+
+[node name="Moon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_1r8jd")
+
+[node name="Dark Castle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_4gwow")
+
+[node name="Mist" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jaf52")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_2t4lf")
+
+[node name="Dark Forest" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("11_7x8sm")
+flip_h = true
+
+[node name="Castle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_o8s15")
+
+[node name="Mist3" type="TextureRect" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_jaf52")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("10_2t4lf")
+flip_h = true
+
+[node name="Tree1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("13_hbpjn")
+
+[node name="Tree2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("14_13ldb")
+
+[node name="Tree3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -135.0
+offset_right = 400.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("15_1in1k")
+
+[node name="ColorRect" type="ColorRect" parent="Tree3"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.5176471)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -111.0
+offset_right = 197.0
+offset_bottom = 111.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionList" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputButton" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList" instance=ExtResource("2_sudnn")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_sudnn")
+text = "RESET TO DEFAULT"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="SaveButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.7137255, 0, 1)
+theme_override_fonts/font = ExtResource("3_sudnn")
+text = "EXIT AND SAVE"
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_4gbk4")
+bus = &"SFX"
+
+[node name="Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g6301")
+bus = &"SFX"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList/InputButton" to="." method="_on_input_button_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_mouse_entered"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/SaveButton" to="." method="_on_save_button_pressed"]

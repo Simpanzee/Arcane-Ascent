@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://54hmjndsbgj2"
-path="res://.godot/imported/Knight.png-7a2ad3a12b1f4516bef2cae8d49ed798.ctex"
+path="res://.godot/imported/Knight.png-b6453123b700c73a954da4d882f4aa9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight(Split Effects)/Knight.png"
-dest_files=["res://.godot/imported/Knight.png-7a2ad3a12b1f4516bef2cae8d49ed798.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight(Split Effects)/Knight.png"
+dest_files=["res://.godot/imported/Knight.png-b6453123b700c73a954da4d882f4aa9d.ctex"]
 
 [params]
 

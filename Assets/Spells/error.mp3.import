@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bnc33wiuqax08"
-path="res://.godot/imported/error.mp3-e453cf3ad7645ac49d5bc1a5ea8aaf45.mp3str"
+path="res://.godot/imported/error.mp3-7214ec3638cf2715601855055c18c03e.mp3str"
 
 [deps]
 
-source_file="res://Assets/spells/error.mp3"
-dest_files=["res://.godot/imported/error.mp3-e453cf3ad7645ac49d5bc1a5ea8aaf45.mp3str"]
+source_file="res://Assets/Spells/error.mp3"
+dest_files=["res://.godot/imported/error.mp3-7214ec3638cf2715601855055c18c03e.mp3str"]
 
 [params]
 
