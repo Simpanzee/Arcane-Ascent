@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://x4rbjsqcfvuo"]
 
 [ext_resource type="Script" uid="uid://can4vqe2t8tm" path="res://Scripts/Enemies/enemy.gd" id="1_613su"]
-[ext_resource type="Texture2D" uid="uid://ctesj1bf7ywfp" path="res://Assets/UI/healthbarUnder.png" id="2_x1rqp"]
-[ext_resource type="Texture2D" uid="uid://b0co41iglq3p8" path="res://Assets/UI/healthbarProgress.png" id="3_ubio8"]
+[ext_resource type="Texture2D" uid="uid://bj2niv5hrblv0" path="res://Assets/UI/HealthBars/tile049.png" id="2_ubio8"]
+[ext_resource type="Texture2D" uid="uid://prfpnw3o8u6g" path="res://Assets/UI/HealthBars/tile050.png" id="3_miwey"]
 [ext_resource type="Script" uid="uid://1bwno2ygcjmx" path="res://Scripts/Enemies/enemy_hp_bar.gd" id="4_ubio8"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
@@ -30,10 +30,14 @@ bus = &"SFX"
 
 [node name="Hp Bar" type="TextureProgressBar" parent="."]
 z_index = 99
-offset_right = 64.0
-offset_bottom = 10.0
-scale = Vector2(0.25, 0.25)
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 8.0
+scale = Vector2(0.5, 0.5)
 value = 100.0
-texture_under = ExtResource("2_x1rqp")
-texture_progress = ExtResource("3_ubio8")
+nine_patch_stretch = true
+stretch_margin_left = 10
+stretch_margin_right = 10
+texture_under = ExtResource("2_ubio8")
+texture_progress = ExtResource("3_miwey")
 script = ExtResource("4_ubio8")

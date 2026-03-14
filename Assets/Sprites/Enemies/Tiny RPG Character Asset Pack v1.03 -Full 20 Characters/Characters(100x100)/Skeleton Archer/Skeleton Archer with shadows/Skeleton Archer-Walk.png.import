@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pe1upbhj2g8j"
-path="res://.godot/imported/Skeleton Archer-Walk.png-348164db04f4f00f222f46c8c9a8389b.ctex"
+path="res://.godot/imported/Skeleton Archer-Walk.png-a070493a28eb93e2d0892265bca52e45.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer with shadows/Skeleton Archer-Walk.png"
-dest_files=["res://.godot/imported/Skeleton Archer-Walk.png-348164db04f4f00f222f46c8c9a8389b.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer with shadows/Skeleton Archer-Walk.png"
+dest_files=["res://.godot/imported/Skeleton Archer-Walk.png-a070493a28eb93e2d0892265bca52e45.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq15sdphekwvr"
-path="res://.godot/imported/Werebear-Attack01.png-b1e061c50a79ed9b48151b221ca2f04c.ctex"
+path="res://.godot/imported/Werebear-Attack01.png-e05ea666043c32e1dc3c0d635ebd1e5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werebear/Werebear with shadows/Werebear-Attack01.png"
-dest_files=["res://.godot/imported/Werebear-Attack01.png-b1e061c50a79ed9b48151b221ca2f04c.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werebear/Werebear with shadows/Werebear-Attack01.png"
+dest_files=["res://.godot/imported/Werebear-Attack01.png-e05ea666043c32e1dc3c0d635ebd1e5f.ctex"]
 
 [params]
 

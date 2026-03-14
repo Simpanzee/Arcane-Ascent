@@ -156,7 +156,6 @@ func take_damage(amount : int):
 	healthChanged.emit()
 	hurt.pitch_scale = randf_range(1, 1.4)
 	hurt.play()
-	print("Ouch! HP:", current_health)
 
 	if current_health <= 0:
 		if is_invulnerable:
@@ -370,7 +369,7 @@ func lighting_sound():
 		player.pitch_scale = randf_range(0.9, 1.2)
 		player.play()
 
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.6).timeout
 
 func start_invulnerability():
 	var blink_speed = 0.05
@@ -425,7 +424,6 @@ func die():
 	sprite.play("death")
 	await get_tree().create_timer(3).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/retry.tscn")
-	print("Player died")
 
 func apply_upgrade(upgrade : Upgrade):
 	upgrades.append(upgrade)

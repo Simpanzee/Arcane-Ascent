@@ -22,7 +22,7 @@ var gold_upgrade_pool = [
 ]
 
 func _ready() -> void:
-	loot_generator = preload("res://Scripts/Lootbox Generator/lootbox.gd").new()
+	loot_generator = preload("res://Scripts/LootboxGenerator/lootbox.gd").new()
 	sprite.play("default")
 
 	update_label_key()

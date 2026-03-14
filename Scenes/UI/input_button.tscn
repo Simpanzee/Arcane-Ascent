@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj5dqntfo4qyn"]
 
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="1_ee6dt"]
-[ext_resource type="Script" path="res://Scripts/Screens/input_button.gd" id="1_qry0x"]
-[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/Menu/hover.mp3" id="3_t2lqj"]
+[ext_resource type="Script" uid="uid://qdehgq01tkw7" path="res://Scripts/UI/input_button.gd" id="1_qry0x"]
+[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/UI/hover.mp3" id="3_t2lqj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bumm"]
 bg_color = Color(0, 0, 0, 0.392)

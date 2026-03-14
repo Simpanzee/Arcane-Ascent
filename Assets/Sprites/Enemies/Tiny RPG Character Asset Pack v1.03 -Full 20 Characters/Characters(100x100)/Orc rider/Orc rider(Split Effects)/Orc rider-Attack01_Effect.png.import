@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvlmgluapb7l8"
-path="res://.godot/imported/Orc rider-Attack01_Effect.png-79b3598f899bb28ffd20bfa671d87a9a.ctex"
+path="res://.godot/imported/Orc rider-Attack01_Effect.png-10433aff906a618b102cd5f32a63e915.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Orc rider/Orc rider(Split Effects)/Orc rider-Attack01_Effect.png"
-dest_files=["res://.godot/imported/Orc rider-Attack01_Effect.png-79b3598f899bb28ffd20bfa671d87a9a.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Orc rider/Orc rider(Split Effects)/Orc rider-Attack01_Effect.png"
+dest_files=["res://.godot/imported/Orc rider-Attack01_Effect.png-10433aff906a618b102cd5f32a63e915.ctex"]
 
 [params]
 

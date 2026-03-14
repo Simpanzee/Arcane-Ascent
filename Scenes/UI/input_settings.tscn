@@ -1,10 +1,10 @@
 [gd_scene load_steps=17 format=3 uid="uid://bljg1ibpbefsr"]
 
-[ext_resource type="Script" uid="uid://clavmpmffimh8" path="res://Scripts/Screens/input_settings.gd" id="1_blk88"]
+[ext_resource type="Script" uid="uid://clavmpmffimh8" path="res://Scripts/UI/input_settings.gd" id="1_blk88"]
 [ext_resource type="PackedScene" uid="uid://bj5dqntfo4qyn" path="res://Scenes/UI/input_button.tscn" id="2_sudnn"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="3_sudnn"]
-[ext_resource type="AudioStream" uid="uid://cuktvdhto32ub" path="res://Assets/Audio/Menu/click.mp3" id="4_4gbk4"]
-[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/Menu/hover.mp3" id="5_g6301"]
+[ext_resource type="AudioStream" uid="uid://cuktvdhto32ub" path="res://Assets/Audio/UI/click.mp3" id="4_4gbk4"]
+[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/UI/hover.mp3" id="5_g6301"]
 [ext_resource type="Texture2D" uid="uid://ccdxtc5xeglnm" path="res://Assets/Menu/Background/dark sky.png" id="6_lsq0o"]
 [ext_resource type="Texture2D" uid="uid://dfftlvr11lfsd" path="res://Assets/Menu/Background/moon.png" id="7_1r8jd"]
 [ext_resource type="Texture2D" uid="uid://bes1y3s05lag3" path="res://Assets/Menu/Background/dark castle.png" id="8_4gwow"]

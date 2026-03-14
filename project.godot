@@ -17,14 +17,14 @@ config/icon="res://icon.svg"
 
 [audio]
 
-buses/default_bus_layout="res://Assets/Audio/default_bus_layout.tres"
+buses/default_bus_layout="res://Assets/Audio/UI/default_bus_layout.tres"
 
 [autoload]
 
-GlobalSignals="*res://Scripts/Screens/global_signals.gd"
-MusicPlayer="*res://Assets/Audio/music_player.tscn"
+GlobalSignals="*res://Scripts/UI/global_signals.gd"
+MusicPlayer="*res://Assets/Audio/Music/music_player.tscn"
 ConfigFileHandler="*res://Scripts/ConfigFileHandler.gd"
-game_state="*res://Scripts/game_state.gd"
+game_state="*res://Scripts/Generation/game_state.gd"
 
 [display]
 

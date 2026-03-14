@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://be7qywn5dqf71"]
 
-[ext_resource type="Script" uid="uid://bboe4b5h3y6rw" path="res://Scripts/upgrade_card.gd" id="1_yvd15"]
+[ext_resource type="Script" uid="uid://bboe4b5h3y6rw" path="res://Scripts/Cards/upgrade_card.gd" id="1_yvd15"]
 [ext_resource type="Texture2D" uid="uid://btc86oyqwlej4" path="res://Assets/Cards/silver.png" id="2_i5unv"]
 [ext_resource type="FontFile" uid="uid://csteby7yfu6f1" path="res://Assets/Menu/OldeTome.ttf" id="3_djitu"]
 [ext_resource type="Texture2D" uid="uid://cy6fxf1kcro2v" path="res://Assets/Cards/shine/sheen__0000_sheen01.png" id="3_i01iw"]
@@ -15,9 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://c02j6hhfrsj6y" path="res://Assets/Cards/shine/sheen__0007_sheen08.png" id="10_v7gne"]
 [ext_resource type="Texture2D" uid="uid://cxh1sn16hajfd" path="res://Assets/Cards/shine/sheen__0008_sheen09.png" id="11_5d87c"]
 [ext_resource type="Texture2D" uid="uid://cocic2bxnhx5k" path="res://Assets/Cards/shine/sheen__0009_sheen010.png" id="12_6te5l"]
-[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/Player/wizard.png" id="13_f5kpg"]
+[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="13_f5kpg"]
 [ext_resource type="AudioStream" uid="uid://d14dq4ix02mqi" path="res://Assets/Audio/Cards/card.mp3" id="17_3hvv1"]
-[ext_resource type="AudioStream" uid="uid://b1vv7vluqirsi" path="res://Assets/Audio/Cards/upgrade.mp3" id="18_y037i"]
+[ext_resource type="AudioStream" uid="uid://b1vv7vluqirsi" path="res://Assets/Audio/UI/upgrade.mp3" id="18_y037i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyajd"]
 atlas = ExtResource("13_f5kpg")
