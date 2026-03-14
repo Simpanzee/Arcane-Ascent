@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bejck50dj55ti"
-path="res://.godot/imported/lightning1.mp3-6dc7e1ec28bbd7d2b30e4a71f83b88ae.mp3str"
+path="res://.godot/imported/lightning1.mp3-b72bced8c91a8cd68271e3e40bede030.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Spells/lightning1.mp3"
-dest_files=["res://.godot/imported/lightning1.mp3-6dc7e1ec28bbd7d2b30e4a71f83b88ae.mp3str"]
+source_file="res://Assets/Audio/Spells/lightning1.mp3"
+dest_files=["res://.godot/imported/lightning1.mp3-b72bced8c91a8cd68271e3e40bede030.mp3str"]
 
 [params]
 

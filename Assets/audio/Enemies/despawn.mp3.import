@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://84ihehmilmyx"
-path="res://.godot/imported/despawn.mp3-22afcba905080c8e95c5dc6ab9e426c3.mp3str"
+path="res://.godot/imported/despawn.mp3-3627a50374805b3ae08dfa01f1185a65.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Enemies/despawn.mp3"
-dest_files=["res://.godot/imported/despawn.mp3-22afcba905080c8e95c5dc6ab9e426c3.mp3str"]
+source_file="res://Assets/Audio/Enemies/despawn.mp3"
+dest_files=["res://.godot/imported/despawn.mp3-3627a50374805b3ae08dfa01f1185a65.mp3str"]
 
 [params]
 

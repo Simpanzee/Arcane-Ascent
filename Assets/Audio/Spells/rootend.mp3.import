@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://8w6cdnosvie8"
-path="res://.godot/imported/rootend.mp3-fb3d9fcac3e32be1f3a92c6172835ed9.mp3str"
+path="res://.godot/imported/rootend.mp3-3b5622c2efbfe5db720b48f35df33790.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/Spells/rootend.mp3"
-dest_files=["res://.godot/imported/rootend.mp3-fb3d9fcac3e32be1f3a92c6172835ed9.mp3str"]
+source_file="res://Assets/Audio/Spells/rootend.mp3"
+dest_files=["res://.godot/imported/rootend.mp3-3b5622c2efbfe5db720b48f35df33790.mp3str"]
 
 [params]
 

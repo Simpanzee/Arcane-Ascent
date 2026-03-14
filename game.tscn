@@ -148,5 +148,3 @@ theme_override_font_sizes/font_size = 16
 text = "Floor: 1"
 
 [node name="Upgrade_Menu" parent="." instance=ExtResource("18_rvswv")]
-
-[connection signal="floor_number_changed" from="RoomGeneration" to="CanvasLayer" method="_on_room_generation_floor_number_changed"]

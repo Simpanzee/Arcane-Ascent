@@ -1,7 +1,7 @@
 [gd_scene load_steps=65 format=3 uid="uid://dfuvckrqq83mq"]
 
 [ext_resource type="Script" uid="uid://dybpu6p8bu2tg" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/Player/wizard.png" id="1_v0iea"]
 [ext_resource type="AudioStream" uid="uid://iboux3g3i2ed" path="res://Assets/Audio/Spells/bullet.mp3" id="3_6t5aa"]
 [ext_resource type="AudioStream" uid="uid://7pqd7mc7dyvn" path="res://Assets/Audio/Player/walking.mp3" id="4_vgqql"]
 [ext_resource type="AudioStream" uid="uid://ctllrfac32emj" path="res://Assets/Audio/Spells/ultimate.mp3" id="5_fkybt"]
@@ -15,7 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bejck50dj55ti" path="res://Assets/Audio/Spells/lightning1.mp3" id="13_h4iuc"]
 [ext_resource type="AudioStream" uid="uid://cjg0dvj6nfnl4" path="res://Assets/Audio/Spells/lightning2.mp3" id="14_fd4e3"]
 [ext_resource type="AudioStream" uid="uid://jsqeg1d3cys" path="res://Assets/Audio/Spells/lightning3.mp3" id="15_qqcod"]
-[ext_resource type="AudioStream" uid="uid://bnc33wiuqax08" path="res://Assets/Spells/error.mp3" id="16_fd4e3"]
+[ext_resource type="AudioStream" uid="uid://bnc33wiuqax08" path="res://Assets/spells/error.mp3" id="16_fd4e3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v0iea"]
 radius = 8.0

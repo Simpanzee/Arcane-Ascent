@@ -16,8 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://cxh1sn16hajfd" path="res://Assets/Cards/shine/sheen__0008_sheen09.png" id="11_5d87c"]
 [ext_resource type="Texture2D" uid="uid://cocic2bxnhx5k" path="res://Assets/Cards/shine/sheen__0009_sheen010.png" id="12_6te5l"]
 [ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/Player/wizard.png" id="13_f5kpg"]
-[ext_resource type="AudioStream" uid="uid://d14dq4ix02mqi" path="res://Assets/audio/Cards/card.mp3" id="17_3hvv1"]
-[ext_resource type="AudioStream" uid="uid://b1vv7vluqirsi" path="res://Assets/audio/Cards/upgrade.mp3" id="18_y037i"]
+[ext_resource type="AudioStream" uid="uid://d14dq4ix02mqi" path="res://Assets/Audio/Cards/card.mp3" id="17_3hvv1"]
+[ext_resource type="AudioStream" uid="uid://b1vv7vluqirsi" path="res://Assets/Audio/Cards/upgrade.mp3" id="18_y037i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tyajd"]
 atlas = ExtResource("13_f5kpg")
