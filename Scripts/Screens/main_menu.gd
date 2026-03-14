@@ -16,6 +16,10 @@ var leaving := false
 
 func _ready() -> void:
 	sprite.play("default")
+	
+	ConfigFileHandler.apply_keybindings()
+	ConfigFileHandler.apply_audio_settings()
+	
 	MusicPlayer.play_menu()
 
 func _process(delta):

@@ -1,5 +1,7 @@
 extends Control
 
+signal keybind_changed
+
 @onready var input_button_scene = preload("res://Scenes/UI/input_button.tscn")
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 @onready var click = $Click
@@ -18,15 +20,21 @@ var input_actions = {
 	"ability_1" : "Ability 1",
 	"ability_2" : "Ability 2",
 	"ability_3" : "Ability 3",
-	"ultimate" : "Ultimate Ability"
+	"ultimate" : "Ultimate Ability",
+	"interact" : "Interact"
 }
 
 func _ready():
+	_load_keybindings_from_settings()
 	_create_action_list()
+	
+func _load_keybindings_from_settings():
+	var keybindings = ConfigFileHandler.load_keybindings()
+	for action in keybindings.keys():
+		InputMap.action_erase_events(action)
+		InputMap.action_add_event(action, keybindings[action])
 
 func _create_action_list():
-	InputMap.load_from_project_settings()
-
 	for item in action_list.get_children():
 		item.queue_free()
 
@@ -57,7 +65,6 @@ func _on_input_button_pressed(button, action):
 func _input(event):
 	if is_remapping:
 		if event is InputEventKey or (event is InputEventMouseButton and event.pressed):
-
 			if event is InputEventMouseButton and event.double_click:
 				event.double_click = false
 				
@@ -68,12 +75,12 @@ func _input(event):
 				action_to_remap = null
 				remapping_button = null
 				return
-
 			InputMap.action_erase_events(action_to_remap)
 			InputMap.action_add_event(action_to_remap, event)
 
 			_update_action_list(remapping_button, event)
-
+			keybind_changed.emit()
+			
 			is_remapping = false
 			action_to_remap = null
 			remapping_button = null
@@ -105,7 +112,9 @@ func _update_action_list(button, event):
 
 func _on_reset_button_pressed() -> void:
 	click.play()
+	InputMap.load_from_project_settings()
 	_create_action_list()
+	keybind_changed.emit()
 
 func _on_save_button_pressed() -> void:
 	click.play()

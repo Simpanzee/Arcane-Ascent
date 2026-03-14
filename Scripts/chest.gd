@@ -1,13 +1,12 @@
 extends StaticBody2D
 
-@onready var closed_sprite : Sprite2D = $closed
-@onready var open_sprite : Sprite2D = $open
-@onready var active_area : Area2D = $active_area
-@onready var label : Label = $Label
+@onready var sprite = $AnimatedSprite2D
+@onready var active_area: Area2D = $active_area
+@onready var label: Label = $Label
 
-var player_near : bool = false
-var chest_opened : bool = false
-var loot_generator : Node
+var player_near: bool = false
+var chest_opened: bool = false
+var loot_generator: Node
 
 var silver_upgrade_pool = [
 	preload("res://Scripts/Upgrades/resources/more_health.tres"),
@@ -22,36 +21,49 @@ var gold_upgrade_pool = [
 
 func _ready() -> void:
 	loot_generator = preload("res://Scripts/Lootbox Generator/lootbox.gd").new()
-	closed_sprite.visible = true
-	open_sprite.visible = false
+	sprite.play("default")
+
+	update_label_key()
 	label.visible = false
 
+func update_label_key():
+	var events = InputMap.action_get_events("interact")
+
+	if events.size() > 0:
+		var key = events[0].as_text().trim_suffix(" (Physical)")
+		label.text = "[" + key + "] Open"
+	else:
+		label.text = "[?] Open"
+
 func _process(_delta: float) -> void:
-	if player_near and Input.is_action_just_pressed("interact") and chest_opened == false:
+	if player_near and not chest_opened:
+		label.visible = true
+	else:
+		label.visible = false
+
+	if player_near and Input.is_action_just_pressed("interact") and not chest_opened:
 		open_chest()
 
 func _on_active_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_near = true
-		label.visible = true
-
 
 func _on_active_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		player_near = false
-		label.visible = false
-		
+
 func open_chest():
 	chest_opened = true
-	open_sprite.visible = true
-	closed_sprite.visible = false
+	label.visible = false
 	
+	sprite.play("open")
+	await get_tree().create_timer(1).timeout
+
 	var lootboxes = loot_generator.generate_loot(1, 1, 0.0, 1)
 	var lootbox = lootboxes[0]
 	var choices = pick_upgrades(lootbox)
 
 	get_tree().call_group("Upgrade_Menu", "open_selection", choices)
-
 
 func pick_upgrades(lootbox: Dictionary) -> Array:
 	var selected_upgrades : Array = []

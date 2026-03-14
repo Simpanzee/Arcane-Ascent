@@ -1,7 +1,7 @@
 extends TextureButton
 
-@export var cooldown : float = 5.0
-@export var key_text : String = ""
+@export var cooldown: float = 5.0
+@export var action_name: StringName
 
 @onready var bar = $TextureProgressBar
 @onready var timer = $Timer
@@ -12,12 +12,23 @@ extends TextureButton
 func _ready():
 	bar.max_value = cooldown
 	bar.value = 0
-	key_label.text = key_text
+	
+	update_key_label()
+	
 	time_label.visible = false
 	overlay.visible = false
 	bar.visible = false
+
 	if not timer.timeout.is_connected(_on_timer_timeout):
 		timer.timeout.connect(_on_timer_timeout)
+
+func update_key_label():
+	var events = InputMap.action_get_events(action_name)
+
+	if events.size() > 0:
+		key_label.text = events[0].as_text().trim_suffix(" (Physical)")
+	else:
+		key_label.text = ""
 
 func start_cooldown():
 	bar.max_value = cooldown

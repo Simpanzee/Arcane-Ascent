@@ -3,7 +3,6 @@ extends Control
 var music = AudioServer.get_bus_index("Music")
 var sfx = AudioServer.get_bus_index("SFX")
 
-
 @onready var click = $Click
 @onready var hover = $Hover
 @onready var save_button = $Save
@@ -23,6 +22,7 @@ var current_settings = {
 
 func _ready():
 	var loaded_audio = ConfigFileHandler.load_audio_settings()
+	input_menu.keybind_changed.connect(_on_keybind_changed)
 	original_settings = {
 		"music": loaded_audio.get("music_volume", 1.0),
 		"sfx": loaded_audio.get("sfx_volume", 1.0)
@@ -49,15 +49,21 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	_check_for_changes()
 
 func _check_for_changes() -> void:
-	save_button.visible = current_settings != original_settings
+	if current_settings != original_settings:
+		save_button.visible = true
 
 func _on_save_pressed() -> void:
 	click.play()
+
 	original_settings = current_settings.duplicate()
 	save_button.visible = false
+
 	await get_tree().create_timer(0.01).timeout
+
 	ConfigFileHandler.save_audio_setting("sfx_volume", sfx_slider.value)
 	ConfigFileHandler.save_audio_setting("music_volume", music_slider.value)
+
+	ConfigFileHandler.save_all_keybindings()
 
 func _on_return_pressed() -> void:
 	click.play()
@@ -77,3 +83,6 @@ func _on_keybinds_pressed() -> void:
 
 func _on_keybinds_mouse_entered() -> void:
 	hover.play()
+
+func _on_keybind_changed():
+	save_button.visible = true

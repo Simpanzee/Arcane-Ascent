@@ -1,7 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfltgtqy3450l"]
+[gd_scene load_steps=9 format=3 uid="uid://bfltgtqy3450l"]
 
 [ext_resource type="Script" uid="uid://1mssnbwnb6qn" path="res://Scripts/chest.gd" id="1_cjfl1"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_lyb87"]
+[ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="3_bagqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjfl1"]
+atlas = ExtResource("1_lyb87")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bagqn"]
+atlas = ExtResource("1_lyb87")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmguq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjfl1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjfl1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bagqn")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cjfl1"]
 size = Vector2(16, 14)
@@ -13,16 +44,9 @@ radius = 31.06445
 collision_mask = 3
 script = ExtResource("1_cjfl1")
 
-[node name="closed" type="Sprite2D" parent="."]
-texture = ExtResource("1_lyb87")
-region_enabled = true
-region_rect = Rect2(96, 33, 16, 14)
-
-[node name="open" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_lyb87")
-region_enabled = true
-region_rect = Rect2(96, 50, 16, 13)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pmguq")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_cjfl1")
@@ -35,12 +59,14 @@ shape = SubResource("CircleShape2D_bagqn")
 
 [node name="Label" type="Label" parent="."]
 z_index = 99
-offset_left = -27.0
+offset_left = -29.0
 offset_top = -22.0
-offset_right = 26.3
+offset_right = 30.0
 offset_bottom = -9.0
-theme_override_font_sizes/font_size = 9
-text = "\"O\" to Open"
+theme_override_fonts/font = ExtResource("3_bagqn")
+theme_override_font_sizes/font_size = 12
+text = "[O] Open"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="active_area" to="." method="_on_active_area_body_entered"]
 [connection signal="body_exited" from="active_area" to="." method="_on_active_area_body_exited"]

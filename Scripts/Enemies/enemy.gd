@@ -76,7 +76,6 @@ func _physics_process(_delta: float) -> void:
 	sprite.play("move")
 	move_and_slide()
 
-
 func _try_attack() -> bool:
 	if state == "dead" or player.is_dead:
 		return false
@@ -89,7 +88,6 @@ func _try_attack() -> bool:
 	velocity = Vector2.ZERO
 	
 	return true
-
 
 func get_separation_force() -> Vector2:
 	var force := Vector2.ZERO
@@ -106,7 +104,6 @@ func get_separation_force() -> Vector2:
 			force += push_dir * strength
 			
 	return force
-
 
 func take_damage(amount : int):
 	if is_active == false:
