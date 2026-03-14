@@ -15,6 +15,8 @@ func apply(player):
 			player.max_health += 3
 		"Arcane+":
 			player.main_attack_damage += 1
+		"Arcane++":
+			player.main_attack_damage += 3
 		"Agility+":
 			player.move_speed += 10
 		"Agility++":

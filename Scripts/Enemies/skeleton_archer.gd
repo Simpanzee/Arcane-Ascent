@@ -15,6 +15,8 @@ func _ready() -> void:
 	attack_range = 130
 	attack_rate = 2.5
 	
+	apply_modifiers()
+	
 	hurt_pitch = [0.5, 2]
 	death_pitch = [0.5, 2]
 	despawn_pitch = [0.8, 1.2]
@@ -72,6 +74,7 @@ func _try_attack():
 	attack.play()
 	
 	var arrow = arrow_scene.instantiate()
+	arrow.damage = attack_damage
 	arrow.global_position = global_position
 	arrow.direction = player_direction
 	get_tree().current_scene.add_child(arrow)

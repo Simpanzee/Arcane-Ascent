@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b1vv7vluqirsi"
-path="res://.godot/imported/upgrade.mp3-af27b3c230055065523426d9824348ae.mp3str"
+path="res://.godot/imported/upgrade.mp3-65514c93da1686494b62398fbe3a4f0e.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Cards/upgrade.mp3"
-dest_files=["res://.godot/imported/upgrade.mp3-af27b3c230055065523426d9824348ae.mp3str"]
+source_file="res://Assets/audio/Cards/upgrade.mp3"
+dest_files=["res://.godot/imported/upgrade.mp3-65514c93da1686494b62398fbe3a4f0e.mp3str"]
 
 [params]
 

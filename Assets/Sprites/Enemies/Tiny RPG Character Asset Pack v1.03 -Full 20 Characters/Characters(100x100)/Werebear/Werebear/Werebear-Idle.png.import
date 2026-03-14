@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq6rp0kmgjh8a"
-path="res://.godot/imported/Werebear-Idle.png-1be03d8aaca1e507836a101f1a1712c2.ctex"
+path="res://.godot/imported/Werebear-Idle.png-da27bcf91e3af5d7570b393be5a9e088.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werebear/Werebear/Werebear-Idle.png"
-dest_files=["res://.godot/imported/Werebear-Idle.png-1be03d8aaca1e507836a101f1a1712c2.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werebear/Werebear/Werebear-Idle.png"
+dest_files=["res://.godot/imported/Werebear-Idle.png-da27bcf91e3af5d7570b393be5a9e088.ctex"]
 
 [params]
 

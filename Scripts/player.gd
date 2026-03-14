@@ -398,6 +398,7 @@ func stop_all_sounds():
 	hurt.stop()
 
 func die():	
+	game_state.reset()
 	is_dead = true
 	is_casting = true
 	

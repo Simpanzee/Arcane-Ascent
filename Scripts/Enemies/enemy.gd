@@ -32,6 +32,8 @@ var player_distance : float
 var state : String = "move"
 var speed_multiplier : float = 1.0
 
+var floor_num = game_state.floor_number
+
 signal died
 signal healthChanged
 
@@ -164,3 +166,9 @@ func die():
    
 	died.emit()
 	queue_free()
+	
+func apply_modifiers():
+	cur_hp = int(cur_hp * pow(1.1, floor(floor_num / 4.0)) + floor(floor_num / 2.0))
+	max_hp = int(max_hp * pow(1.1, floor(floor_num / 4.0)) + floor(floor_num / 2.0))
+	
+	attack_damage = int(attack_damage * pow(1.1, floor(floor_num / 4.0)) + floor(floor_num / 3.0))

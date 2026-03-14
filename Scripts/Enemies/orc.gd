@@ -17,6 +17,8 @@ func _ready() -> void:
 	attack_range = 30
 	attack_rate = 1.5
 	
+	apply_modifiers()
+	
 	hurt_pitch = [0.5, 0.8]
 	death_pitch = [0.8, 1.2]
 	despawn_pitch = [0.8, 1.2]

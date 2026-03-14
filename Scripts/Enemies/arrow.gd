@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var base_speed : float = 200
-@export var damage : int = 1
+var damage : int
 
 var direction: Vector2
 var is_traveling: bool = false

@@ -26,11 +26,13 @@ var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
 var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
 var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton_archer.tscn")
 
-var enemies_count : int = randi_range(6, 10)
 var room_cleared : bool = false
 var is_first_room : bool = false
 
+var enemies_count : int
+
 func _ready() -> void:
+	determine_enemies_count()
 	initial_state()
 	if is_first_room:
 		var chest = chest_scene.instantiate()
@@ -72,6 +74,27 @@ func player_spawn(player : CharacterBody2D):
 func player_enter(_player : CharacterBody2D):
 	pass
 	
+	
+func determine_enemies_count():
+	if game_state.floor_number == 1:
+		enemies_count = randi_range(4, 6)
+	elif game_state.floor_number <= 3:
+		enemies_count = randi_range(5, 9)
+	elif game_state.floor_number <= 5:
+		enemies_count = randi_range(6, 12)
+	elif game_state.floor_number <= 7:
+		enemies_count = randi_range(9, 15)
+	elif game_state.floor_number <= 10:
+		enemies_count = randi_range(14, 20)
+	elif game_state.floor_number <= 15:
+		enemies_count = randi_range(18, 25)
+	elif game_state.floor_number <= 20:
+		enemies_count = randi_range(24, 30)
+	elif game_state.floor_number <= 30:
+		enemies_count = randi_range(28, 35)
+	else:
+		enemies_count = randi_range(30, 40)
+
 func spawn_enemies():
 	var shapes := []
 	for child in spawn_zone.get_children():

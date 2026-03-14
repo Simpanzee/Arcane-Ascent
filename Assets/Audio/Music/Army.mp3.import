@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://buevryx738g45"
-path="res://.godot/imported/Army.mp3-485c3c13abfe3f24cbce14ec769dd143.mp3str"
+path="res://.godot/imported/Army.mp3-cf5a043634658bd2c9f8fcc3b5acb83e.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Music/Army.mp3"
-dest_files=["res://.godot/imported/Army.mp3-485c3c13abfe3f24cbce14ec769dd143.mp3str"]
+source_file="res://Assets/audio/Music/Army.mp3"
+dest_files=["res://.godot/imported/Army.mp3-cf5a043634658bd2c9f8fcc3b5acb83e.mp3str"]
 
 [params]
 

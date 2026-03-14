@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://crwhid5yg0wji"
-path="res://.godot/imported/rootstart.mp3-a74ee6d19c4390ab3f6d51104181c8ee.mp3str"
+path="res://.godot/imported/rootstart.mp3-63b830209210f35b0e69c2a66682ac0d.mp3str"
 
 [deps]
 
-source_file="res://Assets/Audio/Spells/rootstart.mp3"
-dest_files=["res://.godot/imported/rootstart.mp3-a74ee6d19c4390ab3f6d51104181c8ee.mp3str"]
+source_file="res://Assets/audio/Spells/rootstart.mp3"
+dest_files=["res://.godot/imported/rootstart.mp3-63b830209210f35b0e69c2a66682ac0d.mp3str"]
 
 [params]
 

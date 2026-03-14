@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfeeqt8a0qfbc"
-path="res://.godot/imported/Knight-Walk.png-30f992c80b17eac21e3261155db2a74e.ctex"
+path="res://.godot/imported/Knight-Walk.png-df6b9200afa081342f21cbfcc73cfa5f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight with shadows/Knight-Walk.png"
-dest_files=["res://.godot/imported/Knight-Walk.png-30f992c80b17eac21e3261155db2a74e.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Knight/Knight with shadows/Knight-Walk.png"
+dest_files=["res://.godot/imported/Knight-Walk.png-df6b9200afa081342f21cbfcc73cfa5f.ctex"]
 
 [params]
 
