@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://bvj47pfw8y511"]
+
+[ext_resource type="Texture2D" uid="uid://c3byjlyxn1j3a" path="res://Assets/Cards/health.png" id="1_cgn4x"]
+[ext_resource type="Script" uid="uid://nys3sc3cy45a" path="res://Scripts/Upgrades/upgrade.gd" id="1_eki8y"]
+
+[resource]
+script = ExtResource("1_eki8y")
+name = "Vigor+"
+description = "+1 Health"
+icon = ExtResource("1_cgn4x")
+metadata/_custom_type_script = "uid://nys3sc3cy45a"

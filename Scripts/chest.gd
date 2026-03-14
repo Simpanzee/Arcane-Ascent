@@ -3,20 +3,21 @@ extends StaticBody2D
 @onready var sprite = $AnimatedSprite2D
 @onready var active_area: Area2D = $active_area
 @onready var label: Label = $Label
+@onready var open = $Open
 
 var player_near: bool = false
 var chest_opened: bool = false
 var loot_generator: Node
 
 var silver_upgrade_pool = [
-	preload("res://Scripts/Upgrades/resources/more_health.tres"),
-	preload("res://Scripts/Upgrades/resources/more_damage.tres"),
-	preload("res://Scripts/Upgrades/resources/more_speed.tres")
+	preload("res://Scripts/Upgrades/resources/vigor+.tres"),
+	preload("res://Scripts/Upgrades/resources/arcane+.tres"),
+	preload("res://Scripts/Upgrades/resources/agility+.tres")
 ]
 
 var gold_upgrade_pool = [
-	preload("res://Scripts/Upgrades/resources/even_more_health.tres"),
-	preload("res://Scripts/Upgrades/resources/even_more_speed.tres")
+	preload("res://Scripts/Upgrades/resources/vigor++.tres"),
+	preload("res://Scripts/Upgrades/resources/agility++.tres")
 ]
 
 func _ready() -> void:
@@ -55,7 +56,8 @@ func _on_active_area_body_exited(body: Node2D) -> void:
 func open_chest():
 	chest_opened = true
 	label.visible = false
-	
+	open.play()
+	await get_tree().create_timer(0.5).timeout
 	sprite.play("open")
 	await get_tree().create_timer(1).timeout
 
@@ -82,7 +84,8 @@ func pick_upgrades(lootbox: Dictionary) -> Array:
 			if tier_pool.size() == 0:
 				break  # No more upgrades of this tier left
 			var index = randi() % tier_pool.size()
-			selected_upgrades.append(tier_pool[index])
-			tier_pool.remove_at(index)  # prevent duplicates
+			var upgrade = tier_pool[index]
+			selected_upgrades.append({"upgrade": upgrade, "tier": tier})
+			tier_pool.remove_at(index)
 
 	return selected_upgrades

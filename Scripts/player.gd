@@ -27,6 +27,7 @@ signal healthChanged
 @onready var lightning_sound3 = $Lightning3
 
 @onready var error = $Error
+var can_input : bool = true
 
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
@@ -48,7 +49,7 @@ var lightning_cd : float = 10.0
 
 @onready var ult_ui = $"../CanvasLayer/Ultamite"
 var ult_ready : bool = true
-var ult_cd : float = 90.0
+var ult_cd : float = 60.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -63,7 +64,7 @@ var is_ulting : bool = false
 var upgrades : Array[Upgrade] = []
 
 func _physics_process(_delta: float) -> void:
-	if is_dead:
+	if is_dead or not can_input:
 		velocity = Vector2.ZERO
 		return
 	
@@ -89,7 +90,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	if is_dead or is_casting:
+	if is_dead or is_casting or not can_input:
 		return
 		
 	if is_casting:

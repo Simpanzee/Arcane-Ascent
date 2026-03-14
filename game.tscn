@@ -14,9 +14,9 @@
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
 [ext_resource type="Script" uid="uid://e7kyjwkrlsll" path="res://Scripts/Screens/main_UI.gd" id="9_boyg6"]
 [ext_resource type="PackedScene" uid="uid://d08iqfpsun481" path="res://Scenes/UI/spell_button.tscn" id="9_lc2xo"]
-[ext_resource type="Texture2D" uid="uid://bgsey1lqeap2f" path="res://Assets/UI/Spells/blink.png" id="10_80cx4"]
+[ext_resource type="Texture2D" uid="uid://v211u014ecx0" path="res://Assets/UI/Spells/blink.png" id="10_80cx4"]
 [ext_resource type="Texture2D" uid="uid://hbrm1sgou0h6" path="res://Assets/UI/Spells/lightning.png" id="11_80cx4"]
-[ext_resource type="Texture2D" uid="uid://ek5ydj51t81p" path="res://Assets/UI/Spells/roots.png" id="11_e8heu"]
+[ext_resource type="Texture2D" uid="uid://b0r7tnttks8l6" path="res://Assets/UI/Spells/roots.png" id="11_e8heu"]
 [ext_resource type="Texture2D" uid="uid://dxw2vdhxer0g0" path="res://Assets/UI/Spells/ultamite.png" id="13_e8heu"]
 [ext_resource type="PackedScene" uid="uid://dlci6dprhhhpp" path="res://Scenes/UI/upgrade_menu.tscn" id="18_rvswv"]
 

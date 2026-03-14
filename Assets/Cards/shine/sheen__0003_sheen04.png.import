@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v211u014ecx0"
-path="res://.godot/imported/blink.png-584b3a3902d017d03db0ed367937bdc8.ctex"
+uid="uid://djcma5ege1sli"
+path="res://.godot/imported/sheen__0003_sheen04.png-fc64c7cbb51e3634f93353685196d004.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/Spells/blink.png"
-dest_files=["res://.godot/imported/blink.png-584b3a3902d017d03db0ed367937bdc8.ctex"]
+source_file="res://Assets/Cards/shine/sheen__0003_sheen04.png"
+dest_files=["res://.godot/imported/sheen__0003_sheen04.png-fc64c7cbb51e3634f93353685196d004.ctex"]
 
 [params]
 

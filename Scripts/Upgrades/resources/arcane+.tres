@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://bxqeai5sdl308"]
+
+[ext_resource type="Texture2D" uid="uid://bw52h87mg8rn0" path="res://Assets/Cards/sword.png" id="1_anq1v"]
+[ext_resource type="Script" uid="uid://nys3sc3cy45a" path="res://Scripts/Upgrades/upgrade.gd" id="1_dgkpi"]
+
+[resource]
+script = ExtResource("1_dgkpi")
+name = "Arcane+"
+description = "+1 Damage"
+icon = ExtResource("1_anq1v")
+metadata/_custom_type_script = "uid://nys3sc3cy45a"

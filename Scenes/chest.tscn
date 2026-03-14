@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfltgtqy3450l"]
+[gd_scene load_steps=10 format=3 uid="uid://bfltgtqy3450l"]
 
 [ext_resource type="Script" uid="uid://1mssnbwnb6qn" path="res://Scripts/chest.gd" id="1_cjfl1"]
 [ext_resource type="Texture2D" uid="uid://bbsffafftxeg1" path="res://Assets/dungeon_tileset.png" id="1_lyb87"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="3_bagqn"]
+[ext_resource type="AudioStream" uid="uid://oaychjgnv4hm" path="res://Assets/Audio/Player/chest.mp3" id="4_pmguq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cjfl1"]
 atlas = ExtResource("1_lyb87")
@@ -67,6 +68,10 @@ theme_override_fonts/font = ExtResource("3_bagqn")
 theme_override_font_sizes/font_size = 12
 text = "[O] Open"
 horizontal_alignment = 1
+
+[node name="Open" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pmguq")
+bus = &"SFX"
 
 [connection signal="body_entered" from="active_area" to="." method="_on_active_area_body_entered"]
 [connection signal="body_exited" from="active_area" to="." method="_on_active_area_body_exited"]
