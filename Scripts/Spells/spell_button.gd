@@ -41,6 +41,11 @@ func start_cooldown():
 	disabled = true
 
 func _process(_delta):
+	if not game_state.in_combat:
+		timer.paused = true
+	else:
+		timer.paused = false
+		
 	if timer.time_left > 0:
 		bar.value = timer.time_left
 		time_label.text = str(snapped(timer.time_left, 0.1))

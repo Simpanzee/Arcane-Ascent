@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=3 format=3 uid="uid://gu6jbek82g25"]
+
+[ext_resource type="Texture2D" uid="uid://cdv5607b8cbh0" path="res://Assets/Cards/fullheal.png" id="1_rstyo"]
+[ext_resource type="Script" uid="uid://nys3sc3cy45a" path="res://Scripts/Upgrades/upgrade.gd" id="2_h41ej"]
+
+[resource]
+script = ExtResource("2_h41ej")
+name = "Full Restore"
+description = "Full Health"
+icon = ExtResource("1_rstyo")
+metadata/_custom_type_script = "uid://nys3sc3cy45a"

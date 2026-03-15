@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cv61m3r6pw6tm"]
+[gd_scene load_steps=70 format=3 uid="uid://cv61m3r6pw6tm"]
 
 [ext_resource type="Script" uid="uid://dyo48eg3w2ei8" path="res://Scripts/Generation/room_generation.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dfuvckrqq83mq" path="res://Scenes/player.tscn" id="2_e2o6t"]
@@ -10,14 +10,17 @@
 [ext_resource type="AudioStream" uid="uid://cbka1esu4obe0" path="res://Assets/Audio/Music/TheSeven.mp3" id="5_215e1"]
 [ext_resource type="AudioStream" uid="uid://c645xcr17yart" path="res://Assets/Audio/Music/Wicked.mp3" id="6_7sc4i"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
-[ext_resource type="AudioStream" uid="uid://cm3rc8dpfgu5x" path="res://Assets/Audio/open.ogg" id="7_xa8c5"]
-[ext_resource type="AudioStream" uid="uid://ce6adwna6m06q" path="res://Assets/Audio/close.ogg" id="8_5b14r"]
+[ext_resource type="AudioStream" uid="uid://cke1qv60hwxpw" path="res://Assets/Audio/Music/Fracture.mp3" id="7_i2p71"]
+[ext_resource type="AudioStream" uid="uid://xmf8bssdq8pr" path="res://Assets/Audio/Music/UpandFight.mp3" id="8_xa8c5"]
+[ext_resource type="AudioStream" uid="uid://bi1866tps7kvr" path="res://Assets/Audio/Music/Mighty.mp3" id="9_36jdj"]
 [ext_resource type="Script" uid="uid://e7kyjwkrlsll" path="res://Scripts/UI/main_UI.gd" id="9_boyg6"]
 [ext_resource type="PackedScene" uid="uid://d08iqfpsun481" path="res://Scenes/UI/spell_button.tscn" id="9_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://v211u014ecx0" path="res://Assets/UI/Spells/blink.png" id="10_80cx4"]
+[ext_resource type="AudioStream" uid="uid://dqolghjv7fjy6" path="res://Assets/Audio/Music/Oscillation.mp3" id="10_xfvwf"]
 [ext_resource type="Texture2D" uid="uid://u7lvggxa5xff" path="res://Assets/UI/Spells/lightning.png" id="11_80cx4"]
+[ext_resource type="AudioStream" uid="uid://cwvxbbun1qds3" path="res://Assets/Audio/Music/SpareNone.mp3" id="11_dhpj7"]
 [ext_resource type="Texture2D" uid="uid://b0r7tnttks8l6" path="res://Assets/UI/Spells/roots.png" id="11_e8heu"]
-[ext_resource type="Texture2D" uid="uid://dxw2vdhxer0g0" path="res://Assets/UI/Spells/ultamite.png" id="13_e8heu"]
+[ext_resource type="Texture2D" uid="uid://d3pfnifmuppo5" path="res://Assets/UI/Spells/ultimate.png" id="14_vaj68"]
 [ext_resource type="Texture2D" uid="uid://bc8q52sj2mn0e" path="res://Assets/UI/HealthBars/tile000.png" id="15_boyg6"]
 [ext_resource type="Texture2D" uid="uid://denwwd422xrr0" path="res://Assets/UI/HealthBars/tile001.png" id="16_e36ub"]
 [ext_resource type="PackedScene" uid="uid://dlci6dprhhhpp" path="res://Scenes/UI/upgrade_menu.tscn" id="18_rvswv"]
@@ -528,13 +531,35 @@ stream = ExtResource("6_7sc4i")
 bus = &"Music"
 parameters/looping = true
 
-[node name="Open" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_xa8c5")
-bus = &"SFX"
+[node name="BattleMusic7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_i2p71")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true
 
-[node name="Close" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_5b14r")
-bus = &"SFX"
+[node name="BattleMusic8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xa8c5")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="BattleMusic9" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_36jdj")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="BattleMusic10" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xfvwf")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="BattleMusic11" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_dhpj7")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true
 
 [node name="RoomGeneration" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("1_e2o6t")
@@ -552,6 +577,7 @@ offset_top = 231.00002
 offset_right = 51.0
 offset_bottom = 271.0
 texture_normal = ExtResource("10_80cx4")
+cooldown = 7.0
 action_name = &"ability_1"
 
 [node name="Roots" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
@@ -560,7 +586,7 @@ offset_top = 231.00002
 offset_right = 90.0
 offset_bottom = 271.0
 texture_normal = ExtResource("11_e8heu")
-cooldown = 8.0
+cooldown = 12.0
 action_name = &"ability_2"
 
 [node name="Lightning" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
@@ -569,17 +595,16 @@ offset_top = 231.00002
 offset_right = 129.0
 offset_bottom = 271.0
 texture_normal = ExtResource("11_80cx4")
-cooldown = 10.0
+cooldown = 15.0
 action_name = &"ability_3"
 
 [node name="Ultamite" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
-offset_left = 408.00003
-offset_top = 201.0
-offset_right = 448.6667
-offset_bottom = 241.66666
-scale = Vector2(1.5, 1.5)
-texture_normal = ExtResource("13_e8heu")
-cooldown = 60.0
+offset_left = 128.0
+offset_top = 231.0
+offset_right = 168.66666
+offset_bottom = 271.6667
+texture_normal = ExtResource("14_vaj68")
+cooldown = 80.0
 action_name = &"ultimate"
 
 [node name="PlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer"]
@@ -656,5 +681,13 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_ryrav")
 theme_override_font_sizes/font_size = 9
 text = "FLOOR: 1"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [node name="Upgrade_Menu" parent="." instance=ExtResource("18_rvswv")]

@@ -21,3 +21,7 @@ func apply(player):
 			player.move_speed += 10
 		"Agility++":
 			player.move_speed += 30
+		"Restore":
+			player.current_health = min(player.current_health + 3, player.max_health)
+		"Full Restore":
+			player.current_health = player.max_health

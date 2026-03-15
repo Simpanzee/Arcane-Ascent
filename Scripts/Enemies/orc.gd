@@ -125,6 +125,7 @@ func _on_attack2_hitbox_body_entered(body):
 			body.take_damage(attack_damage)
 		else:
 			critical.play()
+			_apply_attack_effects(body, 2.0)
 			camera.shake(10)
 			var dynamic_damage = body.current_health - 1
 			body.take_damage(dynamic_damage)

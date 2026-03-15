@@ -1,5 +1,6 @@
 extends Node
 
+var in_combat : bool = false
 var floor_number : int = 1
 signal floor_number_changed(num : int)
 

@@ -28,7 +28,7 @@ func _ready():
 	enable_interaction()
 
 func enable_interaction():
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1.5).timeout
 	interactable = true
 	mouse_filter = Control.MOUSE_FILTER_STOP
 

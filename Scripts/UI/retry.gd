@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var click = $Click
 @onready var hover = $Hover
+@onready var dead = $Dead
+
+func _ready():
+	dead.play()
 
 func _on_retry_pressed() -> void:
 	click.play()

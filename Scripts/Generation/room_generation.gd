@@ -10,16 +10,17 @@ class RoomData:
 
 @export var map_size : int = 7
 @export var rooms_to_generate : int = randi_range(4,10)
-
 @onready var battle_music1 : AudioStreamPlayer = $"../BattleMusic1"
 @onready var battle_music2 : AudioStreamPlayer = $"../BattleMusic2"
 @onready var battle_music3 : AudioStreamPlayer = $"../BattleMusic3"
 @onready var battle_music4 : AudioStreamPlayer = $"../BattleMusic4"
 @onready var battle_music5 : AudioStreamPlayer = $"../BattleMusic5"
 @onready var battle_music6 : AudioStreamPlayer = $"../BattleMusic6"
-@onready var open : AudioStreamPlayer = $"../Open"
-@onready var close : AudioStreamPlayer = $"../Close"
-
+@onready var battle_music7 : AudioStreamPlayer = $"../BattleMusic7"
+@onready var battle_music8 : AudioStreamPlayer = $"../BattleMusic8"
+@onready var battle_music9 : AudioStreamPlayer = $"../BattleMusic9"
+@onready var battle_music10 : AudioStreamPlayer = $"../BattleMusic10"
+@onready var battle_music11 : AudioStreamPlayer = $"../BattleMusic11"
 var music_tracks : Array[AudioStreamPlayer]
 var current_music : AudioStreamPlayer
 
@@ -46,7 +47,7 @@ var end_room_scene : PackedScene = preload("res://Scenes/Rooms/end_room.tscn")
 @export var player : CharacterBody2D
 	
 func _ready() -> void:
-	music_tracks = [battle_music1, battle_music2, battle_music3, battle_music4, battle_music5, battle_music6]
+	music_tracks = [battle_music1, battle_music2, battle_music3, battle_music4, battle_music5, battle_music6, battle_music7, battle_music8, battle_music9, battle_music10, battle_music11]
 	current_music = music_tracks.pick_random()
 	current_music.play()
 	_generate()
@@ -159,18 +160,16 @@ func _get_opposite(dir : Vector2) -> Vector2:
 	return -dir
 	
 func _on_room_template_open_other_rooms() -> void:
+	game_state.in_combat = false
 	for room in rooms:
 		if room.room_cleared == false:
 			room.open_all_doors()
-	if open:
-		open.play()
 
 func _on_room_template_close_other_rooms() -> void:
+	game_state.in_combat = true
 	for room in rooms:
 		if room.room_cleared == false:
 			room.close_all_doors()
-	if close:
-		close.play()
 			
 func _on_new_floor() -> void:
 	game_state.next_floor()

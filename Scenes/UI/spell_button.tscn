@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://becyj55bdqxmn" path="res://Scripts/Spells/spell_button.gd" id="1_ougmo"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="2_17les"]
 [ext_resource type="Texture2D" uid="uid://btope6hkkrm24" path="res://Assets/Spells/cooldown.png" id="2_ougmo"]
-[ext_resource type="AudioStream" uid="uid://e6dopepbd5kp" path="res://Assets/Audio/Spells/frostbite.ogg" id="4_lvnxr"]
+[ext_resource type="AudioStream" uid="uid://bxe124msm4bwc" path="res://Assets/Audio/Spells/ready.mp3" id="4_8qbdq"]
 
 [node name="SpellButton" type="TextureButton"]
 offset_right = 40.0
@@ -66,6 +66,6 @@ horizontal_alignment = 2
 [node name="Timer" type="Timer" parent="."]
 
 [node name="UltReady" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_lvnxr")
-volume_db = 5.0
+stream = ExtResource("4_8qbdq")
+volume_db = 3.0
 bus = &"SFX"

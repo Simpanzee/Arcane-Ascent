@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://dm2okbqmi7ed6"]
+[gd_scene load_steps=14 format=4 uid="uid://dm2okbqmi7ed6"]
 
 [ext_resource type="Script" uid="uid://bf73axfhlflwu" path="res://Scripts/UI/retry.gd" id="1_vw84n"]
 [ext_resource type="FontFile" uid="uid://csteby7yfu6f1" path="res://Assets/Menu/OldeTome.ttf" id="2_6verv"]
 [ext_resource type="Theme" path="res://Assets/Menu/skwdShdwlssBrdrdRdTpLftRdBttn.theme" id="2_7n2l4"]
 [ext_resource type="AudioStream" uid="uid://cuktvdhto32ub" path="res://Assets/Audio/UI/click.mp3" id="4_cmnxw"]
 [ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/UI/hover.mp3" id="5_jk6mc"]
+[ext_resource type="AudioStream" uid="uid://cnwaog2kvm0qd" path="res://Assets/Audio/Music/dead.mp3" id="5_swl52"]
 
 [sub_resource type="Image" id="Image_cp0ys"]
 data = {
@@ -357,6 +358,11 @@ text = "MENU
 stream = ExtResource("4_cmnxw")
 bus = &"SFX"
 
+[node name="Dead" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_swl52")
+volume_db = 5.0
+bus = &"Music"
+
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_jk6mc")
 bus = &"SFX"
@@ -366,3 +372,4 @@ bus = &"SFX"
 [connection signal="pressed" from="ButtonManager/Retry" to="." method="_on_retry_pressed"]
 [connection signal="mouse_entered" from="ButtonManager/Menu" to="." method="_on_menu_mouse_entered"]
 [connection signal="pressed" from="ButtonManager/Menu" to="." method="_on_menu_pressed"]
+[connection signal="ready" from="Dead" to="." method="_on_dead_ready"]

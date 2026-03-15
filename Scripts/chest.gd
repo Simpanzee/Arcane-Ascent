@@ -13,13 +13,15 @@ var loot_generator: Node
 var silver_upgrade_pool = [
 	preload("res://Scripts/Upgrades/resources/vigor+.tres"),
 	preload("res://Scripts/Upgrades/resources/arcane+.tres"),
-	preload("res://Scripts/Upgrades/resources/agility+.tres")
+	preload("res://Scripts/Upgrades/resources/agility+.tres"),
+	preload("res://Scripts/Upgrades/resources/restore.tres")
 ]
 
 var gold_upgrade_pool = [
 	preload("res://Scripts/Upgrades/resources/vigor++.tres"),
 	preload("res://Scripts/Upgrades/resources/agility++.tres"),
-	preload("res://Scripts/Upgrades/resources/arcane++.tres")
+	preload("res://Scripts/Upgrades/resources/arcane++.tres"),
+	preload("res://Scripts/Upgrades/resources/fullrestore.tres")
 ]
 
 func _ready() -> void:

@@ -27,6 +27,8 @@ signal healthChanged
 @onready var lightning_sound3 = $Lightning3
 
 @onready var error = $Error
+@onready var fade_rect = $"../CanvasLayer/ColorRect"
+
 var can_input : bool = true
 var shaking : bool = false
 var knockback_velocity: Vector2 = Vector2.ZERO
@@ -41,19 +43,19 @@ var lightning_scene : PackedScene = preload("res://Scenes/Spells/lightning.tscn"
 
 @onready var blink_ui = $"../CanvasLayer/Blink"
 var blink_ready : bool = true
-var blink_cd : float = 5.0
+var blink_cd : float = 7.0
 
 @onready var roots_ui = $"../CanvasLayer/Roots"
 var roots_ready : bool = true
-var roots_cd : float = 8.0
+var roots_cd : float = 12.0
 
 @onready var lightning_ui = $"../CanvasLayer/Lightning"
 var lightning_ready : bool = true
-var lightning_cd : float = 10.0
+var lightning_cd : float = 15.0
 
 @onready var ult_ui = $"../CanvasLayer/Ultamite"
 var ult_ready : bool = true
-var ult_cd : float = 60.0
+var ult_cd : float = 80.0
 
 @onready var sprite = $AnimatedSprite2D
 @onready var cast_timer = $CastTimer
@@ -115,47 +117,72 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("primary"):
 		start_cast(mouse_pos, mouse_dir)
-	
+
 	if Input.is_action_just_pressed("ability_1"):
 		if blink_ready:
 			blink_ready = false
 			blink()
 			await get_tree().create_timer(0.4).timeout
 			blink_ui.start_cooldown()
-			await get_tree().create_timer(blink_cd).timeout
+			var cd = blink_cd
+			while cd > 0 and not is_dead:
+				if game_state.in_combat:
+					cd -= get_process_delta_time()
+				await get_tree().process_frame
+
 			blink_ready = true
 		else:
 			error.play()
-	
+
+
 	if Input.is_action_just_pressed("ability_2"):
 		if roots_ready:
 			roots_ready = false
 			cast_root()
 			await get_tree().create_timer(0.2).timeout
 			roots_ui.start_cooldown()
-			await get_tree().create_timer(roots_cd).timeout
+			var cd = roots_cd
+			while cd > 0 and not is_dead:
+				if game_state.in_combat:
+					cd -= get_process_delta_time()
+				await get_tree().process_frame
+
 			roots_ready = true
 		else:
 			error.play()
-		
+
+
 	if Input.is_action_just_pressed("ability_3"):
 		if lightning_ready:
 			lightning_ready = false
 			lightning_strike()
 			await get_tree().create_timer(0.4).timeout
 			lightning_ui.start_cooldown()
-			await get_tree().create_timer(lightning_cd).timeout
+
+			var cd = lightning_cd
+			while cd > 0 and not is_dead:
+				if game_state.in_combat:
+					cd -= get_process_delta_time()
+				await get_tree().process_frame
+
 			lightning_ready = true
 		else:
 			error.play()
-	
+
+
 	if Input.is_action_just_pressed("ultimate"):
 		if ult_ready:
 			ult_ready = false
 			start_ultimate(mouse_pos, mouse_dir)
 			await get_tree().create_timer(5.0).timeout
 			ult_ui.start_cooldown()
-			await get_tree().create_timer(ult_cd).timeout
+
+			var cd = ult_cd
+			while cd > 0 and not is_dead:
+				if game_state.in_combat:
+					cd -= get_process_delta_time()
+				await get_tree().process_frame
+
 			ult_ready = true
 		else:
 			error.play()
@@ -265,7 +292,7 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 		beam.global_position = global_position + dir * spawn_offset
 		
 		if shaking:
-			camera.shake(10)
+			camera.shake(5)
 		
 		timer += delta
 		await get_tree().process_frame
@@ -436,7 +463,15 @@ func die():
 		death_3.play()
 		
 	sprite.play("death")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2.0).timeout
+	var fade_time = 1.0
+	var elapsed = 0.0
+	while elapsed < fade_time:
+		elapsed += get_process_delta_time()
+		var alpha = clamp(elapsed / fade_time, 0, 1)
+		fade_rect.color.a = alpha
+		await get_tree().process_frame
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/retry.tscn")
 
 func apply_upgrade(upgrade : Upgrade):

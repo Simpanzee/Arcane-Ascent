@@ -24,7 +24,7 @@ func _ready():
 		await _wait_for_frame(5)
 		for enemy in enemies_in_range:
 			if enemy and enemy.is_inside_tree() and enemy.has_method("take_damage"):
-				camera.shake(10)
+				camera.shake(8)
 				enemy.take_damage(damage)
 
 		await get_tree().create_timer(interval).timeout
