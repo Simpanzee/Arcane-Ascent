@@ -552,7 +552,7 @@ position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_ej31k")
 
 [node name="Hp Bar" parent="." index="12"]
-offset_left = -8.0
+offset_left = -10.0
 offset_top = -16.0
-offset_right = 56.0
+offset_right = 54.0
 offset_bottom = -6.0

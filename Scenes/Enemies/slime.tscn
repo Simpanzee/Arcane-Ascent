@@ -2,19 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://x4rbjsqcfvuo" path="res://Scenes/Enemies/enemy.tscn" id="1_c2nj3"]
 [ext_resource type="Script" uid="uid://dknby1yyhv3ay" path="res://Scripts/Enemies/slime.gd" id="1_wkjhq"]
-[ext_resource type="Texture2D" uid="uid://hfge28p7cndx" path="res://Assets/sprites/Enemies/slime/Monster_Slime_Attack1-Sheet.png" id="3_16kjp"]
-[ext_resource type="Texture2D" uid="uid://c2y5fyc08qm4c" path="res://Assets/sprites/Enemies/slime/Monster_Slime_Death-Sheet.png" id="4_vvc4l"]
-[ext_resource type="Texture2D" uid="uid://bck7w3kd6defd" path="res://Assets/sprites/Enemies/slime/Monster_Slime_Hurt-Sheet.png" id="5_5igrg"]
-[ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/sprites/Enemies/despawn.png" id="5_vvc4l"]
-[ext_resource type="Texture2D" uid="uid://i2hw1ivhe0g1" path="res://Assets/sprites/Enemies/slime/Monster_Slime_Idle-Sheet.png" id="6_t6lbm"]
-[ext_resource type="Texture2D" uid="uid://cwh6fjhypxnv2" path="res://Assets/sprites/Enemies/slime/Monster_Slime_Walk-Sheet.png" id="7_wkjhq"]
+[ext_resource type="Texture2D" uid="uid://hfge28p7cndx" path="res://Assets/Sprites/Enemies/Slime/Monster_Slime_Attack1-Sheet.png" id="3_16kjp"]
+[ext_resource type="Texture2D" uid="uid://c2y5fyc08qm4c" path="res://Assets/Sprites/Enemies/Slime/Monster_Slime_Death-Sheet.png" id="4_vvc4l"]
+[ext_resource type="Texture2D" uid="uid://bck7w3kd6defd" path="res://Assets/Sprites/Enemies/Slime/Monster_Slime_Hurt-Sheet.png" id="5_5igrg"]
+[ext_resource type="Texture2D" uid="uid://c0pdpktsp75k2" path="res://Assets/Sprites/Enemies/despawn.png" id="5_vvc4l"]
+[ext_resource type="Texture2D" uid="uid://i2hw1ivhe0g1" path="res://Assets/Sprites/Enemies/Slime/Monster_Slime_Idle-Sheet.png" id="6_t6lbm"]
+[ext_resource type="Texture2D" uid="uid://cwh6fjhypxnv2" path="res://Assets/Sprites/Enemies/Slime/Monster_Slime_Walk-Sheet.png" id="7_wkjhq"]
 [ext_resource type="AudioStream" uid="uid://v6m0q36vxhhb" path="res://Assets/Audio/Enemies/slimedeath.mp3" id="9_cp62l"]
 [ext_resource type="AudioStream" uid="uid://bw11ffpamhfl1" path="res://Assets/Audio/Enemies/slimeattack.mp3" id="10_hphkj"]
 [ext_resource type="AudioStream" uid="uid://84ihehmilmyx" path="res://Assets/Audio/Enemies/despawn.mp3" id="11_sapfs"]
 [ext_resource type="AudioStream" uid="uid://dci6dvlaqln2q" path="res://Assets/Audio/Enemies/slimehurt.mp3" id="12_dksck"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pm37t"]
-radius = 8.0
+radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cp62l"]
 atlas = ExtResource("3_16kjp")
@@ -407,22 +407,18 @@ frame_progress = 0.41760203
 
 [node name="Death" parent="." index="2"]
 stream = ExtResource("9_cp62l")
-bus = &"SFX"
 
 [node name="Attack" parent="." index="3"]
 stream = ExtResource("10_hphkj")
-bus = &"SFX"
 
 [node name="Despawn" parent="." index="4"]
 stream = ExtResource("11_sapfs")
-bus = &"SFX"
 
 [node name="Hurt" parent="." index="5"]
 stream = ExtResource("12_dksck")
-bus = &"SFX"
 
 [node name="Hp Bar" parent="." index="6"]
-offset_left = -8.0
+offset_left = -10.0
 offset_top = -12.0
-offset_right = 56.0
+offset_right = 54.0
 offset_bottom = -2.0
