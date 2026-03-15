@@ -9,7 +9,7 @@ signal healthChanged
 @export var main_attack_damage = 1
 
 @onready var collision_shape = $CollisionShape2D
-
+@onready var camera = $Camera2D
 @onready var fire_sound = $FireSound
 @onready var walk_sound = $WalkSound 
 @onready var ultimate_sound = $UltimateSound
@@ -28,6 +28,10 @@ signal healthChanged
 
 @onready var error = $Error
 var can_input : bool = true
+var shaking : bool = false
+var knockback_velocity: Vector2 = Vector2.ZERO
+var slow_timer: float = 0.0
+var slow_multiplier: float = 1.0
 
 var projectile_scene : PackedScene = preload("res://Scenes/Spells/projectile.tscn")
 var beam_scene : PackedScene = preload("res://Scenes/Spells/beam.tscn")
@@ -67,15 +71,23 @@ func _physics_process(_delta: float) -> void:
 	if is_dead or not can_input:
 		velocity = Vector2.ZERO
 		return
-	
+
+	var current_knockback = knockback_velocity
+	if slow_timer > 0.0:
+		slow_timer -= _delta
+		knockback_velocity = knockback_velocity.lerp(Vector2.ZERO, 0.2)
+	else:
+		knockback_velocity = Vector2.ZERO
+		slow_multiplier = 1.0
+
 	if is_casting:
-		velocity = Vector2.ZERO
+		velocity = current_knockback
 		move_and_slide()
 		return
-	
+
 	var move_input : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	velocity = move_input * move_speed
-		
+	velocity = move_input * move_speed * slow_multiplier + current_knockback
+
 	if move_input == Vector2.ZERO:
 		if sprite.animation != "idle":
 			sprite.play("idle")
@@ -86,7 +98,7 @@ func _physics_process(_delta: float) -> void:
 			sprite.play("walk")
 		if not walk_sound.playing:
 			walk_sound.play()
-	
+
 	move_and_slide()
 
 func _process(_delta: float) -> void:
@@ -223,48 +235,48 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	ultimate_sound.play()
 	
 	await get_tree().create_timer(2.0).timeout
-	
 	if is_dead:
 		return
-
+	
 	var beam = beam_scene.instantiate()
 	get_tree().current_scene.add_child(beam)
-	
 	var spawn_offset = 85
 	var current_angle = mouse_dir.angle()
 	var rotate_speed = 0.5
 	var ultimate_duration = 2.0
 	var timer = 0.0
 	
+	shaking = true
+	
 	while timer < ultimate_duration:
 		if is_dead:
 			beam.queue_free()
+			shaking = false
 			return
-
-		await get_tree().process_frame
-		var delta = get_process_delta_time()
 		
+		# Move beam
+		var delta = get_process_delta_time()
 		var mouse_pos = get_global_mouse_position()
 		var target_dir = (mouse_pos - global_position).normalized()
 		var target_angle = target_dir.angle()
-		
 		current_angle = lerp_angle(current_angle, target_angle, rotate_speed * delta)
-		
 		var dir = Vector2.RIGHT.rotated(current_angle)
-		
 		beam.rotation = current_angle + deg_to_rad(90)
 		beam.global_position = global_position + dir * spawn_offset
 		
+		if shaking:
+			camera.shake(10)
+		
 		timer += delta
+		await get_tree().process_frame
 	
 	if is_dead:
+		shaking = false
 		return
 	
 	await beam.finished
-
-	if is_dead:
-		return
 	
+	shaking = false
 	is_ulting = false
 	is_invulnerable = false
 	is_casting = false
@@ -344,8 +356,10 @@ func lightning_strike():
 	sprite.play("lightning_cast")
 	await sprite.animation_finished
 	is_casting = false
+	
 	var cast_point = get_global_mouse_position()
 	var lightning_radius = 30
+	
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if enemy.global_position.distance_to(cast_point) <= lightning_radius:
 			var strike = lightning_scene.instantiate()

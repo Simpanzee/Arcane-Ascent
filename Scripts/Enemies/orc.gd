@@ -3,9 +3,11 @@ extends Enemy
 @onready var attack1_hitbox = $Attack1Hitbox
 @onready var attack2_hitbox = $Attack2Hitbox
 @onready var attack3_hitbox = $Attack3Hitbox
+@onready var camera = get_tree().get_first_node_in_group("Player").get_node("Camera2D")
 
 @onready var attack2 = $Attack2
 @onready var attack3 = $Attack3
+@onready var critical = $Critical
 
 func _ready() -> void:
 	super()
@@ -14,7 +16,7 @@ func _ready() -> void:
 	move_speed = 25
 
 	attack_damage = 3
-	attack_range = 30
+	attack_range = 40
 	attack_rate = 1.5
 	
 	apply_modifiers()
@@ -30,6 +32,7 @@ func _ready() -> void:
 	attack1_hitbox.body_entered.connect(_on_attack1_hitbox_body_entered)
 	attack2_hitbox.body_entered.connect(_on_attack2_hitbox_body_entered)
 	attack3_hitbox.body_entered.connect(_on_attack3_hitbox_body_entered)
+
 	
 func _try_attack():
 	if !super():
@@ -44,50 +47,72 @@ func _try_attack():
 	else:
 		await attack3_move()
 
-	state = "move"
+	if state != "dead":
+		state = "move"
 	
 func attack1_move():
+	if state == "dead":
+		return
 	sprite.play("attack")
 	attack.pitch_scale = randf_range(0.8, 1.2)
 	
 	if state == "dead":
 		return
-		
 	attack.play()
 	await get_tree().create_timer(0.25).timeout
+	
+	if state == "dead":
+		return
 	attack1_hitbox.monitoring = true
 	await get_tree().create_timer(0.15).timeout
+	
 	attack1_hitbox.monitoring = false
+	if state == "dead":
+		return
 	await sprite.animation_finished
 
 
 func attack2_move():
+	if state == "dead":
+		return
 	sprite.play("attack2")
 	attack2.pitch_scale = randf_range(0.8, 1.2)
 	
 	if state == "dead":
 		return
-		
 	attack2.play()
-	await get_tree().create_timer(0.35).timeout
+	await get_tree().create_timer(0.25).timeout
+	
+	if state == "dead":
+		return
 	attack2_hitbox.monitoring = true
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(0.15).timeout
+	
 	attack2_hitbox.monitoring = false
+	if state == "dead":
+		return
 	await sprite.animation_finished
 
 
 func attack3_move():
+	if state == "dead":
+		return
 	sprite.play("attack3")
 	attack3.pitch_scale = randf_range(0.8, 1.2)
 	
 	if state == "dead":
 		return
-		
 	attack3.play()
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.45).timeout
+	
+	if state == "dead":
+		return
 	attack3_hitbox.monitoring = true
 	await get_tree().create_timer(0.15).timeout
+	
 	attack3_hitbox.monitoring = false
+	if state == "dead":
+		return
 	await sprite.animation_finished
 
 func _on_attack1_hitbox_body_entered(body):
@@ -96,8 +121,23 @@ func _on_attack1_hitbox_body_entered(body):
 
 func _on_attack2_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
-		player.take_damage(attack_damage)
+		if body.current_health < 4:
+			body.take_damage(attack_damage)
+		else:
+			critical.play()
+			camera.shake(10)
+			var dynamic_damage = body.current_health - 1
+			body.take_damage(dynamic_damage)
 
 func _on_attack3_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
-		player.take_damage(attack_damage)
+		_apply_attack_effects(body, 3.0)
+		
+func _apply_attack_effects(body, slow_duration = 3.0):
+	if not body:
+		return
+	var knockback_dir = (body.global_position - global_position).normalized()
+	var knockback_strength = 500
+	body.knockback_velocity = knockback_dir * knockback_strength
+	body.slow_timer = slow_duration
+	body.slow_multiplier = 0.1

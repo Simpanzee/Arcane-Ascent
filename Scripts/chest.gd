@@ -2,7 +2,8 @@ extends StaticBody2D
 
 @onready var sprite = $AnimatedSprite2D
 @onready var active_area: Area2D = $active_area
-@onready var label: Label = $Label
+@onready var panel: Panel = $Panel
+@onready var label: Label = $Panel/Label
 @onready var open = $Open
 
 var player_near: bool = false
@@ -26,7 +27,7 @@ func _ready() -> void:
 	sprite.play("default")
 
 	update_label_key()
-	label.visible = false
+	panel.visible = false
 
 func update_label_key():
 	var events = InputMap.action_get_events("interact")
@@ -39,9 +40,9 @@ func update_label_key():
 
 func _process(_delta: float) -> void:
 	if player_near and not chest_opened:
-		label.visible = true
+		panel.visible = true
 	else:
-		label.visible = false
+		panel.visible = false
 
 	if player_near and Input.is_action_just_pressed("interact") and not chest_opened:
 		open_chest()
@@ -56,7 +57,7 @@ func _on_active_area_body_exited(body: Node2D) -> void:
 
 func open_chest():
 	chest_opened = true
-	label.visible = false
+	panel.visible = false
 	open.play()
 	await get_tree().create_timer(0.5).timeout
 	sprite.play("open")

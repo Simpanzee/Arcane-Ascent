@@ -42,6 +42,9 @@ func _physics_process(_delta: float) -> void:
 	
 	sprite.flip_h = player_direction.x < 0
 	
+	if state == "dead":
+		return
+
 	if player_distance < flee_range:
 		velocity = -player_direction * flee_speed * speed_multiplier
 		sprite.play("move")

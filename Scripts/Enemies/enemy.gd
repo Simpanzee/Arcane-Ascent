@@ -43,8 +43,11 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if is_active == false:
+		velocity = Vector2.ZERO
+		sprite.play("idle")
+		move_and_slide()
 		return
-	
+
 	if player == null or player.is_dead:
 		state = "idle"
 		velocity = Vector2.ZERO
@@ -113,7 +116,16 @@ func take_damage(amount : int):
 	
 	if state == "dead":
 		return
-		
+	
+	cur_hp -= amount
+	healthChanged.emit()
+	
+	if cur_hp <= 0:
+		state = "dead" # immediately mark as dead
+		die()
+		return
+	
+	# Only play hurt animation if still alive
 	state = "hurt"
 	velocity = Vector2.ZERO
 	
@@ -121,15 +133,8 @@ func take_damage(amount : int):
 	hurt.pitch_scale = randf_range(hurt_pitch[0], hurt_pitch[1])
 	hurt.play()
 	
-	cur_hp -= amount
-	healthChanged.emit()
-	
 	await sprite.animation_finished
-	
-	if cur_hp <= 0:
-		die()
-	else:
-		state = "move"
+	state = "move"
 
 func apply_root_slow():
 	state = "rooted"

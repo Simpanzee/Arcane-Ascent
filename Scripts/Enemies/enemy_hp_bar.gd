@@ -4,7 +4,6 @@ extends TextureProgressBar
 
 func _ready() -> void:
 	enemy.healthChanged.connect(update)
-	position.x = -15
 	update()
 
 func update():

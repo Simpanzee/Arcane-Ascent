@@ -4,7 +4,6 @@ signal finished
 
 @export var active_time : float = 2.0
 @export var damage : int = 10
-
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var direction: Vector2

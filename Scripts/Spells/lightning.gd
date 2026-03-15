@@ -6,6 +6,7 @@ extends Area2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var radius_hitbox: Area2D = $AOE
+@onready var camera = get_tree().get_first_node_in_group("Player").get_node("Camera2D")
 
 var enemies_in_range : Array = []
 
@@ -23,6 +24,7 @@ func _ready():
 		await _wait_for_frame(5)
 		for enemy in enemies_in_range:
 			if enemy and enemy.is_inside_tree() and enemy.has_method("take_damage"):
+				camera.shake(10)
 				enemy.take_damage(damage)
 
 		await get_tree().create_timer(interval).timeout

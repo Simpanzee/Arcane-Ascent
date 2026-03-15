@@ -30,14 +30,13 @@ bus = &"SFX"
 
 [node name="Hp Bar" type="TextureProgressBar" parent="."]
 z_index = 99
-offset_top = -10.0
-offset_right = 48.0
-offset_bottom = 8.0
-scale = Vector2(0.5, 0.5)
+offset_top = -5.0
+offset_right = 53.333332
+offset_bottom = 13.0
+scale = Vector2(0.3, 0.3)
 value = 100.0
 nine_patch_stretch = true
-stretch_margin_left = 10
-stretch_margin_right = 10
+stretch_margin_left = 1
 texture_under = ExtResource("2_ubio8")
 texture_progress = ExtResource("3_miwey")
 script = ExtResource("4_ubio8")
