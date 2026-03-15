@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwiyaon4xjnoc"
-path="res://.godot/imported/Soldier-Attack01.png-bb4b84ffd9139125e81164746bab3356.ctex"
+path="res://.godot/imported/Soldier-Attack01.png-b86f6839e356379446f14ed427f44ba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png"
-dest_files=["res://.godot/imported/Soldier-Attack01.png-bb4b84ffd9139125e81164746bab3356.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Soldier/Soldier/Soldier-Attack01.png"
+dest_files=["res://.godot/imported/Soldier-Attack01.png-b86f6839e356379446f14ed427f44ba7.ctex"]
 
 [params]
 

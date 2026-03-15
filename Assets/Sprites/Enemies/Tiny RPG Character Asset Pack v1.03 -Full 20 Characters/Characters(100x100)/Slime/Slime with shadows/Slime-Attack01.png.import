@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl7uixcj2fwqr"
-path="res://.godot/imported/Slime-Attack01.png-1bfbcc5bee9341e5b248e39c61ec363e.ctex"
+path="res://.godot/imported/Slime-Attack01.png-13c79a4e762e9df4a9689d88fe13648b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Slime/Slime with shadows/Slime-Attack01.png"
-dest_files=["res://.godot/imported/Slime-Attack01.png-1bfbcc5bee9341e5b248e39c61ec363e.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Slime/Slime with shadows/Slime-Attack01.png"
+dest_files=["res://.godot/imported/Slime-Attack01.png-13c79a4e762e9df4a9689d88fe13648b.ctex"]
 
 [params]
 

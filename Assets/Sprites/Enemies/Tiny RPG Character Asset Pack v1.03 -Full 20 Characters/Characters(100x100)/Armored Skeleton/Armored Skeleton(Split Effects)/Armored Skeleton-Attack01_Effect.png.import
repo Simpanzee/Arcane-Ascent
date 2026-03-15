@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8wslrpx2q158"
-path="res://.godot/imported/Armored Skeleton-Attack01_Effect.png-e4aa4ea47e5446f68fd10fe1a28fd457.ctex"
+path="res://.godot/imported/Armored Skeleton-Attack01_Effect.png-a35e28accaf4f07f5d7cd3052dc154fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Skeleton/Armored Skeleton(Split Effects)/Armored Skeleton-Attack01_Effect.png"
-dest_files=["res://.godot/imported/Armored Skeleton-Attack01_Effect.png-e4aa4ea47e5446f68fd10fe1a28fd457.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Armored Skeleton/Armored Skeleton(Split Effects)/Armored Skeleton-Attack01_Effect.png"
+dest_files=["res://.godot/imported/Armored Skeleton-Attack01_Effect.png-a35e28accaf4f07f5d7cd3052dc154fc.ctex"]
 
 [params]
 

@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cj5ul6euv1ay2" path="res://Assets/UI/Deco/20250425compass-Sheet.png" id="19_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://csdbummfkhvpq" path="res://Assets/UI/Deco/fc673.png" id="20_vaj68"]
 [ext_resource type="Script" uid="uid://op8utiabaeoy" path="res://Scripts/UI/animated_sprite_2d.gd" id="21_qhcbd"]
-[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="21_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/Player/wizard.png" id="21_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://nh6tjg51hf6v" path="res://Assets/UI/Deco/20250425compass-Sheet2.png" id="22_f1jbl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
@@ -576,7 +576,7 @@ action_name = &"ultimate"
 [node name="PlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer"]
 offset_left = 56.0
 offset_top = 21.0
-offset_right = 217.0
+offset_right = 149.0
 offset_bottom = 42.0
 value = 100.0
 nine_patch_stretch = true
