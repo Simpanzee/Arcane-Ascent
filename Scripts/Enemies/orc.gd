@@ -16,7 +16,7 @@ func _ready() -> void:
 	move_speed = 30
 
 	attack_damage = 3
-	attack_range = 40
+	attack_range = 30
 	attack_rate = 1.7
 	
 	apply_modifiers()
