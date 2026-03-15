@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://cv61m3r6pw6tm"]
+[gd_scene load_steps=67 format=3 uid="uid://cv61m3r6pw6tm"]
 
 [ext_resource type="Script" uid="uid://dyo48eg3w2ei8" path="res://Scripts/Generation/room_generation.gd" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://dfuvckrqq83mq" path="res://Scenes/player.tscn" id="2_e2o6t"]
@@ -10,6 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://cbka1esu4obe0" path="res://Assets/Audio/Music/TheSeven.mp3" id="5_215e1"]
 [ext_resource type="AudioStream" uid="uid://c645xcr17yart" path="res://Assets/Audio/Music/Wicked.mp3" id="6_7sc4i"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="6_ryrav"]
+[ext_resource type="AudioStream" uid="uid://cm3rc8dpfgu5x" path="res://Assets/Audio/open.ogg" id="7_xa8c5"]
+[ext_resource type="AudioStream" uid="uid://ce6adwna6m06q" path="res://Assets/Audio/close.ogg" id="8_5b14r"]
 [ext_resource type="Script" uid="uid://e7kyjwkrlsll" path="res://Scripts/UI/main_UI.gd" id="9_boyg6"]
 [ext_resource type="PackedScene" uid="uid://d08iqfpsun481" path="res://Scenes/UI/spell_button.tscn" id="9_lc2xo"]
 [ext_resource type="Texture2D" uid="uid://v211u014ecx0" path="res://Assets/UI/Spells/blink.png" id="10_80cx4"]
@@ -23,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cj5ul6euv1ay2" path="res://Assets/UI/Deco/20250425compass-Sheet.png" id="19_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://csdbummfkhvpq" path="res://Assets/UI/Deco/fc673.png" id="20_vaj68"]
 [ext_resource type="Script" uid="uid://op8utiabaeoy" path="res://Scripts/UI/animated_sprite_2d.gd" id="21_qhcbd"]
-[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/sprites/Player/wizard.png" id="21_x5p1p"]
+[ext_resource type="Texture2D" uid="uid://brvvght8nreca" path="res://Assets/Sprites/Player/wizard.png" id="21_x5p1p"]
 [ext_resource type="Texture2D" uid="uid://nh6tjg51hf6v" path="res://Assets/UI/Deco/20250425compass-Sheet2.png" id="22_f1jbl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
@@ -523,9 +525,16 @@ parameters/looping = true
 
 [node name="BattleMusic6" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7sc4i")
-volume_db = -6.0
 bus = &"Music"
 parameters/looping = true
+
+[node name="Open" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xa8c5")
+bus = &"SFX"
+
+[node name="Close" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5b14r")
+bus = &"SFX"
 
 [node name="RoomGeneration" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("1_e2o6t")
@@ -564,10 +573,10 @@ cooldown = 10.0
 action_name = &"ability_3"
 
 [node name="Ultamite" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
-offset_left = 413.0
-offset_top = 203.0
-offset_right = 453.66666
-offset_bottom = 243.66666
+offset_left = 408.00003
+offset_top = 201.0
+offset_right = 448.6667
+offset_bottom = 241.66666
 scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("13_e8heu")
 cooldown = 60.0

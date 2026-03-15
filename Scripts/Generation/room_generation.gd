@@ -17,6 +17,8 @@ class RoomData:
 @onready var battle_music4 : AudioStreamPlayer = $"../BattleMusic4"
 @onready var battle_music5 : AudioStreamPlayer = $"../BattleMusic5"
 @onready var battle_music6 : AudioStreamPlayer = $"../BattleMusic6"
+@onready var open : AudioStreamPlayer = $"../Open"
+@onready var close : AudioStreamPlayer = $"../Close"
 
 var music_tracks : Array[AudioStreamPlayer]
 var current_music : AudioStreamPlayer
@@ -160,11 +162,15 @@ func _on_room_template_open_other_rooms() -> void:
 	for room in rooms:
 		if room.room_cleared == false:
 			room.open_all_doors()
+	if open:
+		open.play()
 
 func _on_room_template_close_other_rooms() -> void:
 	for room in rooms:
 		if room.room_cleared == false:
 			room.close_all_doors()
+	if close:
+		close.play()
 			
 func _on_new_floor() -> void:
 	game_state.next_floor()
@@ -182,7 +188,3 @@ func _on_new_floor() -> void:
 		current_music.stop()
 		current_music = new_music
 		current_music.play()
-	
-	
-	
-	

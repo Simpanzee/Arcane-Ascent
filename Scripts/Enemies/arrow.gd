@@ -1,6 +1,8 @@
 extends Area2D
 
 @export var base_speed : float = 200
+@onready var hit = $Hit
+
 var damage : int
 
 var direction: Vector2
@@ -21,7 +23,11 @@ func despawn() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		hit.play()
 		body.take_damage(damage)
+		$Sprite2D.visible = false
+		is_traveling = false
+		await get_tree().create_timer(hit.stream.get_length()).timeout
 		queue_free()
 
 	

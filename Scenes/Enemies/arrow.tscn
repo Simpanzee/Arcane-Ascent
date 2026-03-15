@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://drqteqqsjg7w"]
+[gd_scene load_steps=5 format=3 uid="uid://drqteqqsjg7w"]
 
 [ext_resource type="Script" uid="uid://bbfw4nxefowdd" path="res://Scripts/Enemies/arrow.gd" id="1_47n0q"]
 [ext_resource type="Texture2D" uid="uid://c3iymxrdt6h3a" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Arrow(Projectile)/Arrow03(32x32).png" id="1_ebt6s"]
+[ext_resource type="AudioStream" uid="uid://clqibc4ixry4s" path="res://Assets/Audio/Enemies/bowhit2.ogg" id="3_50ud7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnv5j"]
 size = Vector2(20, 7)
@@ -18,5 +19,10 @@ shape = SubResource("RectangleShape2D_jnv5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ebt6s")
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_50ud7")
+volume_db = 1.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

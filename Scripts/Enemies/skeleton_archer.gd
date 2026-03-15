@@ -21,7 +21,6 @@ func _ready() -> void:
 	death_pitch = [0.5, 2]
 	despawn_pitch = [0.8, 1.2]
 
-
 func _physics_process(_delta: float) -> void:
 	if is_active == false:
 		return

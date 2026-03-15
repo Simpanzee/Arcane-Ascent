@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg10k237aqpam"
-path="res://.godot/imported/Orc rider-Death.png-46d2480d45c9f4045986252b3620be2e.ctex"
+path="res://.godot/imported/Orc rider-Death.png-86340a864c8b6556a4b3dc8890913988.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Orc rider/Orc rider with shadows/Orc rider-Death.png"
-dest_files=["res://.godot/imported/Orc rider-Death.png-46d2480d45c9f4045986252b3620be2e.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Orc rider/Orc rider with shadows/Orc rider-Death.png"
+dest_files=["res://.godot/imported/Orc rider-Death.png-86340a864c8b6556a4b3dc8890913988.ctex"]
 
 [params]
 

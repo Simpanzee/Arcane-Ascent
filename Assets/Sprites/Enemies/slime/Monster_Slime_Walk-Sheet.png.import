@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwh6fjhypxnv2"
-path="res://.godot/imported/Monster_Slime_Walk-Sheet.png-24a037260fd289b6d5e05bf73bef3a35.ctex"
+path="res://.godot/imported/Monster_Slime_Walk-Sheet.png-200a5125d4096abd847c62b0074d02f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/slime/Monster_Slime_Walk-Sheet.png"
-dest_files=["res://.godot/imported/Monster_Slime_Walk-Sheet.png-24a037260fd289b6d5e05bf73bef3a35.ctex"]
+source_file="res://Assets/Sprites/Enemies/Slime/Monster_Slime_Walk-Sheet.png"
+dest_files=["res://.godot/imported/Monster_Slime_Walk-Sheet.png-200a5125d4096abd847c62b0074d02f5.ctex"]
 
 [params]
 

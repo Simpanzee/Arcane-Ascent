@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0eilx1nijtgn"
-path="res://.godot/imported/Werebear-Death.png-e73c62f87a45b0fb8da6c2da2f7ed900.ctex"
+path="res://.godot/imported/Werebear-Death.png-e5963624fb41b7b33c3af755a10eb898.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werebear/Werebear/Werebear-Death.png"
-dest_files=["res://.godot/imported/Werebear-Death.png-e73c62f87a45b0fb8da6c2da2f7ed900.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Werebear/Werebear/Werebear-Death.png"
+dest_files=["res://.godot/imported/Werebear-Death.png-e5963624fb41b7b33c3af755a10eb898.ctex"]
 
 [params]
 

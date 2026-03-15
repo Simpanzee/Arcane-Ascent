@@ -8,6 +8,7 @@ extends TextureButton
 @onready var time_label = $Time
 @onready var key_label = $Key
 @onready var overlay = $Panel
+@onready var ult_ready = $UltReady
 
 func _ready():
 	bar.max_value = cooldown
@@ -53,3 +54,6 @@ func _on_timer_timeout():
 	time_label.visible = false
 	overlay.visible = false
 	disabled = false
+	if action_name == "ultimate" and ult_ready:
+		ult_ready.stop()
+		ult_ready.play()

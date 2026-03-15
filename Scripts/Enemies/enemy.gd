@@ -111,30 +111,28 @@ func get_separation_force() -> Vector2:
 	return force
 
 func take_damage(amount : int):
-	if is_active == false:
-		return
-	
-	if state == "dead":
+	if is_active == false or state == "dead":
 		return
 	
 	cur_hp -= amount
 	healthChanged.emit()
 	
 	if cur_hp <= 0:
-		state = "dead" # immediately mark as dead
-		die()
+		if not has_died:
+			has_died = true
+			state = "dead"
+			die()
 		return
 	
-	# Only play hurt animation if still alive
 	state = "hurt"
 	velocity = Vector2.ZERO
-	
 	sprite.play("hurt")
 	hurt.pitch_scale = randf_range(hurt_pitch[0], hurt_pitch[1])
 	hurt.play()
 	
 	await sprite.animation_finished
-	state = "move"
+	if state != "dead":
+		state = "move"
 
 func apply_root_slow():
 	state = "rooted"
@@ -148,27 +146,21 @@ func remove_root_slow():
 var has_died: bool = false
 
 func die():
-	if has_died:
-		return
-	
-	has_died = true
 	sprite.play("death")
-	state = "dead"
-   
 	death.pitch_scale = randf_range(death_pitch[0], death_pitch[1])
 	death.play()
-   
-	await sprite.animation_finished
-	await get_tree().create_timer(1).timeout
-   
-	despawn.pitch_scale = randf_range(despawn_pitch[0], death_pitch[1])
-	despawn.play()
-   
-	sprite.play("despawn")
-	sprite.scale = Vector2(0.6, 0.6)
 
 	await sprite.animation_finished
-   
+	await get_tree().create_timer(0.5).timeout
+
+	despawn.pitch_scale = randf_range(despawn_pitch[0], despawn_pitch[1])
+	despawn.play()
+	sprite.play("despawn")
+
+	var tween = create_tween()
+	tween.tween_property(sprite, "scale", Vector2(0.6, 0.6), 0.5)
+	await tween.finished
+
 	died.emit()
 	queue_free()
 	
