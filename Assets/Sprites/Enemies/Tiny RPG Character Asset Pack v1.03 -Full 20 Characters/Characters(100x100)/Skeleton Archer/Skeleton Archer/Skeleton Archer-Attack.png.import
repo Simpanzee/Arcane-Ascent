@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://das13nigxol52"
-path="res://.godot/imported/Skeleton Archer-Attack.png-5ef0bdedcd915873003507a22a33cde6.ctex"
+path="res://.godot/imported/Skeleton Archer-Attack.png-0f0b71029763c51aa394f1d67e450fab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png"
-dest_files=["res://.godot/imported/Skeleton Archer-Attack.png-5ef0bdedcd915873003507a22a33cde6.ctex"]
+source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Skeleton Archer/Skeleton Archer/Skeleton Archer-Attack.png"
+dest_files=["res://.godot/imported/Skeleton Archer-Attack.png-0f0b71029763c51aa394f1d67e450fab.ctex"]
 
 [params]
 

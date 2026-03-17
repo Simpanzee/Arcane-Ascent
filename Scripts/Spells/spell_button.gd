@@ -27,7 +27,19 @@ func update_key_label():
 	var events = InputMap.action_get_events(action_name)
 
 	if events.size() > 0:
-		key_label.text = events[0].as_text().trim_suffix(" (Physical)")
+		var key_text = events[0].as_text().trim_suffix(" (Physical)")
+		key_label.text = key_text
+		
+		var font = key_label.get_theme_font("font")
+		var font_size = key_label.get_theme_font_size("font_size")
+		
+		var text_width = font.get_string_size(key_text, HORIZONTAL_ALIGNMENT_LEFT, -1, font_size).x
+		
+		if text_width > key_label.size.x:
+			key_label.position.y = 27
+			key_label.add_theme_font_size_override("font_size", 10)
+		else:
+			key_label.add_theme_font_size_override("font_size", 16)
 	else:
 		key_label.text = ""
 
