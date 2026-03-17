@@ -118,6 +118,7 @@ func _on_reset_button_pressed() -> void:
 
 func _on_save_button_pressed() -> void:
 	click.play()
+	await get_tree().create_timer(0.02).timeout
 	visible = false
 
 func _on_reset_button_mouse_entered() -> void:

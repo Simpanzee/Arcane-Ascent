@@ -58,6 +58,7 @@ func _on_play_mouse_entered() -> void:
 
 func _on_quit_pressed() -> void:
 	click.play()
+	await get_tree().create_timer(0.02).timeout
 	get_tree().quit()
 
 func _on_quit_mouse_entered() -> void:
@@ -65,5 +66,5 @@ func _on_quit_mouse_entered() -> void:
 
 func _on_settings_pressed() -> void:
 	click.play()
-	await get_tree().create_timer(0.01).timeout
+	await get_tree().create_timer(0.02).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/settings.tscn")

@@ -58,8 +58,7 @@ func _on_save_pressed() -> void:
 	original_settings = current_settings.duplicate()
 	save_button.visible = false
 
-	await get_tree().create_timer(0.01).timeout
-
+	await get_tree().create_timer(0.02).timeout
 	ConfigFileHandler.save_audio_setting("sfx_volume", sfx_slider.value)
 	ConfigFileHandler.save_audio_setting("music_volume", music_slider.value)
 
@@ -68,7 +67,7 @@ func _on_save_pressed() -> void:
 func _on_return_pressed() -> void:
 	click.play()
 	_apply_settings(original_settings)
-	await get_tree().create_timer(0.01).timeout
+	await get_tree().create_timer(0.02).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
 
 func _on_return_mouse_entered() -> void:
