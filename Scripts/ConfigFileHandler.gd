@@ -10,9 +10,9 @@ func _ready():
 		config.set_value("keybinding", "move_down", "S")
 		config.set_value("keybinding", "move_right", "D")
 		config.set_value("keybinding", "primary", "mouse_1")
-		config.set_value("keybinding", "ability_1", "E")
-		config.set_value("keybinding", "ability_2", "C")
-		config.set_value("keybinding", "ability_3", "F")
+		config.set_value("keybinding", "ability_1", "Shift")
+		config.set_value("keybinding", "ability_2", "E")
+		config.set_value("keybinding", "ability_3", "R")
 		config.set_value("keybinding", "ultimate", "Q")
 		config.set_value("keybinding", "interact", "O")
 		
