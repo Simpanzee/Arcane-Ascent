@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2g1dex8gt5ic"
-path="res://.godot/imported/Priest.png-96e87c70637cc1b457ae013dcc7fd5bc.ctex"
+path="res://.godot/imported/Priest.png-0ba6e1c8e8d3a0e5578db4d13b6d59a3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Priest/Priest/Priest.png"
-dest_files=["res://.godot/imported/Priest.png-96e87c70637cc1b457ae013dcc7fd5bc.ctex"]
+source_file="res://Assets/sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Priest/Priest/Priest.png"
+dest_files=["res://.godot/imported/Priest.png-0ba6e1c8e8d3a0e5578db4d13b6d59a3.ctex"]
 
 [params]
 
