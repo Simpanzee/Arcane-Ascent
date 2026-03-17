@@ -23,6 +23,7 @@ bus = &"SFX"
 bus = &"SFX"
 
 [node name="Despawn" type="AudioStreamPlayer2D" parent="."]
+volume_db = -5.0
 bus = &"SFX"
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="."]

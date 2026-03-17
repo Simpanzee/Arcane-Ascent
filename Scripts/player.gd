@@ -22,10 +22,6 @@ signal healthChanged
 @onready var death_2 = $Death2
 @onready var death_3 = $Death3
 
-@onready var lightning_sound1 = $Lightning1
-@onready var lightning_sound2 = $Lightning2
-@onready var lightning_sound3 = $Lightning3
-
 @onready var error = $Error
 @onready var fade_rect = $"../CanvasLayer/ColorRect"
 
@@ -383,34 +379,10 @@ func lightning_strike():
 	sprite.play("lightning_cast")
 	await sprite.animation_finished
 	is_casting = false
-	
 	var cast_point = get_global_mouse_position()
-	var lightning_radius = 30
-	
-	for enemy in get_tree().get_nodes_in_group("Enemy"):
-		if enemy.global_position.distance_to(cast_point) <= lightning_radius:
-			var strike = lightning_scene.instantiate()
-			enemy.add_child(strike)
-			strike.global_position = enemy.global_position
-			lighting_sound()
-
-func lighting_sound():
-	for i in range(3):
-		var player = lightning_sound1.duplicate()
-		add_child(player)
-
-		var sound = randi() % 3
-		if sound == 0:
-			player.stream = lightning_sound1.stream
-		elif sound == 1:
-			player.stream = lightning_sound2.stream
-		else:
-			player.stream = lightning_sound3.stream
-
-		player.pitch_scale = randf_range(0.9, 1.2)
-		player.play()
-
-		await get_tree().create_timer(0.6).timeout
+	var strike = lightning_scene.instantiate()
+	get_tree().current_scene.add_child(strike)
+	strike.global_position = cast_point
 
 func start_invulnerability():
 	var blink_speed = 0.05

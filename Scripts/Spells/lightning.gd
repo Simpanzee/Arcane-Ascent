@@ -7,39 +7,51 @@ extends Area2D
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var radius_hitbox: Area2D = $AOE
 @onready var camera = get_tree().get_first_node_in_group("Player").get_node("Camera2D")
-
-var enemies_in_range : Array = []
+@onready var lightning_sound1 = $Lightning1
+@onready var lightning_sound2 = $Lightning2
+@onready var lightning_sound3 = $Lightning3
 
 func _ready():
-	radius_hitbox.monitoring = true
-	radius_hitbox.body_entered.connect(_on_body_entered)
-	radius_hitbox.body_exited.connect(_on_body_exited)
-
+	sprite.hide()
 	await get_tree().physics_frame
-	for body in radius_hitbox.get_overlapping_bodies():
-		_on_body_entered(body)
 
 	for i in range(hits):
-		sprite.play("strike")
-		await _wait_for_frame(5)
-		for enemy in enemies_in_range:
-			if enemy and enemy.is_inside_tree() and enemy.has_method("take_damage"):
+		await get_tree().create_timer(0.05).timeout
+
+		var bodies = radius_hitbox.get_overlapping_bodies()
+		var unique_enemies := {}
+		for body in bodies:
+			if body.is_in_group("Enemy") and body.has_method("take_damage"):
+				unique_enemies[body] = true
+
+		for enemy in unique_enemies.keys():
+			if is_instance_valid(enemy):
+				lighting_sound()
 				camera.shake(8)
 				enemy.take_damage(damage)
+				var fx = sprite.duplicate()
+				enemy.add_child(fx)
+				fx.position = Vector2(0, -10)
+				fx.show()
+				fx.play("strike")
 
 		await get_tree().create_timer(interval).timeout
-	await sprite.animation_finished
+	await get_tree().create_timer(3).timeout
 	queue_free()
 
-func _wait_for_frame(frame_index: int) -> void:
-	while sprite.frame != frame_index:
-		await get_tree().physics_frame
+func lighting_sound() -> void:
+	var sound_choice = randi() % 3
+	var sound_player: AudioStreamPlayer2D
 
-func _on_body_entered(body: Node2D):
-	if !body.is_in_group("Enemy"):
-		return
-	if body not in enemies_in_range:
-		enemies_in_range.append(body)
+	if sound_choice == 0:
+		sound_player = lightning_sound1.duplicate()
+	elif sound_choice == 1:
+		sound_player = lightning_sound2.duplicate()
+	else:
+		sound_player = lightning_sound3.duplicate()
 
-func _on_body_exited(body: Node2D):
-	enemies_in_range.erase(body)
+	add_child(sound_player)
+	sound_player.pitch_scale = randf_range(0.9, 1.2)
+	sound_player.play()
+
+	sound_player.connect("finished", Callable(sound_player, "queue_free"))
