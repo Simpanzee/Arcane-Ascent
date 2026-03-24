@@ -25,3 +25,10 @@ func apply(player):
 			player.current_health = min(player.current_health + 3, player.max_health)
 		"Full Restore":
 			player.current_health = player.max_health
+		"Lightning+":
+			player.lightning_damage += 1
+			player.lightning_hits += 1
+		"Roots+":
+			player.roots_duration += 0.5
+		"Ultimate+":
+			player.ultimate_damage *= 2

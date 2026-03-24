@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var base_speed : float = 200
+@export var base_speed : float = 250
 @onready var hit = $Hit
 
 var damage : int

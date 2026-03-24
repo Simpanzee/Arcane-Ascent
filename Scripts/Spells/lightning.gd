@@ -55,3 +55,7 @@ func lighting_sound() -> void:
 	sound_player.play()
 
 	sound_player.connect("finished", Callable(sound_player, "queue_free"))
+	
+func set_upgrade_values(_hits: int, _damage: int):
+	hits = _hits
+	damage = _damage

@@ -37,6 +37,13 @@ var blink_scene : PackedScene = preload("res://Scenes/Spells/blink.tscn")
 var roots_scene : PackedScene = preload("res://Scenes/Spells/roots.tscn")
 var lightning_scene : PackedScene = preload("res://Scenes/Spells/lightning.tscn")
 
+# Default spell values
+var lightning_hits: int = 3
+var lightning_damage: int = 1
+var roots_duration: float = 2.0
+var ultimate_damage: int = 10
+
+
 @onready var blink_ui = $"../CanvasLayer/Blink"
 var blink_ready : bool = true
 var blink_cd : float = 7.0
@@ -235,13 +242,14 @@ func cast_root():
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if enemy.global_position.distance_to(cast_point) <= root_radius:
 			var root = roots_scene.instantiate()
+			root.set_upgrade_values(roots_duration)
 			enemy.add_child(root)
 			root.position = Vector2.ZERO
 			affected = true
 	if affected:
 		root_start.pitch_scale = randf_range(0.95, 1.1)
 		root_start.play()
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(roots_duration+1).timeout
 	if affected:
 		root_end.pitch_scale = randf_range(0.95, 1.1)
 		root_end.play()
@@ -262,6 +270,7 @@ func start_ultimate(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 		return
 	
 	var beam = beam_scene.instantiate()
+	beam.set_upgrade_values(ultimate_damage)
 	get_tree().current_scene.add_child(beam)
 	var spawn_offset = 85
 	var current_angle = mouse_dir.angle()
@@ -380,8 +389,10 @@ func lightning_strike():
 	sprite.play("lightning_cast")
 	await sprite.animation_finished
 	is_casting = false
+
 	var cast_point = get_global_mouse_position()
 	var strike = lightning_scene.instantiate()
+	strike.set_upgrade_values(lightning_hits, lightning_damage)
 	get_tree().current_scene.add_child(strike)
 	strike.global_position = cast_point
 
@@ -406,8 +417,6 @@ func stop_all_sounds():
 	walk_sound.stop()
 	ultimate_sound.stop()
 	blink_sound.stop()
-	root_start.stop()
-	root_end.stop()
 	hurt.stop()
 
 func die():	

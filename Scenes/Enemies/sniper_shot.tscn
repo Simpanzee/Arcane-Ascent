@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cq14rnlbv4wnu"]
+
+[ext_resource type="Script" uid="uid://cx4orcxe6lrul" path="res://Scripts/Enemies/sniper_shot.gd" id="1_lddf6"]
+[ext_resource type="Texture2D" uid="uid://b1ao2vr83p1s1" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Arrow(Projectile)/Arrow02(32x32).png" id="2_p61y7"]
+[ext_resource type="AudioStream" uid="uid://clqibc4ixry4s" path="res://Assets/Audio/Enemies/bowhit2.ogg" id="3_lejyn"]
+[ext_resource type="AudioStream" uid="uid://y0o7k1sqniyt" path="res://Assets/Audio/Enemies/critical-hit-sounds-effect.mp3" id="3_p61y7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnv5j"]
+size = Vector2(20, 7)
+
+[node name="Sniper" type="Area2D"]
+z_index = 3
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_lddf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0.5)
+shape = SubResource("RectangleShape2D_jnv5j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p61y7")
+
+[node name="Critical" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_p61y7")
+bus = &"SFX"
+
+[node name="Hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lejyn")
+volume_db = 1.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

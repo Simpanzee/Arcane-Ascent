@@ -26,6 +26,7 @@ var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
 var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
 var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton_archer.tscn")
 var werebear_scene : PackedScene = preload("res://Scenes/Enemies/werebear.tscn")
+var elite_archer_scene : PackedScene = preload("res://Scenes/Enemies/elite_archer.tscn")
 
 var room_cleared : bool = false
 var is_first_room : bool = false
@@ -111,8 +112,10 @@ func spawn_enemies():
 			enemy_scene = skeleton_archer_scene
 		elif random_num < 0.87:
 			enemy_scene = orc_scene
-		else:
+		elif random_num < 0.93:
 			enemy_scene = werebear_scene
+		else:
+			enemy_scene = elite_archer_scene
 		
 		var enemy = enemy_scene.instantiate()
 		add_child(enemy)

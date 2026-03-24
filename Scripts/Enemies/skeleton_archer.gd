@@ -1,6 +1,6 @@
 extends Enemy
 
-@export var flee_range : float = 120
+@export var flee_range : float = 100
 @export var flee_speed : float = 80
 @export var idle_after_shot : float = 0.8
 @export var arrow_scene : PackedScene
@@ -12,7 +12,7 @@ func _ready() -> void:
 	move_speed = 35
 
 	attack_damage = 1
-	attack_range = 130
+	attack_range = 110
 	attack_rate = 2.5
 	
 	apply_modifiers()
@@ -66,14 +66,13 @@ func _try_attack():
 		return
 
 	sprite.play("attack")
+	attack.pitch_scale = randf_range(0.8, 1.1)
+	attack.play()
 	await get_tree().create_timer(0.6).timeout
 	
 	# Keep So it STAYS DEAD
 	if state == "dead":
 		return
-
-	attack.pitch_scale = randf_range(0.8, 1.1)
-	attack.play()
 	
 	var arrow = arrow_scene.instantiate()
 	arrow.damage = attack_damage

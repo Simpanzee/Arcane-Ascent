@@ -225,7 +225,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -390,7 +390,7 @@ stream = ExtResource("12_gkmb3")
 stream = ExtResource("13_3uhkr")
 
 [node name="Hp Bar" parent="." index="6"]
-offset_left = -10.0
-offset_top = -15.000001
-offset_right = 54.0
-offset_bottom = -5.000001
+offset_left = -11.0
+offset_top = -16.0
+offset_right = 37.888893
+offset_bottom = 2.0

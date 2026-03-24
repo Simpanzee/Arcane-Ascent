@@ -82,7 +82,6 @@ func _on_radius_hitbox_body_entered(body: Node2D) -> void:
 func _on_radius_hitbox_area_entered(area: Area2D) -> void:
 	var body = area
 	if !body.is_in_group("Enemy"):
-		print("[ROOTS] Not an enemy group (area)")
 		return
 
 	if body.state == "dead":
@@ -91,3 +90,6 @@ func _on_radius_hitbox_area_entered(area: Area2D) -> void:
 	if body not in slowed_enemies:
 		body.apply_root_slow()
 		slowed_enemies.append(body)
+
+func set_upgrade_values(_active_time: float):
+	active_time = _active_time

@@ -23,7 +23,9 @@ func _ready() -> void:
 	emit_signal("finished")
 	queue_free()
 
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		body.take_damage(damage)
+		
+func set_upgrade_values(_damage: int):
+	damage = _damage

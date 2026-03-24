@@ -21,7 +21,10 @@ var gold_upgrade_pool = [
 	preload("res://Scripts/Upgrades/resources/vigor++.tres"),
 	preload("res://Scripts/Upgrades/resources/agility++.tres"),
 	preload("res://Scripts/Upgrades/resources/arcane++.tres"),
-	preload("res://Scripts/Upgrades/resources/fullrestore.tres")
+	preload("res://Scripts/Upgrades/resources/fullrestore.tres"),
+	preload("res://Scripts/Upgrades/resources/roots+.tres"),
+	preload("res://Scripts/Upgrades/resources/lightning+.tres"),
+	preload("res://Scripts/Upgrades/resources/ultimate+.tres")
 ]
 
 func _ready() -> void:
