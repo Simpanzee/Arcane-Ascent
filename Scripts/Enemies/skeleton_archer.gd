@@ -1,6 +1,6 @@
 extends Enemy
 
-@export var flee_range : float = 50
+@export var flee_range : float = 120
 @export var flee_speed : float = 80
 @export var idle_after_shot : float = 0.8
 @export var arrow_scene : PackedScene

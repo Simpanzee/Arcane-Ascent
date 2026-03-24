@@ -336,7 +336,8 @@ func blink() -> void:
 	
 	if is_dead:
 		return
-
+	
+	is_invulnerable = true
 	blink_sound.pitch_scale = randf_range(0.8, 1.2)
 	blink_sound.play()
 
@@ -370,7 +371,7 @@ func blink() -> void:
 
 	await get_tree().process_frame
 	await get_tree().create_timer(0.5).timeout
-
+	is_invulnerable = false
 	if not is_dead:
 		is_casting = false
 
