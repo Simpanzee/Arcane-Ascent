@@ -80,7 +80,7 @@ func _attack():
 	
 	is_charging = true
 	sprite.modulate = Color(1, 1, 0)
-	move_speed = 250
+	move_speed = 200
 	attack_hitbox.set_deferred("monitoring", true)
 	
 	sprite.play("attack")

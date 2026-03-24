@@ -214,6 +214,19 @@ func take_damage(amount : int):
 	start_invulnerability()
 	is_casting = false
 
+func take_damage_ignore_invul(amount: int):
+	if is_dead or is_ulting:
+		return
+
+	current_health -= amount
+	healthChanged.emit()
+	hurt.pitch_scale = randf_range(1, 1.4)
+	hurt.play()
+
+	if current_health <= 0:
+		die()
+		return
+
 func start_cast(_mouse_pos: Vector2, mouse_dir: Vector2) -> void:
 	if is_dead:
 		return

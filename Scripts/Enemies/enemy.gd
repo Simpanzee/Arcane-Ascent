@@ -163,9 +163,11 @@ func die():
 
 	died.emit()
 	queue_free()
-	
+
+func take_damage_ignore_block(amount: int):
+	take_damage(amount)
+
 func apply_modifiers():
 	cur_hp = int(cur_hp * pow(1.1, floor(floor_num / 4.0)) + floor(floor_num / 2.0))
 	max_hp = int(max_hp * pow(1.1, floor(floor_num / 4.0)) + floor(floor_num / 2.0))
-	
 	attack_damage = int(attack_damage * pow(1.1, floor(floor_num / 4.0)) + floor(floor_num / 3.0))
