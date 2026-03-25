@@ -59,7 +59,7 @@ func attack1_move():
 	if state == "dead":
 		return
 	attack.play()
-	await get_tree().create_timer(0.25).timeout
+	await get_tree().create_timer(0.4).timeout
 	
 	if state == "dead":
 		return
@@ -81,7 +81,7 @@ func attack2_move():
 	if state == "dead":
 		return
 	attack2.play()
-	await get_tree().create_timer(0.25).timeout
+	await get_tree().create_timer(0.4).timeout
 	
 	if state == "dead":
 		return
@@ -103,7 +103,7 @@ func attack3_move():
 	if state == "dead":
 		return
 	attack3.play()
-	await get_tree().create_timer(0.45).timeout
+	await get_tree().create_timer(0.4).timeout
 	
 	if state == "dead":
 		return
