@@ -55,12 +55,12 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 		return
 
+	if state == "dead":
+		return
+
 	player_direction = global_position.direction_to(player.global_position)
 	player_distance = global_position.distance_to(player.global_position)
 	sprite.flip_h = player_direction.x < 0
-
-	if state == "dead":
-		return
 
 	if player_distance < attack_range:
 		_try_attack()
