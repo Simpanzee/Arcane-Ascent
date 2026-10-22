@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csvfkq8wclolt"
-path="res://.godot/imported/laser_E_2.png-758d259d5c2eab435c3f997d8f97831f.ctex"
+path="res://.godot/imported/laser_E_2.png-027fcce52f765897eb3d73fe3ad93a41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Spells/Ultimate/end/laser_E_2.png"
-dest_files=["res://.godot/imported/laser_E_2.png-758d259d5c2eab435c3f997d8f97831f.ctex"]
+source_file="res://Assets/Spells/ultimate/end/laser_E_2.png"
+dest_files=["res://.godot/imported/laser_E_2.png-027fcce52f765897eb3d73fe3ad93a41.ctex"]
 
 [params]
 

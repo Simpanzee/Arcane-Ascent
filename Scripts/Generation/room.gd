@@ -22,12 +22,15 @@ signal close_other_rooms
 
 var chest_scene : PackedScene = preload("res://Scenes/chest.tscn")
 
-var slime_scene : PackedScene = preload("res://Scenes/Enemies/slime.tscn")
-var orc_scene : PackedScene = preload("res://Scenes/Enemies/orc.tscn")
-var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/skeleton_archer.tscn")
-var werebear_scene : PackedScene = preload("res://Scenes/Enemies/werebear.tscn")
-var elite_archer_scene : PackedScene = preload("res://Scenes/Enemies/elite_archer.tscn")
-var knight_templar_scene : PackedScene = preload("res://Scenes/Enemies/knight_templar.tscn")
+var slime_scene : PackedScene = preload("res://Scenes/Enemies/Undead/slime.tscn")
+var armored_orc_scene : PackedScene = preload("res://Scenes/Enemies/Orcs/armored_orc.tscn")
+var orc_scene : PackedScene = preload("res://Scenes/Enemies/Orcs/orc.tscn")
+var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/Undead/skeleton_archer.tscn")
+var werebear_scene : PackedScene = preload("res://Scenes/Enemies/Undead/werebear.tscn")
+var elite_archer_scene : PackedScene = preload("res://Scenes/Enemies/Humans/elite_archer.tscn")
+var knight_templar_scene : PackedScene = preload("res://Scenes/Enemies/Humans/knight_templar.tscn")
+var armor_scene : PackedScene = preload("res://Scenes/Enemies/Humans/armor.tscn")
+var waifu_scene : PackedScene = preload("res://Scenes/Enemies/Demons/waifu.tscn")
 
 var room_cleared : bool = false
 var is_first_room : bool = false
@@ -111,9 +114,9 @@ func spawn_enemies():
 		if r < 0.33:
 			enemy_scene = slime_scene
 		elif r < 0.67:
-			enemy_scene = skeleton_archer_scene
-		elif r < 0.87:
 			enemy_scene = orc_scene
+		elif r < 0.87:
+			enemy_scene = armored_orc_scene
 		elif r < 0.93:
 			enemy_scene = werebear_scene
 		elif r < 0.965:
