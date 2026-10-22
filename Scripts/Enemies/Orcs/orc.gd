@@ -5,8 +5,8 @@ extends Enemy
 
 func _ready() -> void:
 	super()
-	cur_hp = 3
-	max_hp = 3
+	cur_hp = 2
+	max_hp = 2
 	move_speed = 55
 
 	attack_damage = 2

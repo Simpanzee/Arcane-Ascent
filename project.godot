@@ -23,7 +23,7 @@ buses/default_bus_layout="res://Assets/Audio/UI/default_bus_layout.tres"
 
 GlobalSignals="*res://Scripts/UI/global_signals.gd"
 MusicPlayer="*res://Assets/Audio/Music/music_player.tscn"
-ConfigFileHandler="*res://Scripts/ConfigFileHandler.gd"
+ConfigFileHandler="*res://Scripts/Core/ConfigFileHandler.gd"
 game_state="*res://Scripts/Generation/game_state.gd"
 
 [display]

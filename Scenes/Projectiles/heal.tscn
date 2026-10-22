@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://b15a1nl75am22"]
 
-[ext_resource type="Texture2D" uid="uid://b4vhaig7j45vm" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Characters(100x100)/Priest/Magic(projectile)/Priest-Heal_Effect.png" id="1_e0jch"]
+[ext_resource type="Texture2D" uid="uid://b4vhaig7j45vm" path="res://Assets/Sprites/Enemies/Characters/Enemies/Priest/Magic(projectile)/Priest-Heal_Effect.png" id="1_e0jch"]
 [ext_resource type="Script" uid="uid://brpycyhwp8riv" path="res://Scripts/Projectiles/heal.gd" id="1_vmrv7"]
 [ext_resource type="Texture2D" uid="uid://ccnxqtxa8yrr3" path="res://Assets/Spells/ultimate/start/laser_S_1.png" id="2_apjsd"]
-[ext_resource type="AudioStream" uid="uid://clqibc4ixry4s" path="res://Assets/Audio/Enemies/bowhit2.ogg" id="3_0pwwi"]
+[ext_resource type="AudioStream" uid="uid://clqibc4ixry4s" path="res://Assets/Audio/Enemies/Archers/bowhit2.ogg" id="3_0pwwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jnv5j"]
 size = Vector2(20, 8)

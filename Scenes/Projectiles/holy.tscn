@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlc6fvd0r8nch"]
+[gd_scene load_steps=12 format=3 uid="uid://dlc6fvd0r8nch"]
 
-[ext_resource type="Script" uid="uid://bfvwup71mc2jn" path="res://Scripts/holy.gd" id="1_hwfqg"]
+[ext_resource type="Script" uid="uid://bfvwup71mc2jn" path="res://Scripts/Projectiles/holy.gd" id="1_hwfqg"]
 [ext_resource type="Texture2D" uid="uid://ccnxqtxa8yrr3" path="res://Assets/Spells/ultimate/start/laser_S_1.png" id="1_jd1wy"]
-[ext_resource type="Texture2D" uid="uid://jvf5ef5x4hu1" path="res://Assets/Sprites/Enemies/Tiny RPG Character Asset Pack v1.03 -Full 20 Characters/Magic(Projectile)/Priest-Attack_effect.png" id="2_hwfqg"]
-[ext_resource type="AudioStream" uid="uid://clqibc4ixry4s" path="res://Assets/Audio/Enemies/bowhit2.ogg" id="4_ft31k"]
+[ext_resource type="Texture2D" uid="uid://jvf5ef5x4hu1" path="res://Assets/Sprites/Enemies/Characters/Magic(Projectile)/Priest-Attack_effect.png" id="2_hwfqg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rnmtb"]
 atlas = ExtResource("1_jd1wy")
@@ -75,10 +74,5 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jnv5j")
-
-[node name="Hit" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ft31k")
-volume_db = 1.0
-bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

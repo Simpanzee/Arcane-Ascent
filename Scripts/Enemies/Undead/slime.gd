@@ -4,7 +4,7 @@ func _ready() -> void:
 	super()
 	cur_hp = 1
 	max_hp = 1
-	move_speed = 80
+	move_speed = 70
 
 	attack_damage = 1
 	attack_range = 15

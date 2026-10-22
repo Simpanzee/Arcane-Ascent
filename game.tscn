@@ -577,7 +577,7 @@ offset_top = 231.00002
 offset_right = 51.0
 offset_bottom = 271.0
 texture_normal = ExtResource("10_80cx4")
-cooldown = 7.0
+cooldown = 4.0
 action_name = &"ability_1"
 
 [node name="Roots" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
@@ -586,7 +586,7 @@ offset_top = 231.00002
 offset_right = 90.0
 offset_bottom = 271.0
 texture_normal = ExtResource("11_e8heu")
-cooldown = 12.0
+cooldown = 8.0
 action_name = &"ability_2"
 
 [node name="Lightning" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
@@ -595,7 +595,7 @@ offset_top = 231.00002
 offset_right = 129.0
 offset_bottom = 271.0
 texture_normal = ExtResource("11_80cx4")
-cooldown = 15.0
+cooldown = 12.0
 action_name = &"ability_3"
 
 [node name="Ultamite" parent="CanvasLayer" instance=ExtResource("9_lc2xo")]
@@ -604,7 +604,7 @@ offset_top = 231.0
 offset_right = 168.66666
 offset_bottom = 271.6667
 texture_normal = ExtResource("14_vaj68")
-cooldown = 80.0
+cooldown = 45.0
 action_name = &"ultimate"
 
 [node name="PlayerHealthBar" type="TextureProgressBar" parent="CanvasLayer"]
@@ -621,9 +621,9 @@ texture_progress = ExtResource("16_e36ub")
 script = ExtResource("3_feb5d")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 65.0
+offset_left = 83.0
 offset_top = 14.0
-offset_right = 104.63799
+offset_right = 122.63799
 offset_bottom = 50.120003
 size_flags_horizontal = 4
 theme_override_constants/outline_size = 5
