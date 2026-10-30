@@ -1,23 +1,178 @@
-[gd_scene load_steps=17 format=3 uid="uid://bljg1ibpbefsr"]
+[gd_scene load_steps=33 format=3 uid="uid://bljg1ibpbefsr"]
 
 [ext_resource type="Script" uid="uid://clavmpmffimh8" path="res://Scripts/UI/input_settings.gd" id="1_blk88"]
+[ext_resource type="Texture2D" uid="uid://dri7qidihalo5" path="res://Assets/Menu/castle.png" id="2_litby"]
 [ext_resource type="PackedScene" uid="uid://bj5dqntfo4qyn" path="res://Scenes/UI/input_button.tscn" id="2_sudnn"]
+[ext_resource type="Texture2D" uid="uid://doicavmvy782" path="res://Assets/Sprites/Enemies/Demons/Enemies/Demon_D/Demon_D/Demon_D_Idle.png" id="3_ptlv1"]
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="3_sudnn"]
-[ext_resource type="AudioStream" uid="uid://cuktvdhto32ub" path="res://Assets/Audio/UI/click.mp3" id="4_4gbk4"]
-[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/UI/hover.mp3" id="5_g6301"]
-[ext_resource type="Texture2D" uid="uid://ccdxtc5xeglnm" path="res://Assets/Menu/Background/dark sky.png" id="6_lsq0o"]
-[ext_resource type="Texture2D" uid="uid://dfftlvr11lfsd" path="res://Assets/Menu/Background/moon.png" id="7_1r8jd"]
-[ext_resource type="Texture2D" uid="uid://bes1y3s05lag3" path="res://Assets/Menu/Background/dark castle.png" id="8_4gwow"]
-[ext_resource type="Shader" uid="uid://cpkv7hj1netgh" path="res://Assets/Menu/scroll.gdshader" id="9_385ck"]
-[ext_resource type="Texture2D" uid="uid://0r2bbgeekx7m" path="res://Assets/Menu/Background/mist.png" id="10_2t4lf"]
-[ext_resource type="Texture2D" uid="uid://briitdc4j0ep6" path="res://Assets/Menu/Background/dark forest.png" id="11_7x8sm"]
-[ext_resource type="Texture2D" uid="uid://dmqua70r2vg7t" path="res://Assets/Menu/Background/castle.png" id="12_o8s15"]
-[ext_resource type="Texture2D" uid="uid://4lwtr7fguso2" path="res://Assets/Menu/Background/pine1.png" id="13_hbpjn"]
-[ext_resource type="Texture2D" uid="uid://ceexqnskywk52" path="res://Assets/Menu/Background/pine 2.png" id="14_13ldb"]
-[ext_resource type="Texture2D" uid="uid://beac0svcshbya" path="res://Assets/Menu/Background/pine 3.png" id="15_1in1k"]
+[ext_resource type="Texture2D" uid="uid://dfwmnuhnod7xt" path="res://Assets/Menu/fire.png" id="4_ptlv1"]
+[ext_resource type="Texture2D" uid="uid://b5iff52o7j1rk" path="res://Assets/Sprites/Enemies/Demons/Enemies/Hellbat/Hellbat/Hellbat_Flying.png" id="5_stf80"]
+[ext_resource type="AudioStream" uid="uid://dn1i64dxepfhf" path="res://Assets/Audio/UI/click2.ogg" id="8_ptlv1"]
+[ext_resource type="AudioStream" uid="uid://s324jmw4p8r7" path="res://Assets/Audio/UI/hover2.ogg" id="9_ptlv1"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jaf52"]
-shader = ExtResource("9_385ck")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypsd1"]
+atlas = ExtResource("3_ptlv1")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp0kt"]
+atlas = ExtResource("3_ptlv1")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yfdm"]
+atlas = ExtResource("3_ptlv1")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h8o7"]
+atlas = ExtResource("3_ptlv1")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6o50"]
+atlas = ExtResource("3_ptlv1")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46hhv"]
+atlas = ExtResource("3_ptlv1")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8gnrj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypsd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp0kt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yfdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h8o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6o50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_46hhv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go30u"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dji77"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keyrt"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hhrj"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1abay"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(128, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5l24"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(160, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fumqw"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(192, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj0e2"]
+atlas = ExtResource("4_ptlv1")
+region = Rect2(224, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmrf4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go30u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dji77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keyrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hhrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1abay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5l24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fumqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj0e2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oslnl"]
+atlas = ExtResource("5_stf80")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr32r"]
+atlas = ExtResource("5_stf80")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbsmt"]
+atlas = ExtResource("5_stf80")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gipi"]
+atlas = ExtResource("5_stf80")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayn3n"]
+atlas = ExtResource("5_stf80")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py2ge"]
+atlas = ExtResource("5_stf80")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8sb8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oslnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr32r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbsmt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gipi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayn3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py2ge")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="InputSettings" type="Control"]
 layout_mode = 3
@@ -31,180 +186,72 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_blk88")
 
-[node name="Sky" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("6_lsq0o")
+[node name="CastleBackground" type="TextureRect" parent="."]
+modulate = Color(0.4824236, 0.4824236, 0.4824236, 1)
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("2_litby")
+expand_mode = 1
 
-[node name="Moon" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_1r8jd")
-
-[node name="Dark Castle" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("8_4gwow")
-
-[node name="Mist" type="TextureRect" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_jaf52")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("10_2t4lf")
-
-[node name="Dark Forest" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("11_7x8sm")
-flip_h = true
-
-[node name="Castle" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("12_o8s15")
-
-[node name="Mist3" type="TextureRect" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_jaf52")
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("10_2t4lf")
-flip_h = true
-
-[node name="Tree1" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("13_hbpjn")
-
-[node name="Tree2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("14_13ldb")
-
-[node name="Tree3" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -240.0
-offset_top = -135.0
-offset_right = 400.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("15_1in1k")
-
-[node name="ColorRect" type="ColorRect" parent="Tree3"]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.5258789e-05
+offset_right = -1.5258789e-05
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.5176471)
+color = Color(0, 0, 0, 0.5568628)
+
+[node name="Demon" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+position = Vector2(73, 221)
+scale = Vector2(6.8762503, 6.8762503)
+sprite_frames = SubResource("SpriteFrames_8gnrj")
+
+[node name="Fire" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.00035865666, 0.00035865666, 0.00035865666, 1)
+position = Vector2(98, 235)
+scale = Vector2(6.5003104, 2.880247)
+sprite_frames = SubResource("SpriteFrames_hmrf4")
+flip_h = true
+
+[node name="Fire2" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.00035865666, 0.00035865666, 0.00035865666, 1)
+position = Vector2(239, 234)
+scale = Vector2(6.5003104, 2.880247)
+sprite_frames = SubResource("SpriteFrames_hmrf4")
+flip_h = true
+
+[node name="Fire3" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.00035865666, 0.00035865666, 0.00035865666, 1)
+position = Vector2(368, 239)
+scale = Vector2(6.5003104, 2.880247)
+sprite_frames = SubResource("SpriteFrames_hmrf4")
+flip_h = true
+
+[node name="Bat1" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.00035865666, 0.00035865666, 0.00035865666, 1)
+position = Vector2(407.5, 85.395676)
+scale = Vector2(0.8499994, 0.7279137)
+sprite_frames = SubResource("SpriteFrames_m8sb8")
+flip_h = true
+
+[node name="Bat2" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.00035865666, 0.00035865666, 0.00035865666, 1)
+position = Vector2(388.5, 99.39569)
+scale = Vector2(0.8499994, 0.7279137)
+sprite_frames = SubResource("SpriteFrames_m8sb8")
+flip_h = true
+
+[node name="Bat3" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.00035865666, 0.00035865666, 0.00035865666, 1)
+position = Vector2(415.5, 101.395676)
+scale = Vector2(0.8499994, 0.7279137)
+sprite_frames = SubResource("SpriteFrames_m8sb8")
+flip_h = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -262,11 +309,11 @@ theme_override_fonts/font = ExtResource("3_sudnn")
 text = "EXIT AND SAVE"
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_4gbk4")
+stream = ExtResource("8_ptlv1")
 bus = &"SFX"
 
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_g6301")
+stream = ExtResource("9_ptlv1")
 bus = &"SFX"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList/InputButton" to="." method="_on_input_button_pressed"]

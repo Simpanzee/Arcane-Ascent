@@ -6,6 +6,10 @@ signal keybind_changed
 @onready var action_list = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ActionList
 @onready var click = $Click
 @onready var hover = $Hover
+@onready var demon = $Demon
+@onready var fire1 = $Fire
+@onready var fire2 = $Fire2
+@onready var fire3 = $Fire3
 
 var is_remapping = false
 var action_to_remap = null
@@ -25,6 +29,10 @@ var input_actions = {
 }
 
 func _ready():
+	demon.play("default")
+	fire1.play("default")
+	fire2.play("default")
+	fire3.play("default")
 	_load_keybindings_from_settings()
 	_create_action_list()
 	
@@ -118,7 +126,7 @@ func _on_reset_button_pressed() -> void:
 
 func _on_save_button_pressed() -> void:
 	click.play()
-	await get_tree().create_timer(0.02).timeout
+	await get_tree().create_timer(0.25).timeout
 	visible = false
 
 func _on_reset_button_mouse_entered() -> void:

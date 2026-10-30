@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b150vnhs856ab" path="res://Assets/Menu/Font.ttf" id="1_ee6dt"]
 [ext_resource type="Script" uid="uid://qdehgq01tkw7" path="res://Scripts/UI/input_button.gd" id="1_qry0x"]
-[ext_resource type="AudioStream" uid="uid://cfphmm4kn448v" path="res://Assets/Audio/UI/hover.mp3" id="3_t2lqj"]
+[ext_resource type="AudioStream" uid="uid://bwu13psfnw1b6" path="res://Assets/Audio/UI/hover2.ogg" id="3_qry0x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bumm"]
 bg_color = Color(0, 0, 0, 0.392)
@@ -59,7 +59,7 @@ text = "INPUT KEY"
 vertical_alignment = 1
 
 [node name="Hover" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_t2lqj")
+stream = ExtResource("3_qry0x")
 bus = &"SFX"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

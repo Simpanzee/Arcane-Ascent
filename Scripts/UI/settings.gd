@@ -9,7 +9,10 @@ var sfx = AudioServer.get_bus_index("SFX")
 @onready var music_slider = $MarginContainer/VBoxContainer/MusicSlider
 @onready var sfx_slider = $MarginContainer/VBoxContainer/SFXSlider
 @onready var input_menu = $CanvasLayer/InputSettings
-
+@onready var demon = $Demon
+@onready var fire1 = $Fire
+@onready var fire2 = $Fire2
+@onready var fire3 = $Fire3
 
 var original_settings = {
 	"music": 1.0,
@@ -21,6 +24,10 @@ var current_settings = {
 }
 
 func _ready():
+	demon.play("default")
+	fire1.play("default")
+	fire2.play("default")
+	fire3.play("default")
 	var loaded_audio = ConfigFileHandler.load_audio_settings()
 	input_menu.keybind_changed.connect(_on_keybind_changed)
 	original_settings = {
@@ -67,7 +74,7 @@ func _on_save_pressed() -> void:
 func _on_return_pressed() -> void:
 	click.play()
 	_apply_settings(original_settings)
-	await get_tree().create_timer(0.02).timeout
+	await get_tree().create_timer(0.25).timeout
 	get_tree().change_scene_to_file("res://Scenes/UI/main_menu.tscn")
 
 func _on_return_mouse_entered() -> void:
