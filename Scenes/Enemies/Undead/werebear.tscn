@@ -355,7 +355,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"move",
-"speed": 20.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ej31k"]
@@ -370,9 +370,10 @@ shape = SubResource("CircleShape2D_fi1oq")
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_gcr5c")
-animation = &"move"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.35339567
+frame = 8
+frame_progress = 1.0
 
 [node name="Death" parent="." index="2"]
 stream = ExtResource("9_e4jjb")

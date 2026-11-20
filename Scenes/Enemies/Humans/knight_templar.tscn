@@ -313,6 +313,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7fqex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryk7r")
 }],
 "loop": false,
 "name": &"attack",
@@ -339,6 +342,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xl300")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tcxdc")
 }],
 "loop": false,
 "name": &"attack2",
@@ -377,6 +383,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jlhw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itpiw")
 }],
 "loop": false,
 "name": &"attack3",
@@ -548,8 +557,10 @@ shape = SubResource("CircleShape2D_fi1oq")
 [node name="AnimatedSprite2D" parent="." index="1"]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_gcr5c")
-animation = &"attack"
+animation = &"attack3"
 autoplay = "idle"
+frame = 11
+frame_progress = 1.0
 
 [node name="Death" parent="." index="2"]
 stream = ExtResource("13_3rnro")

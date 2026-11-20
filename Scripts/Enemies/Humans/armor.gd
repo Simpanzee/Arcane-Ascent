@@ -11,8 +11,8 @@ extends Enemy
 
 func _ready() -> void:
 	super()
-	cur_hp = 6
-	max_hp = 6
+	cur_hp = 5
+	max_hp = 5
 	move_speed = 50
 
 	attack_damage = 2
@@ -126,14 +126,10 @@ func _on_attack2_hitbox_body_entered(body):
 		_apply_attack_effects(body, 2.0)
 
 func _on_attack3_hitbox_body_entered(body):
-	if body.current_health < 2:
-		body.take_damage(attack_damage)
-	else:
-		critical.play()
-		_apply_attack_effects(body, 2.0)
-		camera.shake(10)
-		var dynamic_damage = body.current_health - 1
-		body.take_damage(dynamic_damage)
+	critical.play()
+	_apply_attack_effects(body, 2.0)
+	camera.shake(10)
+	player.take_damage(attack_damage * 2)
 		
 func _apply_attack_effects(body, slow_duration = 3.0):
 	if not body:

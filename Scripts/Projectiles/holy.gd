@@ -1,7 +1,7 @@
 
 extends Area2D
 
-@export var damage_delay: float = 0.3
+@export var damage_delay: float = 0.45
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var activated: bool = false

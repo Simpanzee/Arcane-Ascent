@@ -22,7 +22,7 @@ func _ready() -> void:
 	max_hp = 10
 	move_speed = 40
 	attack_damage = 4
-	attack_range = 34
+	attack_range = 28
 	attack_rate = 2.0
 	
 	apply_modifiers()
@@ -167,14 +167,11 @@ func _on_attack1_hitbox_body_entered(body):
 
 func _on_attack2_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
-		if body.current_health < 4:
-			body.take_damage(attack_damage)
-		else:
-			critical.play()
-			_apply_attack_effects(body, 2.0)
-			camera.shake(10)
-			var dynamic_damage = body.current_health - 1
-			body.take_damage(dynamic_damage)
+		critical.play()
+		_apply_attack_effects(body, 2.0)
+		camera.shake(10)
+		player.take_damage(attack_damage * 2)
+
 
 func _on_attack3_hitbox_body_entered(body):
 	if body.is_in_group("Player"):

@@ -192,6 +192,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ow0i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cp62l")
 }],
 "loop": false,
 "name": &"attack",
@@ -332,9 +335,10 @@ shape = SubResource("CircleShape2D_pm37t")
 position = Vector2(0.99999994, 0)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_pdyrv")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.22973442
+frame = 6
+frame_progress = 1.0
 
 [node name="Node" type="Node" parent="AnimatedSprite2D" index="0"]
 

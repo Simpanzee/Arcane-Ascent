@@ -42,6 +42,10 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(_delta: float) -> void:
+	if cur_hp <= 0 or state == "dead" or state == "attack":
+		velocity = Vector2.ZERO
+		return
+	
 	if is_active == false:
 		velocity = Vector2.ZERO
 		sprite.play("idle")
@@ -51,7 +55,8 @@ func _physics_process(_delta: float) -> void:
 	if player == null or player.is_dead:
 		state = "idle"
 		velocity = Vector2.ZERO
-		sprite.play("idle")
+		if cur_hp != 0:
+			sprite.play("idle")
 		move_and_slide()
 		return
 
@@ -118,9 +123,11 @@ func take_damage(amount : int):
 	healthChanged.emit()
 	
 	if cur_hp <= 0:
+		cur_hp = 0
 		if not has_died:
 			has_died = true
 			state = "dead"
+			velocity = Vector2.ZERO
 			die()
 		return
 	
@@ -151,7 +158,7 @@ func die():
 	death.play()
 
 	await sprite.animation_finished
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1.0).timeout
 
 	despawn.pitch_scale = randf_range(despawn_pitch[0], despawn_pitch[1])
 	despawn.play()
@@ -162,6 +169,8 @@ func die():
 	await tween.finished
 
 	died.emit()
+	
+	await despawn.finished
 	queue_free()
 
 func take_damage_ignore_block(amount: int):

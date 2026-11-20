@@ -23,6 +23,7 @@ signal close_other_rooms
 var chest_scene : PackedScene = preload("res://Scenes/chest.tscn")
 var slime_scene : PackedScene = preload("res://Scenes/Enemies/Undead/slime.tscn")
 var orc_scene : PackedScene = preload("res://Scenes/Enemies/Orcs/orc.tscn")
+var skeleton_scene : PackedScene = preload("res://Scenes/Enemies/Undead/skeleton.tscn")
 var skeleton_archer_scene : PackedScene = preload("res://Scenes/Enemies/Undead/skeleton_archer.tscn")
 var armored_orc_scene : PackedScene = preload("res://Scenes/Enemies/Orcs/armored_orc.tscn")
 var werebear_scene : PackedScene = preload("res://Scenes/Enemies/Undead/werebear.tscn")
@@ -30,7 +31,14 @@ var armor_scene : PackedScene = preload("res://Scenes/Enemies/Humans/armor.tscn"
 var elite_archer_scene : PackedScene = preload("res://Scenes/Enemies/Humans/elite_archer.tscn")
 var knight_templar_scene : PackedScene = preload("res://Scenes/Enemies/Humans/knight_templar.tscn")
 var priest_scene : PackedScene = preload("res://Scenes/Enemies/Humans/priest.tscn")
+
+# Demons
+var demon_scene : PackedScene = preload("res://Scenes/Enemies/Demons/demon.tscn")
+var demon_archer_scene : PackedScene = preload("res://Scenes/Enemies/Demons/demon_archer.tscn")
+var hellhound_scene : PackedScene = preload("res://Scenes/Enemies/Demons/hellhound.tscn")
+var skull_scene : PackedScene = preload("res://Scenes/Enemies/Demons/skull.tscn")
 var waifu_scene : PackedScene = preload("res://Scenes/Enemies/Demons/waifu.tscn")
+var black_knight_scene : PackedScene = preload("res://Scenes/Enemies/Demons/black_knight.tscn")
 
 var room_cleared : bool = false
 var is_first_room : bool = false
@@ -73,13 +81,11 @@ func set_doors(data):
 		entrance_west.toggle_barrier(false)
 		# entrance_west.open_door()
 		
-
 func player_spawn(player : CharacterBody2D):
 	player.global_position = global_position
 	
 func player_enter(_player : CharacterBody2D):
 	pass
-	
 	
 func determine_enemies_count():
 	if game_state.floor_number == 1:
@@ -106,31 +112,23 @@ func spawn_enemies():
 	for child in spawn_zone.get_children():
 		if child is CollisionShape2D and child.shape is RectangleShape2D:
 			shapes.append(child)
-
+	
 	for i in range(enemies_count):
 		var enemy_scene: PackedScene
 		var r = randf()
-
-		if r < 0.261:
-			enemy_scene = slime_scene
-		elif r < 0.435:
-			enemy_scene = orc_scene
-		elif r < 0.565:
-			enemy_scene = armored_orc_scene
-		elif r < 0.696:
-			enemy_scene = skeleton_archer_scene
-		elif r < 0.783:
-			enemy_scene = werebear_scene
-		elif r < 0.870:
-			enemy_scene = armor_scene
-		elif r < 0.8915:
-			enemy_scene = elite_archer_scene
-		elif r < 0.913:
-			enemy_scene = priest_scene
-		elif r < 0.957:
-			enemy_scene = knight_templar_scene
+		
+		if r < 0.20:
+			enemy_scene = hellhound_scene
+		#elif r < 0.40:
+			#enemy_scene = demon_archer_scene
+		#elif r < 0.60:
+			#enemy_scene = skull_scene
+		#elif r < 0.80:
+			#enemy_scene = waifu_scene
 		else:
-			enemy_scene = waifu_scene
+			enemy_scene = hellhound_scene
+			#enemy_scene = black_knight_scene
+
 		var enemy = enemy_scene.instantiate()
 		add_child(enemy)
 		

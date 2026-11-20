@@ -1,4 +1,3 @@
-
 extends Node2D
 
 @onready var click = $Click
@@ -11,6 +10,7 @@ extends Node2D
 @onready var bat2 = $Bat2
 @onready var bat3 = $Bat3
 @onready var fade_rect = $ColorRect
+@onready var laugh = $Laugh
 
 func _ready() -> void:
 	fade_rect.color = Color(0, 0, 0, 0)
@@ -54,6 +54,7 @@ func leave_menu() -> void:
 
 func _on_play_pressed() -> void:
 	click.play()
+	laugh.play()
 	$ButtonManager.hide()
 	$Title.hide()
 	$Version.hide()

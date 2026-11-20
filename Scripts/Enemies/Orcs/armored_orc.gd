@@ -117,18 +117,14 @@ func attack3_move():
 
 func _on_attack1_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
-		player.take_damage(attack_damage)
+		body.take_damage_ignore_invul(attack_damage-2)
 
 func _on_attack2_hitbox_body_entered(body):
 	if body.is_in_group("Player"):
-		if body.current_health < 4:
-			body.take_damage(attack_damage)
-		else:
-			critical.play()
-			_apply_attack_effects(body, 2.0)
-			camera.shake(10)
-			var dynamic_damage = body.current_health - 1
-			body.take_damage(dynamic_damage)
+		critical.play()
+		_apply_attack_effects(body, 2.0)
+		camera.shake(10)
+		player.take_damage(attack_damage * 2)
 
 func _on_attack3_hitbox_body_entered(body):
 	if body.is_in_group("Player"):

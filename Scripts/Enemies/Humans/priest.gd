@@ -7,7 +7,7 @@ extends Enemy
 @export var heal_animation_delay: float = 0.3
 
 @export var holy_scene: PackedScene
-@export var attack_cooldown: float = 4.0
+@export var attack_cooldown: float = 6.0
 @export var attack_animation_delay: float = 0.6
 
 @export var flee_speed: float = 80.0
@@ -24,8 +24,8 @@ var strafe_dir: int = 1
 
 func _ready() -> void:
 	super()
-	cur_hp = 3
-	max_hp = 3
+	cur_hp = 4
+	max_hp = 4
 	move_speed = 55
 
 	last_attack_time = -1000.0

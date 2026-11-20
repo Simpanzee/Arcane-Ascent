@@ -25,7 +25,7 @@ func _ready() -> void:
 	move_speed = 50
 
 	attack_damage = 2
-	attack_range = 45
+	attack_range = 38
 	attack_rate = 1.7
 		
 	apply_modifiers()
@@ -37,7 +37,6 @@ func _ready() -> void:
 	attack1_hitbox.monitoring = false
 	attack1_hitbox.body_entered.connect(_on_attack1_hitbox_body_entered)
 	attack2_hitbox.monitoring = false
-
 	
 func _try_attack():
 	if teleporting or state == "dead" or state == "rooted":
@@ -67,7 +66,7 @@ func _physics_process(delta: float) -> void:
 func _process(_delta: float) -> void:
 	if state == "rooted" or state == "dead":
 		return
-
+	
 	if player == null:
 		return
 
@@ -90,7 +89,6 @@ func _process(_delta: float) -> void:
 		return
 
 	var distance = global_position.distance_to(player.global_position)
-
 	if distance <= teleport_range:
 		if randf() < teleport_chance:
 			teleport_to_player()
@@ -203,6 +201,7 @@ func _on_attack2_hitbox_body_entered(body: Node2D) -> void:
 		laugh.pitch_scale = randf_range(0.8, 1.1)
 		laugh.play()
 		critical.play()
+		camera.shake(10)
 		player.take_damage(attack_damage * 2)
 		cur_hp = max_hp
 		healthChanged.emit()

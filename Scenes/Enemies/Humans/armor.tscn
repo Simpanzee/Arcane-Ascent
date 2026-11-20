@@ -342,6 +342,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x2smx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh4sq")
 }],
 "loop": false,
 "name": &"attack2",
@@ -383,6 +386,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8kllh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xrc8")
 }],
 "loop": false,
 "name": &"attack3",
@@ -539,7 +545,7 @@ position = Vector2(-2, 0)
 sprite_frames = SubResource("SpriteFrames_gcr5c")
 animation = &"attack3"
 autoplay = "idle"
-frame = 11
+frame = 12
 frame_progress = 1.0
 
 [node name="Death" parent="." index="2"]
